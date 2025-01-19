@@ -1,3 +1,27 @@
-<html>
-    <h1>Hellow World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Students</h1>
+    <ul id="student-list"></ul>
+
+    <script>
+        fetch('/devopsassignment1/students')
+            .then(response => response.json())
+            .then(data => {
+                const studentList = document.getElementById('student-list');
+                data.forEach(student => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Name: ${student.name}, ID: ${student.student_id}, Points: ${student.points}`;
+                    studentList.appendChild(listItem);
+                    console.log(student);
+                });
+            })
+            .catch(error => console.error('Error fetching students:', error));
+    </script>
+</body>
 </html>
