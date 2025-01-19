@@ -1,5 +1,5 @@
 from flask import Flask, send_from_directory
-from routes.user_routes import user_bp
+from routes.student_routes import student_bp
 from db import init_db
 from dotenv import load_dotenv
 import os
@@ -7,7 +7,7 @@ import os
 load_dotenv()
 app = Flask(__name__, static_folder="../client", static_url_path="/")
 
-app.register_blueprint(user_bp, url_prefix='/devopsassignment1/users')
+app.register_blueprint(student_bp, url_prefix='/devopsassignment1/students')
 
 @app.route("/")
 def serve_index():
