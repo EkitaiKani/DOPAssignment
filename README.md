@@ -50,3 +50,27 @@ The DevOps Oct 2024 project aims to develop a gamification system for students, 
 - **Deployment and Documentation**
   - Automated deployment scripts
   - Comprehensive user and technical documentation
+
+
+## Installing Dependencies
+
+To set up the required dependencies for this project:
+
+1. Make sure you have Python installed (preferably version 3.10 or higher).
+
+2. Create a virtual environment (optional but recommended):
+
+   - On **Windows**:
+     ```bash
+     python -m venv venv
+     venv\Scripts\activate
+     ```
+   - On **macOS/Linux**:
+     ```bash
+     python -m venv venv
+     source venv/bin/activate
+     ```
+
+3. Install the dependencies listed in `requirements.txt`:
+   ```bash
+   pip install -r requirements.txt
