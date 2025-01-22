@@ -29,7 +29,7 @@ jobs:
         run: |
           curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d chat_id="${TELEGRAM_CHAT_ID}" \
-          -d topic="${TELEGRAM_UPDATES}" \
+          -d thread_id="${TELEGRAM_UPDATES}" \
           -d text="New Commit Pushed:
           Commit Message: ${GITHUB_COMMIT_MESSAGE}
           Author: ${GITHUB_COMMIT_AUTHOR}
