@@ -33,6 +33,4 @@ jobs:
           -d text="New Commit Pushed:
           Commit Message: ${GITHUB_COMMIT_MESSAGE}
           Author: ${GITHUB_COMMIT_AUTHOR}
-          Commit URL: ${GITHUB_COMMIT_URL}
-          chat_id: ${TELEGRAM_CHAT_ID}
-          message_thread_id: ${TELEGRAM_TOPIC_ID}"
+          Commit URL: ${GITHUB_COMMIT_URL}"
