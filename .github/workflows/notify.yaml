@@ -35,4 +35,4 @@ jobs:
           Author: ${GITHUB_COMMIT_AUTHOR}
           Commit URL: ${GITHUB_COMMIT_URL}
           chat_id: ${TELEGRAM_CHAT_ID}
-          message_thread_id: ${TELEGRAM_TOPIC_ID}
+          message_thread_id: ${TELEGRAM_TOPIC_ID}"
