@@ -8,40 +8,44 @@
 <body>
     <form id="login-form">
         <div class="form-group">
-          <label for="InputStudent1">Student ID</label>
-          <input type="student" class="form-control" id="InputStudent1" aria-describedby="studentHelp" placeholder="Enter student ID">
+            <label for="InputUsername">Student ID</label>
+            <input type="text" class="form-control" id="InputUsername" placeholder="Enter your Username" required>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <div class="form-group">
+            <label for="InputPassword">Password</label>
+            <input type="password" class="form-control" id="InputPassword" placeholder="Enter your Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
 
-    
-<script>
-    document.getElementById('login-form').addEventListener('submit', function (e) {
-      e.preventDefault(); 
-      const studentId = document.getElementById('InputStudent1').value;
-  
-      fetch('/devopsassignment1/students/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ student_id: studentId }),
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Login failed. Please check your Student ID.');
-          }
-          return response.json();
-        })
-        .then(data => {
-          alert(`Login successful! Welcome, ${data.name}.`);
-          console.log(data);
-        })
-        .catch(error => {
-          console.error('Error during login:', error);
-          alert('Error during login. Please try again.');
-        });
-    });
-  </script>
+    <script>
+      document.getElementById('login-form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          const username = document.getElementById('InputUsername').value;
+          const password = document.getElementById('InputPassword').value;
+
+          fetch('/devopsassignment1/authentication/login', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ username: username, password: password }),
+          })
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error('Login failed. Please check your credentials.');
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                  alert(`Login successful!`);
+                  console.log(data);
+              })
+              .catch(error => {
+                  console.error('Error during login:', error);
+                  alert('Login failed. Please try again.');
+              });
+      });
+    </script>
 </body>
 </html>

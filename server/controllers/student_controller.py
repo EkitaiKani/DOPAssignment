@@ -3,12 +3,12 @@ from db import get_db
 def get_all_students():
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT student_id, name, points FROM students")
+    cursor.execute("SELECT studentID, name, points FROM students")
     rows = cursor.fetchall()
 
     students = [
         {
-            "student_id": row[0],
+            "studentID": row[0],
             "name": row[1],
             "points": row[2]
         }
@@ -17,19 +17,24 @@ def get_all_students():
     
     return students
 
-def login_student(student_id):
+def login_student(username, password):
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM students WHERE student_id = %s", (student_id,))
-    row = cursor.fetchone()
 
-    if row is None:
-        return None
+    cursor.execute("SELECT * FROM students WHERE username = %s", (username,))
+    user_row = cursor.fetchone()
+
+    if user_row is None:
+        return {"error": "Invalid username"}  
+
+    cursor.execute("SELECT * FROM students WHERE username = %s AND password = %s", (username, password))
+    password_row = cursor.fetchone()
+
+    if password_row is None:
+        return {"error": "Invalid password"}
 
     student = {
-        "student_id": row[0],
-        "name": row[1],
-        "points": row[2]
+        "studentid": password_row[0],
     }
-    
-    return student
+
+    return 
