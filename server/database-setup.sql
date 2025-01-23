@@ -1,10 +1,11 @@
 CREATE TABLE students (
     studentID VARCHAR(10) PRIMARY KEY,
+	password VARCHAR(255) NOT NULL,
     username VARCHAR(100) NOT NULL,
     diplomaOfStudy VARCHAR(100) NOT NULL,
     yearOfEntry INT NOT NULL,
     emailAddress VARCHAR(100) NOT NULL,
-    points INT NOT NULL DEFAULT 0,
+    points INT NOT NULL DEFAULT 0
 );
 
 CREATE TABLE redeemable_items (
@@ -17,7 +18,7 @@ CREATE TABLE redeemable_items (
 CREATE TABLE admins (
     adminID VARCHAR(10) PRIMARY KEY,
     username VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
 
 INSERT INTO students (studentID, password, username, diplomaOfStudy, yearOfEntry, emailAddress, points) VALUES

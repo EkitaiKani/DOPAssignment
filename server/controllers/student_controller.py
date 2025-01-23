@@ -17,24 +17,4 @@ def get_all_students():
     
     return students
 
-def login_student(username, password):
-    conn = get_db()
-    cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM students WHERE username = %s", (username,))
-    user_row = cursor.fetchone()
-
-    if user_row is None:
-        return {"error": "Invalid username"}  
-
-    cursor.execute("SELECT * FROM students WHERE username = %s AND password = %s", (username, password))
-    password_row = cursor.fetchone()
-
-    if password_row is None:
-        return {"error": "Invalid password"}
-
-    student = {
-        "studentid": password_row[0],
-    }
-
-    return 
