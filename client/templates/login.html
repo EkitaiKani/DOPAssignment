@@ -1,14 +1,17 @@
+<!-- filepath: /c:/Users/table/OneDrive - Ngee Ann Polytechnic/Desktop/Desktop/Ngee Ann Poly/Semester 6/Developer Operations/Assignment/DOPAssignment/client/templates/login.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
   <body>
     <form id="login-form">
       <div class="form-group">
-        <label for="InputUsername">Student ID</label>
+        <label for="InputUsername">Username</label>
         <input
           type="text"
           class="form-control"
@@ -27,7 +30,10 @@
           required
         />
       </div>
-      <button type="submit" class="btn btn-primary">Login</button>
+      <div>
+        <a href="recover-password" class="btn btn-link">Forgot Password</a>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
     </form>
 
     <script>
@@ -52,10 +58,14 @@
               return response.json();
             })
             .then((data) => {
-              if (data.role === "student") {
-                window.location.href = "/student";
-              } else if (data.role === "admin") {
-                window.location.href = "/admin";
+              if (data.error) {
+                alert(data.error);
+              } else {
+                if (data.role === "student") {
+                  window.location.href = "/student";
+                } else if (data.role === "admin") {
+                  window.location.href = "/admin";
+                }
               }
             })
             .catch((error) => {
