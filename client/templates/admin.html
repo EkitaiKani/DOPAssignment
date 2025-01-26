@@ -4,8 +4,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   </head>
   <body>
-    <h1>Admin</h1>
+    <div class="heading">
+      <h1>Admin Dashboard</h1>
+      <a href="/logout" class="btn btn-primary">Logout</a>
+      <a href="/createStudent" class="btn btn-primary">Create Student Account</a>
+    </div>
+    <p>Welcome to the admin dashboard.</p>
+
+    <div class="form-group">
+      <input
+        type="text"
+        id="search-bar"
+        class="form-control"
+        placeholder="Search by Username or Student ID"
+      />
+    </div>
+    <table class="table" id="students-table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Username</th>
+          <th>Diploma of Study</th>
+          <th>Year of Entry</th>
+          <th>Email Address</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchBar = document.getElementById("search-bar");
+      const tableBody = document
+        .getElementById("students-table")
+        .getElementsByTagName("tbody")[0];
+
+      function fetchStudents(query = "") {
+        fetch(`/devopsassignment1/students/search?identifier=${query}`)
+          .then((response) => response.json())
+          .then((data) => {
+            tableBody.innerHTML = "";
+            data.forEach((student) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
+                      <td>${student[0]}</td>
+                      <td>${student[2]}</td>
+                      <td>${student[3]}</td>
+                      <td>${student[4]}</td>
+                      <td>${student[5]}</td>
+                      <td>${student[6]}</td>
+                      <td>
+                        <a href="/editStudent?studentID=${student[0]}" class="btn btn-primary btn-sm">Edit</a>
+                        <button class="btn btn-danger btn-sm" onclick="deleteStudent('${student[0]}')">Delete</button>
+                      </td>
+                  `;
+              tableBody.appendChild(row);
+            });
+          })
+          .catch((error) =>
+            console.error("Error fetching student data:", error)
+          );
+      }
+
+      searchBar.addEventListener("input", function () {
+        const query = searchBar.value;
+        fetchStudents(query);
+      });
+
+      fetchStudents();
+    });
+    function deleteStudent(studentID) {
+        fetch(`/devopsassignment1/students/${studentID}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Student deleted successfully');
+                fetchStudents();
+            } else {
+                alert('Failed to delete student');
+            }
+        })
+        .catch(error => console.error('Error deleting student:', error));
+    }
+  </script>
 </html>

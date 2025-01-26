@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/createStudent.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Student</h1>
+        <form id="create-student-form">
+            <div class="input-container">
+                <div>
+                    <div class="form-group">
+                        <label for="studentID">Student ID:</label>
+                        <input type="text" class="form-control" id="studentID" name="studentID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="diplomaOfStudy">Diploma of Study:</label>
+                        <input type="text" class="form-control" id="diplomaOfStudy" name="diplomaOfStudy" required>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label for="yearOfEntry">Year of Entry:</label>
+                        <input type="number" class="form-control" id="yearOfEntry" name="yearOfEntry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address:</label>
+                        <input type="email" class="form-control" id="emailAddress" name="emailAddress" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="points">Points:</label>
+                        <input type="number" class="form-control" id="points" name="points" required>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Student</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('create-student-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const data = {
+                    studentID: document.getElementById('studentID').value,
+                    username: document.getElementById('username').value,
+                    password: document.getElementById('password').value,
+                    diplomaOfStudy: document.getElementById('diplomaOfStudy').value,
+                    yearOfEntry: document.getElementById('yearOfEntry').value,
+                    emailAddress: document.getElementById('emailAddress').value,
+                    points: document.getElementById('points').value
+                };
+
+                fetch('/devopsassignment1/students/add_student', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        alert('Student created successfully!');
+                    } else {
+                        alert('Failed to create student.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while creating the student.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
