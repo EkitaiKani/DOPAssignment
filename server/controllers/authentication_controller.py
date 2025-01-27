@@ -1,48 +1,48 @@
 from werkzeug.security import generate_password_hash, check_password_hash
-from db import get_db
+from models.student_model import db, Student
+from models.admin_model import Admin
+
+def get_user_data(username):
+    user = Student.query.filter_by(username=username).first()
+    if user:
+        return user.to_dict(), 'student'
+
+    user = Admin.query.filter_by(username=username).first()
+    if user:
+        return user.to_dict(), 'admin'
+
+    return None, None
 
 def login_user(username, password):
-    conn = get_db()
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        SELECT 'student' AS role, studentID AS id, username, password FROM students WHERE username = %s
-        UNION
-        SELECT 'admin' AS role, adminID AS id, username, password FROM admins WHERE username = %s
-    """, (username, username))
-
-    user_row = cursor.fetchone()
-
-    if user_row is None:
+    user_data, role = get_user_data(username)
+    if user_data is None:
         return {"error": "Invalid username"}
 
-    role, userID, stored_username, stored_password = user_row
+    stored_password = user_data['password']
     if not check_password_hash(stored_password, password):
         return {"error": "Invalid password"}
 
-    return {"userID": userID, "role": role}
+    return {"userID": user_data[role+"id"], "role": role}
 
-def recoverPassword(username, password):
-    conn = get_db()
-    cursor = conn.cursor()
+def recoverPassword(username, new_password):
+    user_data = get_user_data(username)
 
-    cursor.execute("""
-        SELECT 'student' AS role, studentID AS id, username, password FROM students WHERE username = %s
-        UNION
-        SELECT 'admin' AS role, adminID AS id, username, password FROM admins WHERE username = %s
-    """, (username, username))
-
-    user_row = cursor.fetchone()
-
-    if user_row is None:
+    if user_data is None:
         return {"error": "Invalid username"}
 
-    role, userID, stored_username, stored_password = user_row
+    role = user_data['role']
+    userID = user_data['id']
 
-    cursor.execute("""
-        UPDATE {}s SET password = %s WHERE {}ID = %s
-    """.format(role, role), (generate_password_hash(password), userID))
+    if role == 'student':
+        user = Student.query.filter_by(studentid=userID).first()
+    elif role == 'admin':
+        user = Admin.query.filter_by(adminid=userID).first()
 
-    conn.commit()
+    if user is None:
+        return {"error": "User not found"}
+
+    # Update the user's password
+    user.password = generate_password_hash(new_password)
+    db.session.commit()
+
     return {"success": True}
-
