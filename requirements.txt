@@ -2,3 +2,4 @@ flask
 python-dotenv
 pip
 psycopg2
+flask_sqlalchemy
