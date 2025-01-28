@@ -2,3 +2,6 @@ flask
 python-dotenv
 pip
 psycopg2
+selenium
+behave
+allure-behave
