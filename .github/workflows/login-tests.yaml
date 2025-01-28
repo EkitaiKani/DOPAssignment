@@ -1,0 +1,40 @@
+name: Login test on push
+run-name: ${{github.actor}} is testing the Login
+
+on:
+  push:
+    branches: github-actions
+
+jobs:
+  behave-testing:
+    # Create VM with windows OS
+    runs-on: windows-latest
+    steps:
+      # Setup of environment for test
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: List repo
+        run: |
+          ls
+
+      # install python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # install dependencies from requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # download chrome for behave testing
+      - name: Setup Chrome and Chrome Webdriver
+        steps:
+        - uses: browser-actions/setup-chrome@v1
+        - run: chrome --version
+
+      - name: Run Behave tests
+        run: |
+          behave tests/features/    
