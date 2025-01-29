@@ -33,9 +33,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes postgresql-client
       
-      - name: Verify PostgreSQL installation
+    - name: Debug PostgreSQL logs
         run: |
-          pg_isready -h postgres -p 5432
+          docker logs $(docker ps -q -f ancestor=postgres:latest)
 
       - name: Test database connection
         run: |
