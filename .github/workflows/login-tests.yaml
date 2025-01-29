@@ -75,3 +75,9 @@ jobs:
       - name: Check Chrome version
         run: chrome --version
 
+      - name: Run App.py
+        run: python ./server/app.py
+
+      - name: Run login tests
+        run: behave ./tests/features
+
