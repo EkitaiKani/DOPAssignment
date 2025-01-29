@@ -32,19 +32,23 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --yes postgresql-client
+      
+      - name: Verify PostgreSQL installation
+        run: |
+          pg_isready -h postgres -p 5432
 
       - name: Test database connection
         run: |
-          PGPASSWORD=mypassword psql -U myuser -d database-setup -c "\l"
+          PGPASSWORD=mypassword psql -h postgres -U myuser -d database-setup -c "\l"
 
       # Initialize database using database-setup.sql
       - name: Initialize database
         run: |
-          PGPASSWORD=mypassword psql -U myuser -d database-setup -f database-setup.sql
+          PGPASSWORD=mypassword psql -h postgres -U myuser -d database-setup -f database-setup.sql
 
       - name: Verify database setup
         run: |
-          PGPASSWORD=mypassword psql -U myuser -d database-setup -c "SELECT COUNT(*) FROM students;"
+          PGPASSWORD=mypassword psql -h postgres -U myuser -d database-setup -c "SELECT COUNT(*) FROM students;"
       
       - name: Setup Python
         uses: actions/setup-python@v5
