@@ -32,11 +32,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --yes postgresql-client
-      
-      - name: Verify PostgreSQL installation
-        run: |
-          psql --version
-          pg_isready
 
       - name: Test database connection
         run: |
