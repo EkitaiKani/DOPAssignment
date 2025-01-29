@@ -43,10 +43,10 @@ jobs:
           postgresql-version: 17
 
       - name: Verify PostgreSQL installation
-          run: |
-            psql --version
-            pg_isready
-          shell: cmd
+        run: |
+          psql --version
+          pg_isready
+        shell: cmd
 
       - name: Create database and user
         run: |
