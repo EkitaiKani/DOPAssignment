@@ -44,7 +44,7 @@ jobs:
       # Initialize database using database-setup.sql
       - name: Initialize database
         run: |
-          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup -f database-setup.sql
+          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup -f ./server/database-setup.sql
 
       - name: Verify database setup
         run: |
