@@ -39,7 +39,7 @@ jobs:
 
       - name: Test database connection
         run: |
-          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup -c "\l"
+          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup
 
       # Initialize database using database-setup.sql
       - name: Initialize database
