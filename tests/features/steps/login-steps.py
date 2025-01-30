@@ -4,21 +4,24 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 import time
-import tempfile
 
 def step_impl(context):
-    # Create a unique temporary directory for user data
-    user_data_dir = tempfile.mkdtemp()
+
 
     # Set Chrome options
     chrome_options = Options()
-    chrome_options.add_argument(f"--user-data-dir={user_data_dir}")  # Use a unique directory
+    chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument("--no-sandbox")  # Required for running in CI environments
     chrome_options.add_argument("--headless")  # Run in headless mode for CI
 
-    # Launch Chrome with the specified options
-    context.driver = webdriver.Chrome(options=chrome_options)
+    # Don't specify user data directory
+    chrome_options.add_argument('--remote-debugging-port=9222')
+    
+    # Create ChromeDriver instance with options
+    service = Service('chromedriver')
+    context.driver = webdriver.Chrome(service=service, options=chrome_options)
 
 @given(u'Chrome browser is launch')
 def step_impl(context):
