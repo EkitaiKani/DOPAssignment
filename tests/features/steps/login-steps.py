@@ -23,7 +23,7 @@ def step_impl(context):
     chrome_options.add_argument('--remote-debugging-port=9222')
     
     # Create ChromeDriver instance with options
-    service = Service('chromedriver')
+    service = Service('/usr/bin/chromedriver')  # Use system ChromeDriver path
     context.driver = webdriver.Chrome(service=service, options=chrome_options)
 
 @given(u'Browser console logging is enabled for error tracking')
