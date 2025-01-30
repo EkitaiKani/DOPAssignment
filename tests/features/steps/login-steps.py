@@ -6,15 +6,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import time
+import os
 
 def step_impl(context):
-
 
     # Set Chrome options
     chrome_options = Options()
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument("--no-sandbox")  # Required for running in CI environments
     chrome_options.add_argument("--headless")  # Run in headless mode for CI
+    
+    # Use different port for Selenium
+    selenium_port = os.getenv('SELENIUM_PORT', '9515')
 
     # Don't specify user data directory
     chrome_options.add_argument('--remote-debugging-port=9222')
