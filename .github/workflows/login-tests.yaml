@@ -75,8 +75,8 @@ jobs:
           sudo apt-get install -y chromium-chromedriver
       
       - name: Check Chrome version
-        run: chrome --version
-
+        run: chromium-browser --version
+        
       - name: Run App.py
         run: |
           python ./server/app.py &
