@@ -8,9 +8,9 @@ from selenium.webdriver.chrome.service import Service
 import time
 import os
 
+@given(u'Chrome browser is launch')
 def step_impl(context):
-
-    # Set Chrome options
+        # Set Chrome options
     chrome_options = Options()
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument("--no-sandbox")  # Required for running in CI environments
@@ -25,10 +25,6 @@ def step_impl(context):
     # Create ChromeDriver instance with options
     service = Service('chromedriver')
     context.driver = webdriver.Chrome(service=service, options=chrome_options)
-
-@given(u'Chrome browser is launch')
-def step_impl(context):
-    context.driver = webdriver.Chrome()
 
 @given(u'Browser console logging is enabled for error tracking')
 def step_impl(context):
