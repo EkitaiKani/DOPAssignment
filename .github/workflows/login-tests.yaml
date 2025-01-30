@@ -69,14 +69,19 @@ jobs:
           echo "DB_PASSWORD=mypassword" >> .env
           echo "DB_HOST=localhost" >> .env
 
-      - name: Install ChromeDriver
+      - name: Install Chromium (via apt)
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-chromedriver
+          sudo apt-get install -y chromium-browser
+
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
       
       - name: Check Chrome version
         run: chromium-browser --version
-        
+
       - name: Run App.py
         run: |
           python ./server/app.py &
