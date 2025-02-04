@@ -70,6 +70,7 @@
             })
             .catch((error) => {
               console.error("Error during login:", error);
+              console.error(error.code)
               alert("Login failed. Please try again.");
             });
         });
