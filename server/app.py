@@ -1,12 +1,16 @@
 from flask import Flask, send_from_directory, request, redirect, make_response, jsonify, session, render_template
 from routes.student_routes import student_bp
 from routes.authentication_routes import authentication_bp
+from config import DevelopmentConfig, ProductionConfig
+from db import init_db, db
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 app = Flask(__name__, static_folder="../client/static", template_folder="../client/templates")
 app.secret_key = os.urandom(24)
+app.config.from_object(DevelopmentConfig)
+init_db(app)
 
 users = {}
 
@@ -33,6 +37,18 @@ def serve_admin():
         return render_template("admin.html")
     return redirect("/login")
 
+@app.route("/editStudent")
+def serve_editStudent():
+    if 'userID' in session:
+        return render_template("editStudent.html")
+    return redirect("/login")
+
+@app.route("/createStudent")
+def server_createStudent():
+    if 'userID' in session:
+        return render_template("createStudent.html")
+    return redirect("/login")
+
 @app.route("/student")
 def serve_student():
     if 'userID' in session:
@@ -46,4 +62,5 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=(DevelopmentConfig != ProductionConfig))

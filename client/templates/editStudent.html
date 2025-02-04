@@ -4,48 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Student</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/editStudent.css') }}" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/editStudent.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
   <body>
-    
     <form id="edit-student-form">
-        <h1>Edit Student</h1>
-        <div class="input-container">
-            <div>
-                <div class="form-group">
-                    <label for="studentID">Student ID:</label>
-                    <input type="text" class="form-control" id="studentID" name="studentID" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                </div>
-                <div class="form-group">
-                    <label for="diplomaOfStudy">Diploma of Study:</label>
-                    <input type="text" class="form-control" id="diplomaOfStudy" name="diplomaOfStudy" required>
-                </div>
-            </div>
-            <div>
-                <div class="form-group">
-                    <label for="yearOfEntry">Year of Entry:</label>
-                    <input type="number" class="form-control" id="yearOfEntry" name="yearOfEntry" required>
-                </div>
-                <div class="form-group">
-                    <label for="emailAddress">Email Address:</label>
-                    <input type="email" class="form-control" id="emailAddress" name="emailAddress" required>
-                </div>
-                <div class="form-group">
-                    <label for="points">Points:</label>
-                    <input type="number" class="form-control" id="points" name="points" required>
-                </div>
-            </div>
+      <h1>Edit Student</h1>
+      <div class="input-container">
+        <div>
+          <div class="form-group">
+            <label for="studentid">Student ID:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="studentid"
+              name="studentid"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="diplomaofstudy">Diploma of Study:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="diplomaofstudy"
+              name="diplomaofstudy"
+              required
+            />
+          </div>
         </div>
-        <button class="btn btn-primary" type="submit">Save Changes</button>
+        <div>
+          <div class="form-group">
+            <label for="yearofentry">Year of Entry:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="yearofentry"
+              name="yearofentry"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="emailaddress">Email Address:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailaddress"
+              name="emailaddress"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="points">Points:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="points"
+              name="points"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <button id="editStudent" class="btn btn-primary" type="submit">Save Changes</button>
     </form>
 
     <script>
@@ -62,40 +108,40 @@
         }
 
         const queryParams = getQueryParams();
-        const studentID = queryParams.studentID;
-        let password = ""
-        fetch(`/devopsassignment1/students/${studentID}`)
+        const studentid = queryParams.studentid;
+        let password = "";
+        fetch(`/devopsassignment1/students/${studentid}`)
           .then((response) => response.json())
           .then((data) => {
             data = data[0]
-            password = data[1]
-            document.getElementById("studentID").value = data[0];
+            password = data["password"];
+            document.getElementById("studentid").value = data['studentid'];
             document.getElementById("password").value = "";
-            document.getElementById("username").value = data[2]; 
-            document.getElementById("diplomaOfStudy").value = data[3];
-            document.getElementById("yearOfEntry").value = data[4];
-            document.getElementById("emailAddress").value = data[5];
-            document.getElementById("points").value = data[6];
+            document.getElementById("username").value = data["username"];
+            document.getElementById("diplomaofstudy").value = data["diplomaofstudy"];
+            document.getElementById("yearofentry").value = data["yearofentry"];
+            document.getElementById("emailaddress").value = data["emailaddress"];
+            document.getElementById("points").value = data["points"];
           })
           .catch((error) =>
             console.error("Error fetching student data:", error)
           );
-          
+
         document
           .getElementById("edit-student-form")
           .addEventListener("submit", function (event) {
             event.preventDefault();
             const data = {
-              studentID: document.getElementById("studentID").value,
+              studentid: document.getElementById("studentid").value,
               username: document.getElementById("username").value,
               password: document.getElementById("password").value === "" ? password : document.getElementById("password").value,
-              diplomaOfStudy: document.getElementById("diplomaOfStudy").value,
-              yearOfEntry: document.getElementById("yearOfEntry").value,
-              emailAddress: document.getElementById("emailAddress").value,
+              diplomaofstudy: document.getElementById("diplomaofstudy").value,
+              yearofentry: document.getElementById("yearofentry").value,
+              emailaddress: document.getElementById("emailaddress").value,
               points: document.getElementById("points").value,
             };
 
-            fetch(`/devopsassignment1/students/${studentID}`, {
+            fetch(`/devopsassignment1/students/${studentid}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
