@@ -64,9 +64,9 @@ jobs:
       - name: Create .env file
         run: |
           echo "# Database Configuration" > .env
-          echo "DB_NAME=database-setup" >> .env
-          echo "DB_USER=myuser" >> .env
-          echo "DB_PASSWORD=mypassword" >> .env
+          echo "DB_NAME=DOPAssignment" >> .env
+          echo "DB_USER=postgres" >> .env
+          echo "DB_PASSWORD=bafjoiaibudfkasf" >> .env
           echo "DB_HOST=localhost" >> .env
 
       - name: Install Chromium (via apt)
