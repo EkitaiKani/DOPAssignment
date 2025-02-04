@@ -48,7 +48,7 @@ jobs:
 
       - name: Verify database setup
         run: |
-          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup -c "SELECT COUNT(*) FROM students;"
+          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup -c "SELECT * FROM students;"
       
       - name: Setup Python
         uses: actions/setup-python@v5
