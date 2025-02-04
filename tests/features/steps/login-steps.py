@@ -5,123 +5,161 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from selenium.common.exceptions import TimeoutException, WebDriverException
 import time
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Constants
+WAIT_TIMEOUT = 10
+BASE_URL = "http://127.0.0.1:5000"
+CHROME_DRIVER_PATH = '/usr/bin/chromedriver'
+
+def setup_chrome_options():
+    """Configure Chrome options with best practices"""
+    chrome_options = Options()
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument('--remote-debugging-port=9222')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--window-size=1920,1080')
+    chrome_options.add_argument('--disable-extensions')
+    return chrome_options
 
 @given(u'Chrome browser is launch')
 def step_impl(context):
-        # Set Chrome options
-    chrome_options = Options()
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument("--no-sandbox")  # Required for running in CI environments
-    chrome_options.add_argument("--headless")  # Run in headless mode for CI
-    
-    # Use different port for Selenium
-    selenium_port = os.getenv('SELENIUM_PORT', '9515')
-
-    # Don't specify user data directory
-    chrome_options.add_argument('--remote-debugging-port=9222')
-    
-    # Create ChromeDriver instance with options
-    service = Service('/usr/bin/chromedriver')  # Use system ChromeDriver path
-    context.driver = webdriver.Chrome(service=service, options=chrome_options)
+    try:
+        chrome_options = setup_chrome_options()
+        service = Service(CHROME_DRIVER_PATH)
+        context.driver = webdriver.Chrome(service=service, options=chrome_options)
+        context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
+        logger.info("Chrome browser launched successfully")
+    except WebDriverException as e:
+        logger.error(f"Failed to launch Chrome browser: {str(e)}")
+        raise
 
 @given(u'Browser console logging is enabled for error tracking')
 def step_impl(context):
-    # Clear existing logs
     context.console_logs = []
+    logger.info("Console logging enabled")
 
 @when(u'Open Login Page')
 def step_impl(context):
-    context.driver.get("http://127.0.0.1:5000/login")
-    
+    try:
+        context.driver.get(f"{BASE_URL}/login")
+        context.wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+        logger.info("Login page loaded successfully")
+    except TimeoutException:
+        logger.error("Timeout while loading login page")
+        raise
+
+def wait_for_element(context, locator, timeout=WAIT_TIMEOUT):
+    """Utility function to wait for and return an element"""
+    try:
+        element = WebDriverWait(context.driver, timeout).until(
+            EC.presence_of_element_located(locator)
+        )
+        return element
+    except TimeoutException:
+        logger.error(f"Element not found: {locator}")
+        raise
+
 @then('Verify page loads without console errors')
 def step_verify_no_console_errors(context):
-    # Get browser console logs
     browser_logs = context.driver.get_log('browser')
-    wait = WebDriverWait(context.driver, 10)
-
+    errors = [log for log in browser_logs if log['level'] in ['SEVERE', 'ERROR']]
     
-    # Filter for severe errors
-    errors = [
-        log for log in browser_logs 
-        if log['level'] in ['SEVERE', 'ERROR']
-    ]
+    # Log all console entries for debugging
+    for log in browser_logs:
+        logger.debug(f"Console log: {log}")
     
-    # Store logs for later analysis
-    context.console_logs.extend(browser_logs)
-    
-    # Assert no severe errors
     if errors:
-        print("Console Errors Found:")
         for error in errors:
-            print(f"Error: {error['message']}")
-        assert False, f"Found {len(errors)} console errors"
+            logger.error(f"Console error: {error['message']}")
+        raise AssertionError(f"Found {len(errors)} console errors")
     
-    # Verify essential elements are present
-    assert wait.until(
-        EC.presence_of_element_located((By.ID, "InputUsername"))
-    ), "Username field not found"
+    # Verify essential elements with custom wait function
+    username_field = wait_for_element(context, (By.ID, "InputUsername"))
+    password_field = wait_for_element(context, (By.ID, "InputPassword"))
     
-    assert wait.until(
-        EC.presence_of_element_located((By.ID, "InputPassword"))
-    ), "Password field not found"
+    assert username_field.is_displayed(), "Username field not visible"
+    assert password_field.is_displayed(), "Password field not visible"
 
 @then(u'Verify Login title is present')
 def step_impl(context):
-    title = context.driver.title
-    assert title == "Student Login"
+    try:
+        context.wait.until(EC.title_is("Student Login"))
+        logger.info("Login title verified successfully")
+    except TimeoutException:
+        actual_title = context.driver.title
+        logger.error(f"Expected title 'Student Login', got '{actual_title}'")
+        raise
 
-@then(u'Close browser')
-def step_impl(context):
-    context.driver.quit()
-    
-@then(u'Input username "{userName}" and password "{passWord}"')
-def step_impl(context, userName, passWord):
-    context.driver.find_element("id", "InputUsername").send_keys(userName)
-    context.driver.find_element("id", "InputPassword").send_keys(passWord)
-    
-@then(u'Input multiple "{userName}" and "{passWord}"')
-def step_impl(context, userName, passWord):
-    context.driver.find_element("id", "InputUsername").send_keys(userName)
-    context.driver.find_element("id", "InputPassword").send_keys(passWord)
-    
+@then(u'Input username "{username}" and password "{password}"')
+def step_impl(context, username, password):
+    try:
+        username_field = wait_for_element(context, (By.ID, "InputUsername"))
+        password_field = wait_for_element(context, (By.ID, "InputPassword"))
+        
+        username_field.clear()
+        username_field.send_keys(username)
+        password_field.clear()
+        password_field.send_keys(password)
+        logger.info("Credentials entered successfully")
+    except Exception as e:
+        logger.error(f"Failed to input credentials: {str(e)}")
+        raise
+
 @then(u'Submit form')
 def step_impl(context):
-    context.driver.find_element("css selector", "form button.btn.btn-primary").submit()
-    time.sleep(5)
-    
+    try:
+        submit_button = wait_for_element(context, (By.ID, "login"))
+        submit_button.click()
+        time.sleep(1)  # Short wait for form submission
+        logger.info("Form submitted successfully")
+    except Exception as e:
+        logger.error(f"Failed to submit form: {str(e)}")
+        raise
+
 @then(u'Verify student login')
 def step_impl(context):
-    WebDriverWait(context.driver, 10).until(
-        EC.url_contains("/student")
-    )
-    url = context.driver.current_url
-    assert url == "http://127.0.0.1:5000/student", f"Expected URL: http://127.0.0.1:5000/student, Actual URL: {url}"
+    try:
+        context.wait.until(EC.url_to_be(f"{BASE_URL}/student"))
+        logger.info("Student login verified successfully")
+    except TimeoutException:
+        current_url = context.driver.current_url
+        logger.error(f"Failed to verify student login. Expected URL: {BASE_URL}/student, Got: {current_url}")
+        raise
 
 @then(u'Verify admin login')
 def step_impl(context):
-    WebDriverWait(context.driver, 10).until(
-        EC.url_contains("/admin")
-    )
-    url = context.driver.current_url
-    assert url == "http://127.0.0.1:5000/admin", f"Expected URL: http://127.0.0.1:5000/admin, Actual URL: {url}"
-
+    try:
+        context.wait.until(EC.url_to_be(f"{BASE_URL}/admin"))
+        logger.info("Admin login verified successfully")
+    except TimeoutException:
+        current_url = context.driver.current_url
+        logger.error(f"Failed to verify admin login. Expected URL: {BASE_URL}/admin, Got: {current_url}")
+        raise
 
 @then(u'Verify failed student login')
 def step_impl(context):
-    # Wait for alert
-    wait = WebDriverWait(context.driver, 10)
-    alert = wait.until(EC.alert_is_present())
-    
-    # Check alert text
-    alert_text = alert.text
-    assert "Invalid username" in alert_text
-    
-    # Dismiss alert
-    alert.accept()
-        
-# @then(u'Check locked out')
-# def step_impl(context):
-#     error = context.driver.find_element(By.TAG_NAME, "h3").text
-#     assert error == "Epic sadface: Sorry, this user has been locked out."
+    try:
+        alert = context.wait.until(EC.alert_is_present())
+        alert_text = alert.text
+        assert "Invalid username" in alert_text, f"Expected 'Invalid username' in alert, got: {alert_text}"
+        alert.accept()
+        logger.info("Failed login verified successfully")
+    except TimeoutException:
+        logger.error("Alert not present for failed login")
+        raise
+
+@then(u'Close browser')
+def step_impl(context):
+    if hasattr(context, 'driver'):
+        context.driver.quit()
+        logger.info("Browser closed successfully")
