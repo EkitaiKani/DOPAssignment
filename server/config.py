@@ -13,8 +13,8 @@ class DevelopmentConfig(Config):
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
 
-ENV = os.getenv("FLASK_ENV", "development")
-if ENV == "production":
-    AppConfig = ProductionConfig
-else:
-    AppConfig = DevelopmentConfig
+# ENV = os.getenv("FLASK_ENV", "development")
+# if ENV == "production":
+#     AppConfig = ProductionConfig
+# else:
+#     AppConfig = DevelopmentConfig
