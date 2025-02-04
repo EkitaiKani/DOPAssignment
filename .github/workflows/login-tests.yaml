@@ -93,7 +93,7 @@ jobs:
         run: behave ./tests/features
 
       - name: Upload Flask logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: flask-log
           path: flask.log
