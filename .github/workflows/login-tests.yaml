@@ -84,9 +84,9 @@ jobs:
       - name: Check Chrome version
         run: chromium-browser --version
 
-      - name: Run App.py
+      - name: Run Flask App
         run: |
-          python ./server/app.py &
+          nohup python ./server/app.py > flask.log 2>&1 &
           echo "Flask server started"
 
       - name: Run login tests
