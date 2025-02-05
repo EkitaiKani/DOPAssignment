@@ -10,15 +10,23 @@ jobs:
   setup:
     runs-on: ubuntu-latest
 
+    # Extract the database configuration values from your .bat file
+    env:
+      PG_USER: postgres
+      PG_PASSWORD: bafjoiaibudfkasf
+      PG_DATABASE: DOPAssignment
+      PG_HOST: localhost
+      PG_PORT: 5432
+
     services:
       postgres:
-        image: postgres:latest
+        image: postgres:17.2
         env:
-          POSTGRES_USER: myuser
-          POSTGRES_PASSWORD: mypassword
-          POSTGRES_DB: database-setup
+          POSTGRES_USER: ${{ env.PG_USER }}
+          POSTGRES_PASSWORD: ${{ env.PG_PASSWORD }}
+          POSTGRES_DB: ${{ env.PG_DATABASE }}
         ports:
-          - 5432:5432
+          - ${{ env.PG_PORT }}:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
@@ -32,23 +40,22 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --yes postgresql-client
-      
+
       - name: Debug PostgreSQL logs
         run: |
-          docker logs $(docker ps -q -f ancestor=postgres:latest)
+          docker logs $(docker ps -q -f ancestor=postgres:17.2)
 
       - name: Test database connection
         run: |
-          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup
+          PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }}
 
-      # Initialize database using database-setup.sql
       - name: Initialize database
         run: |
-          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup -f ./server/database-setup.sql
+          PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
 
       - name: Verify database setup
         run: |
-          PGPASSWORD=mypassword psql -h localhost -U myuser -d database-setup -c "SELECT * FROM students;"
+          PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -c "SELECT * FROM students;"
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -60,14 +67,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Create .env file 
       - name: Create .env file
         run: |
           echo "# Database Configuration" > .env
-          echo "DB_NAME=DOPAssignment" >> .env
-          echo "DB_USER=postgres" >> .env
-          echo "DB_PASSWORD=bafjoiaibudfkasf" >> .env
-          echo "DB_HOST=localhost" >> .env
+          echo "DB_NAME=${{ env.PG_DATABASE }}" >> .env
+          echo "DB_USER=${{ env.PG_USER }}" >> .env
+          echo "DB_PASSWORD=${{ env.PG_PASSWORD }}" >> .env
+          echo "DB_HOST=${{ env.PG_HOST }}" >> .env
 
       - name: Install Chromium (via apt)
         run: |
@@ -98,4 +104,3 @@ jobs:
         with:
           name: flask-log
           path: flask.log
-
