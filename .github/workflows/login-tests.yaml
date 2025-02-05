@@ -53,7 +53,7 @@ jobs:
         env:
           PGPASSWORD: ${{ env.PG_PASSWORD }}
         run: |
-          psql -h localhost -c "CREATE USER ${{ env.PG_USER }} WITH PASSWORD '${{ env.PG_PASSWORD }}';"
+          psql -h localhost -U ${{ env.PG_USER }} -c "CREATE USER ${{ env.PG_USER }} WITH PASSWORD '${{ env.PG_PASSWORD }}';"
           psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
 
       - name: Setup Python
