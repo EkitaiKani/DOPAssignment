@@ -94,7 +94,7 @@ jobs:
       - name: Generate Allure Report
         if: failure()
         run: |
-          mkdir -p allure-results
+          mkdir -p allure-history
           python -m allure generate allure-results --clean -o allure-history
           ls -la allure-history
 
