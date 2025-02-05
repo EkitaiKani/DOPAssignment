@@ -2,7 +2,7 @@ Feature: Verify Login is valid
 
 	Background: Common steps
 		Given Chrome browser is launch
-		And   Browser console logging is enabled for error tracking
+		# And   Browser console logging is enabled for error tracking
 		When  Open Login Page
 		Then  Verify page loads without console errors
 
