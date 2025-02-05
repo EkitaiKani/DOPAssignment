@@ -5,7 +5,6 @@ psycopg2
 behave
 allure-behave
 allure-pytest
-allure-commandline
 flask_sqlalchemy
 behave
 selenium

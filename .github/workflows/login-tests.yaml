@@ -94,8 +94,8 @@ jobs:
       - name: Generate Allure Report
         if: failure()
         run: |
-          allure generate allure-results --clean -o allure-history
-
+          python -m allure generate allure-results --clean -o allure-history
+          
       - name: Upload Allure Report
         if: failure()
         uses: actions/upload-artifact@v4
