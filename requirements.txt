@@ -3,8 +3,9 @@ python-dotenv
 pip
 psycopg2
 behave
-allure
 allure-behave
+allure-pytest
+allure-commandline
 flask_sqlalchemy
 behave
 selenium
