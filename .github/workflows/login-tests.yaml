@@ -14,7 +14,7 @@ jobs:
       PG_USER: postgres
       PG_PASSWORD: bafjoiaibudfkasf
       PG_DATABASE: DOPAssignment
-      PG_HOST: localhost
+      PG_HOST: postgres
       PG_PORT: 5432
 
     services:
