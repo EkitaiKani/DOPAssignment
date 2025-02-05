@@ -32,9 +32,6 @@ jobs:
       - name: Checkout for app
         uses: actions/checkout@v4
       
-      - name: List repo
-        run: ls
-
       - name: Install PostgreSQL client
         run: |
           sudo apt-get update
@@ -44,11 +41,13 @@ jobs:
         run: |
           docker logs $(docker ps -q -f ancestor=postgres:17.2)
 
-      - name: Test database connection
-        env:
-          PGPASSWORD: ${{ env.PG_PASSWORD }}
+      - name: Wait for PostgreSQL to be ready
         run: |
-          psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }}
+          until PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -c '\q'; do
+            echo "PostgreSQL is unavailable - sleeping"
+            sleep 1
+          done
+          echo "PostgreSQL is up"
 
       - name: Initialize database
         env:
@@ -56,12 +55,6 @@ jobs:
         run: |
           psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
 
-      - name: Verify database setup
-        env:
-          PGPASSWORD: ${{ env.PG_PASSWORD }}
-        run: |
-          psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -c "SELECT * FROM students;"
-      
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -72,39 +65,34 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Create .env file
+      - name: Create .env file for Flask
         run: |
-          echo "# Database Configuration" > .env
-          echo "DB_NAME=${{ env.PG_DATABASE }}" >> .env
-          echo "DB_USER=${{ env.PG_USER }}" >> .env
-          echo "DB_PASSWORD=${{ env.PG_PASSWORD }}" >> .env
-          echo "DB_HOST=${{ env.PG_HOST }}" >> .env
+          cat << EOF > .env
+          # Database Configuration
+          DB_NAME=${{ env.PG_DATABASE }}
+          DB_USER=${{ env.PG_USER }}
+          DB_PASSWORD=${{ env.PG_PASSWORD }}
+          DB_HOST=${{ env.PG_HOST }}
+          DB_PORT=${{ env.PG_PORT }}
+          SQLALCHEMY_DATABASE_URI=postgresql://${{ env.PG_USER }}:${{ env.PG_PASSWORD }}@${{ env.PG_HOST }}:${{ env.PG_PORT }}/${{ env.PG_DATABASE }}
+          EOF
 
-      - name: Install Chromium (via apt)
+      - name: Install Chrome and Chromium
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser
-
-      - name: Install Chrome
-        run: |
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          sudo apt-get install -y chromium-browser google-chrome-stable
       
-      - name: Check Chrome version
-        run: chromium-browser --version
-
       - name: Run Flask App
         run: |
           nohup python ./server/app.py > flask.log 2>&1 &
           echo "Flask server started"
+          sleep 5  # Give Flask time to start
 
       - name: Run login tests
         run: behave ./tests/features
 
       - name: Upload Flask logs
-        if: failure()
+        if: always()  # Changed to always upload logs
         uses: actions/upload-artifact@v4
         with:
           name: flask-log
