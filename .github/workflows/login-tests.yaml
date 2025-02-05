@@ -83,6 +83,9 @@ jobs:
           nohup python ./server/app.py > flask.log 2>&1 &
           echo "Flask server started"
           sleep 5  # Give Flask time to start
+          
+      - name: List open ports in GitHub Actions
+        run: netstat -tuln
 
       - name: Run login tests
         run: behave ./tests/features
