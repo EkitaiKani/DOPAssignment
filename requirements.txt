@@ -3,6 +3,7 @@ python-dotenv
 pip
 psycopg2
 behave
+allure
 allure-behave
 flask_sqlalchemy
 behave
