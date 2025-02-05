@@ -97,9 +97,9 @@ jobs:
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
-          with:
-            name: allure-report
-            path: allure-history
+        with:
+          name: allure-report
+          path: allure-history
 
       - name: Upload Flask logs
         if: always()  # Changed to always upload logs
