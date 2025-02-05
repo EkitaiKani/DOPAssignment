@@ -89,7 +89,7 @@ jobs:
 
       - name: Run Behave Selenium Tests with Allure
         run: |
-          behave -f allure_behave.formatter:AllureFormatter -o allure-results
+          behave tests/ -f allure_behave.formatter:AllureFormatter -o allure-results
 
       - name: Generate Allure Report
         run: |
