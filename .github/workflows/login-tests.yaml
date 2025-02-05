@@ -10,7 +10,6 @@ jobs:
   setup:
     runs-on: ubuntu-latest
 
-    # Extract the database configuration values from your .bat file
     env:
       PG_USER: postgres
       PG_PASSWORD: bafjoiaibudfkasf
@@ -22,11 +21,11 @@ jobs:
       postgres:
         image: postgres:17.2
         env:
-          POSTGRES_USER: ${{ env.PG_USER }}
-          POSTGRES_PASSWORD: ${{ env.PG_PASSWORD }}
-          POSTGRES_DB: ${{ env.PG_DATABASE }}
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: bafjoiaibudfkasf
+          POSTGRES_DB: DOPAssignment
         ports:
-          - ${{ env.PG_PORT }}:5432
+          - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
@@ -46,16 +45,22 @@ jobs:
           docker logs $(docker ps -q -f ancestor=postgres:17.2)
 
       - name: Test database connection
+        env:
+          PGPASSWORD: ${{ env.PG_PASSWORD }}
         run: |
-          PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }}
+          psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }}
 
       - name: Initialize database
+        env:
+          PGPASSWORD: ${{ env.PG_PASSWORD }}
         run: |
-          PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
+          psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
 
       - name: Verify database setup
+        env:
+          PGPASSWORD: ${{ env.PG_PASSWORD }}
         run: |
-          PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -c "SELECT * FROM students;"
+          psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -c "SELECT * FROM students;"
       
       - name: Setup Python
         uses: actions/setup-python@v5
