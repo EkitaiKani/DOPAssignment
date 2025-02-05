@@ -77,10 +77,8 @@ jobs:
           SQLALCHEMY_DATABASE_URI=postgresql://${{ env.PG_USER }}:${{ env.PG_PASSWORD }}@${{ env.PG_HOST }}:${{ env.PG_PORT }}/${{ env.PG_DATABASE }}
           EOF
 
-      - name: Install Chrome and Chromium
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser google-chrome-stable
+      - name: Install Chrome driver
+        uses: nanasess/setup-chromedriver@v2
       
       - name: Run Flask App
         run: |

@@ -9,31 +9,26 @@ from selenium.common.exceptions import TimeoutException, WebDriverException
 import time
 import os
 import logging
-# Configure logging with more detailed format
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Constants
 WAIT_TIMEOUT = 10
 BASE_URL = "http://127.0.0.1:5000"
-CHROME_DRIVER_PATH = '/usr/local/bin/chromedriver'  # Updated path
+CHROME_DRIVER_PATH = '/usr/bin/chromedriver'
 
 def setup_chrome_options():
     """Configure Chrome options with best practices"""
     chrome_options = Options()
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--headless=new")  # Updated headless argument
+    chrome_options.add_argument("--headless")
     chrome_options.add_argument('--remote-debugging-port=9222')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--window-size=1920,1080')
     chrome_options.add_argument('--disable-extensions')
-    chrome_options.add_argument('--disable-software-rasterizer')
-    chrome_options.add_argument('--ignore-certificate-errors')
-    chrome_options.add_argument('--log-level=3')  # Enable verbose logging
     return chrome_options
 
 @given(u'Chrome browser is launch')
@@ -41,22 +36,11 @@ def step_impl(context):
     try:
         chrome_options = setup_chrome_options()
         service = Service(CHROME_DRIVER_PATH)
-        
-        # Log Chrome and ChromeDriver versions
-        import subprocess
-        chrome_version = subprocess.getoutput('google-chrome --version')
-        chromedriver_version = subprocess.getoutput('chromedriver --version')
-        logger.info(f"Chrome version: {chrome_version}")
-        logger.info(f"ChromeDriver version: {chromedriver_version}")
-        
         context.driver = webdriver.Chrome(service=service, options=chrome_options)
         context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
         logger.info("Chrome browser launched successfully")
     except WebDriverException as e:
         logger.error(f"Failed to launch Chrome browser: {str(e)}")
-        # Log more details about the environment
-        logger.error(f"ChromeDriver path exists: {os.path.exists(CHROME_DRIVER_PATH)}")
-        logger.error(f"ChromeDriver path permissions: {oct(os.stat(CHROME_DRIVER_PATH).st_mode)[-3:]}")
         raise
 
 @given(u'Browser console logging is enabled for error tracking')
