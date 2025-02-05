@@ -92,10 +92,12 @@ jobs:
           behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results
 
       - name: Generate Allure Report
+        if: failure()
         run: |
           allure generate allure-results --clean -o allure-history
 
       - name: Upload Allure Report
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
