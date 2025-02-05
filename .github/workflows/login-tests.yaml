@@ -14,7 +14,7 @@ jobs:
       PG_USER: postgres
       PG_PASSWORD: bafjoiaibudfkasf
       PG_DATABASE: DOPAssignment
-      PG_HOST: postgres
+      PG_HOST: localhost
       PG_PORT: 5432
 
     services:
@@ -53,6 +53,7 @@ jobs:
         env:
           PGPASSWORD: ${{ env.PG_PASSWORD }}
         run: |
+          psql -c "CREATE USER ${{ env.PG_USER }} WITH PASSWORD '${{ env.PG_PASSWORD }}';"
           psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
 
       - name: Setup Python
