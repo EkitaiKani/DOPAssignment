@@ -71,7 +71,7 @@ jobs:
           # Database Configuration
           DB_NAME=${{ env.PG_DATABASE }}
           DB_USER=${{ env.PG_USER }}
-          DB_PASSWORD=${{ env.PG_PASSWORD }}
+          DB_PASSWORD=${{env.PG_PASSWORD}}
           DB_HOST=${{ env.PG_HOST }}
           DB_PORT=${{ env.PG_PORT }}
 
