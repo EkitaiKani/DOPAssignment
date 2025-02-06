@@ -51,7 +51,7 @@ jobs:
 
       - name: Initialize database
         env:
-          PGPASSWORD: ${{env.PG_PASSWORD}}
+          PGPASSWORD: ${{ env.PG_PASSWORD }}
         run: |
           psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
 
@@ -71,9 +71,10 @@ jobs:
           # Database Configuration
           DB_NAME=${{ env.PG_DATABASE }}
           DB_USER=${{ env.PG_USER }}
-          DB_PASSWORD=${{env.PG_PASSWORD}}
+          DB_PASSWORD=${{ env.PG_PASSWORD }}
           DB_HOST=${{ env.PG_HOST }}
           DB_PORT=${{ env.PG_PORT }}
+          EOF
 
       - name: Install Chrome driver
         uses: nanasess/setup-chromedriver@v2
