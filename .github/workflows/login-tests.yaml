@@ -136,9 +136,8 @@ jobs:
         uses: simple-elf/allure-report-action@v1
         with:
           allure_results: allure-results
-          allure_history: gh-pages/allure-history
-          keep_reports: 10
-          gh_pages: gh-pages/allure-history
+          allure_history: gh-pages/allure-history/login
+          gh_pages: gh-pages/allure-history/login
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -153,7 +152,7 @@ jobs:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Selenium test report
           state: success
-          target_url: https://EkitaiKani.github.io/DOPAssignment/allure-history/
+          target_url: https://EkitaiKani.github.io/DOPAssignment/allure-history/login
           owner: EkitaiKani
           repository: EkitaiKani/DOPAssignment
           sha: ${{ github.sha }}
