@@ -65,21 +65,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Create .env file for Flask
-        run: |
-          cat << EOF > .env
-          # Database Configuration
-          DB_NAME=${{ env.PG_DATABASE }}
-          DB_USER=${{ env.PG_USER }}
-          DB_PASSWORD=${{ env.PG_PASSWORD }}
-          DB_HOST=${{ env.PG_HOST }}
-          DB_PORT=${{ env.PG_PORT }}
-          EOF
+      # - name: Create .env file for Flask
+      #   run: |
+      #     cat << EOF > .env
+      #     # Database Configuration
+      #     DB_NAME=${{ env.PG_DATABASE }}
+      #     DB_USER=${{ env.PG_USER }}
+      #     DB_PASSWORD=${{ env.PG_PASSWORD }}
+      #     DB_HOST=${{ env.PG_HOST }}
+      #     DB_PORT=${{ env.PG_PORT }}
+      #     EOF
 
-      - name: List repo and check env file
-        run: |
-          ls
-          cat .env
+      # - name: List repo and check env file
+      #   run: |
+      #     ls
+      #     cat .env
 
       - name: Install Chrome driver
         uses: nanasess/setup-chromedriver@v2
