@@ -76,6 +76,11 @@ jobs:
           DB_PORT=${{ env.PG_PORT }}
           EOF
 
+      - name: List repo and check env file
+        run: |
+          ls
+          cat .env
+
       - name: Install Chrome driver
         uses: nanasess/setup-chromedriver@v2
 
@@ -83,7 +88,7 @@ jobs:
         run: |
           nohup python ./server/app.py > flask.log 2>&1 &
           echo "Flask server started"
-          sleep 5  # Give Flask time to start
+          sleep 10
 
       - name: List open ports in GitHub Actions
         run: netstat -tuln
