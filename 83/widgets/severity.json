@@ -1,0 +1,51 @@
+[ {
+  "uid" : "5412939aec42e4d3",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1738904577488,
+    "stop" : 1738904579070,
+    "duration" : 1582
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "61f0c2b45e8ad07",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1738904575874,
+    "stop" : 1738904577487,
+    "duration" : 1613
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "886875717cba3e4c",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1738904571665,
+    "stop" : 1738904573989,
+    "duration" : 2324
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e692ce67f3b2af26",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1738904573989,
+    "stop" : 1738904575873,
+    "duration" : 1884
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5096453a398fc533",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1738904579071,
+    "stop" : 1738904580663,
+    "duration" : 1592
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
