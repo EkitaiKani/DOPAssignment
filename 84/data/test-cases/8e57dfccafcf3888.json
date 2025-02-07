@@ -1,0 +1,190 @@
+{
+  "uid" : "8e57dfccafcf3888",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "fullName" : "Verify Login is valid: Fill in student login with multiple correct user data",
+  "historyId" : "32f92818a8a829b8b22fca159efe65b5",
+  "time" : {
+    "start" : 1738907333915,
+    "stop" : 1738907333953,
+    "duration" : 38
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created\nfrom disconnected: unable to connect to renderer\nStacktrace:\n#0 0x560382fb553a <unknown>\n#1 0x560382ab0f00 <unknown>\n#2 0x560382aee917 <unknown>\n#3 0x560382ae8a0c <unknown>\n#4 0x560382ae44b6 <unknown>\n#5 0x560382b317b6 <unknown>\n#6 0x560382b30e06 <unknown>\n#7 0x560382b25343 <unknown>\n#8 0x560382af278a <unknown>\n#9 0x560382af39de <unknown>\n#10 0x560382f7f2cb <unknown>\n#11 0x560382f83242 <unknown>\n#12 0x560382f6c7ac <unknown>\n#13 0x560382f83df7 <unknown>\n#14 0x560382f50b2f <unknown>\n#15 0x560382fa41a8 <unknown>\n#16 0x560382fa4370 <unknown>\n#17 0x560382fb43b6 <unknown>\n#18 0x7faaa289ca94 <unknown>\n#19 0x7faaa2929c3c <unknown>\n\n",
+  "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"tests/features/steps/login-steps.py\", line 39, in step_impl\n    context.driver = webdriver.Chrome(service=service, options=chrome_options)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py\", line 45, in __init__\n    super().__init__(\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py\", line 66, in __init__\n    super().__init__(command_executor=executor, options=options)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 250, in __init__\n    self.start_session(capabilities)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 342, in start_session\n    response = self.execute(Command.NEW_SESSION, caps)[\"value\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created\nfrom disconnected: unable to connect to renderer\nStacktrace:\n#0 0x560382fb553a <unknown>\n#1 0x560382ab0f00 <unknown>\n#2 0x560382aee917 <unknown>\n#3 0x560382ae8a0c <unknown>\n#4 0x560382ae44b6 <unknown>\n#5 0x560382b317b6 <unknown>\n#6 0x560382b30e06 <unknown>\n#7 0x560382b25343 <unknown>\n#8 0x560382af278a <unknown>\n#9 0x560382af39de <unknown>\n#10 0x560382f7f2cb <unknown>\n#11 0x560382f83242 <unknown>\n#12 0x560382f6c7ac <unknown>\n#13 0x560382f83df7 <unknown>\n#14 0x560382f50b2f <unknown>\n#15 0x560382fa41a8 <unknown>\n#16 0x560382fa4370 <unknown>\n#17 0x560382fb43b6 <unknown>\n#18 0x7faaa289ca94 <unknown>\n#19 0x7faaa2929c3c <unknown>\n\n",
+    "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"tests/features/steps/login-steps.py\", line 39, in step_impl\n    context.driver = webdriver.Chrome(service=service, options=chrome_options)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py\", line 45, in __init__\n    super().__init__(\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py\", line 66, in __init__\n    super().__init__(command_executor=executor, options=options)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 250, in __init__\n    self.start_session(capabilities)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 342, in start_session\n    response = self.execute(Command.NEW_SESSION, caps)[\"value\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1738907333915,
+        "stop" : 1738907333952,
+        "duration" : 37
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created\nfrom disconnected: unable to connect to renderer\nStacktrace:\n#0 0x560382fb553a <unknown>\n#1 0x560382ab0f00 <unknown>\n#2 0x560382aee917 <unknown>\n#3 0x560382ae8a0c <unknown>\n#4 0x560382ae44b6 <unknown>\n#5 0x560382b317b6 <unknown>\n#6 0x560382b30e06 <unknown>\n#7 0x560382b25343 <unknown>\n#8 0x560382af278a <unknown>\n#9 0x560382af39de <unknown>\n#10 0x560382f7f2cb <unknown>\n#11 0x560382f83242 <unknown>\n#12 0x560382f6c7ac <unknown>\n#13 0x560382f83df7 <unknown>\n#14 0x560382f50b2f <unknown>\n#15 0x560382fa41a8 <unknown>\n#16 0x560382fa4370 <unknown>\n#17 0x560382fb43b6 <unknown>\n#18 0x7faaa289ca94 <unknown>\n#19 0x7faaa2929c3c <unknown>\n\n",
+      "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"tests/features/steps/login-steps.py\", line 39, in step_impl\n    context.driver = webdriver.Chrome(service=service, options=chrome_options)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py\", line 45, in __init__\n    super().__init__(\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py\", line 66, in __init__\n    super().__init__(command_executor=executor, options=options)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 250, in __init__\n    self.start_session(capabilities)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 342, in start_session\n    response = self.execute(Command.NEW_SESSION, caps)[\"value\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Given Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1738907333953,
+        "stop" : 1738907333953,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1738907333953,
+        "stop" : 1738907333953,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1738907333953,
+        "stop" : 1738907333953,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Then Input multiple \"John Tan\" and \"password1\"",
+      "time" : {
+        "start" : 1738907333953,
+        "stop" : 1738907333953,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1738907333953,
+        "stop" : 1738907333953,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "And Verify student login",
+      "time" : {
+        "start" : 1738907333953,
+        "stop" : 1738907333953,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1738907333953,
+        "stop" : 1738907333953,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 8,
+    "attachmentsCount" : 0
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "passWord",
+    "value" : "password1"
+  }, {
+    "name" : "userName",
+    "value" : "John Tan"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "8e57dfccafcf3888.json",
+  "parameterValues" : [ "password1", "John Tan" ]
+}
