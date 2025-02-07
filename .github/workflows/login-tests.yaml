@@ -106,9 +106,27 @@ jobs:
           name: allure-results
           path: allure-results
 
+      - name: Upload Flask logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flask-log
+          path: flask.log
+
+  allure_report:
+    needs: test  # Only run after tests are done
+    runs-on: ubuntu-latest
+    if: always()  # Run even if tests fail
+
+    steps:
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
       - name: Download previous Allure history (if available)
         uses: actions/checkout@v4
-        if: always()
         with:
           ref: gh-pages
           path: gh-pages
@@ -116,7 +134,6 @@ jobs:
 
       - name: Generate Allure Report with History
         uses: simple-elf/allure-report-action@v1
-        if: always()
         with:
           allure_results: allure-results
           allure_history: gh-pages/allure-history
@@ -125,25 +142,18 @@ jobs:
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
-        if: always()
         with:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
 
-      - name: Post the link to the report
-        if: always()
+      - name: Set GitHub Status for Selenium Test Report
         uses: Sibz/github-status-action@v1
-        with: 
-            authToken: ${{secrets.GITHUB_TOKEN}}
-            context: 'Selenium test report'
-            state: 'success'
-            sha: ${{ github.event.pull_request.head.sha }}
-            target_url: simple-elf.github.io/github-allure-history/${{ github.run_number }}
-
-      - name: Upload Flask logs
-        if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: flask-log
-          path: flask.log
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Selenium test report
+          state: success
+          target_url: https://EkitaiKani.github.io/DOPAssignment/allure-history/
+          owner: EkitaiKani
+          repository: EkitaiKani/DOPAssignment
+          sha: ${{ github.sha }}
