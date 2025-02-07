@@ -78,14 +78,6 @@ jobs:
       - name: Install Chrome driver
         uses: nanasess/setup-chromedriver@v2
 
-      - name: Check Environment Variables
-        run: |
-          echo "DB_NAME: $DB_NAME"
-          echo "DB_USER: $DB_USER"
-          echo "DB_PASSWORD: $DB_PASSWORD"
-          echo "DB_HOST: $DB_HOST"
-          echo "DB_PORT: $DB_PORT"
-
       - name: Run Flask App
         run: |
           nohup python ./server/app.py > flask.log 2>&1 &
@@ -144,7 +136,7 @@ jobs:
         with:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
+          PUBLISH_DIR: gh-pages/allure-history/login
 
       - name: Set GitHub Status for Selenium Test Report
         uses: Sibz/github-status-action@v1
