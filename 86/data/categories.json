@@ -1,0 +1,94 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x559191a2e53a <unknown>\n#1 0x559191529f00 <unknown>\n#2 0x559191579c0c <unknown>\n#3 0x559191579e31 <unknown>\n#4 0x5591915bfbd4 <unknown>\n#5 0x55919159e5cd <unknown>\n#6 0x5591915bcf84 <unknown>\n#7 0x55919159e343 <unknown>\n#8 0x55919156b78a <unknown>\n#9 0x55919156c9de <unknown>\n#10 0x5591919f82cb <unknown>\n#11 0x5591919fc242 <unknown>\n#12 0x5591919e57ac <unknown>\n#13 0x5591919fcdf7 <unknown>\n#14 0x5591919c9b2f <unknown>\n#15 0x559191a1d1a8 <unknown>\n#16 0x559191a1d370 <unknown>\n#17 0x559191a2d3b6 <unknown>\n#18 0x7f83d5e9ca94 <unknown>\n#19 0x7f83d5f29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Check Login title",
+        "uid" : "161711d6a649537e",
+        "parentUid" : "6e58e1feead0d45d49d47f41e3e23a5c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738907916134,
+          "stop" : 1738907927581,
+          "duration" : 11447
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6e58e1feead0d45d49d47f41e3e23a5c"
+    }, {
+      "name" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x5578df0d853a <unknown>\n#1 0x5578debd3f00 <unknown>\n#2 0x5578dec23c0c <unknown>\n#3 0x5578dec23e31 <unknown>\n#4 0x5578dec69bd4 <unknown>\n#5 0x5578dec485cd <unknown>\n#6 0x5578dec66f84 <unknown>\n#7 0x5578dec48343 <unknown>\n#8 0x5578dec1578a <unknown>\n#9 0x5578dec169de <unknown>\n#10 0x5578df0a22cb <unknown>\n#11 0x5578df0a6242 <unknown>\n#12 0x5578df08f7ac <unknown>\n#13 0x5578df0a6df7 <unknown>\n#14 0x5578df073b2f <unknown>\n#15 0x5578df0c71a8 <unknown>\n#16 0x5578df0c7370 <unknown>\n#17 0x5578df0d73b6 <unknown>\n#18 0x7fa9a7c9ca94 <unknown>\n#19 0x7fa9a7d29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with one incorrect userName data",
+        "uid" : "9f052f5b2452a3be",
+        "parentUid" : "d1b9fedaa137634cdd731fe9dfeffc2c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738907927582,
+          "stop" : 1738907937860,
+          "duration" : 10278
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d1b9fedaa137634cdd731fe9dfeffc2c"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created\nfrom disconnected: unable to connect to renderer\nStacktrace:\n#0 0x5563cf63353a <unknown>\n#1 0x5563cf12ef00 <unknown>\n#2 0x5563cf16c917 <unknown>\n#3 0x5563cf166a0c <unknown>\n#4 0x5563cf1624b6 <unknown>\n#5 0x5563cf1af7b6 <unknown>\n#6 0x5563cf1aee06 <unknown>\n#7 0x5563cf1a3343 <unknown>\n#8 0x5563cf17078a <unknown>\n#9 0x5563cf1719de <unknown>\n#10 0x5563cf5fd2cb <unknown>\n#11 0x5563cf601242 <unknown>\n#12 0x5563cf5ea7ac <unknown>\n#13 0x5563cf601df7 <unknown>\n#14 0x5563cf5ceb2f <unknown>\n#15 0x5563cf6221a8 <unknown>\n#16 0x5563cf622370 <unknown>\n#17 0x5563cf6323b6 <unknown>\n#18 0x7f2fb389ca94 <unknown>\n#19 0x7f2fb3929c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in admin login with one correct user data",
+        "uid" : "93cc7a4ca3fda14f",
+        "parentUid" : "d2a27f87b5b85ce32515659214cc262f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738907937860,
+          "stop" : 1738907937897,
+          "duration" : 37
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d2a27f87b5b85ce32515659214cc262f"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created\nfrom disconnected: unable to connect to renderer\nStacktrace:\n#0 0x563065a0a53a <unknown>\n#1 0x563065505f00 <unknown>\n#2 0x563065543917 <unknown>\n#3 0x56306553da0c <unknown>\n#4 0x5630655394b6 <unknown>\n#5 0x5630655867b6 <unknown>\n#6 0x563065585e06 <unknown>\n#7 0x56306557a343 <unknown>\n#8 0x56306554778a <unknown>\n#9 0x5630655489de <unknown>\n#10 0x5630659d42cb <unknown>\n#11 0x5630659d8242 <unknown>\n#12 0x5630659c17ac <unknown>\n#13 0x5630659d8df7 <unknown>\n#14 0x5630659a5b2f <unknown>\n#15 0x5630659f91a8 <unknown>\n#16 0x5630659f9370 <unknown>\n#17 0x563065a093b6 <unknown>\n#18 0x7fda24a9ca94 <unknown>\n#19 0x7fda24b29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+        "uid" : "62b28b77fdddf3c9",
+        "parentUid" : "7752cb6a0e9d39da71d4d4345c95c798",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738907937897,
+          "stop" : 1738907937935,
+          "duration" : 38
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "password1", "John Tan" ]
+      } ],
+      "uid" : "7752cb6a0e9d39da71d4d4345c95c798"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created\nfrom disconnected: unable to connect to renderer\nStacktrace:\n#0 0x56165039e53a <unknown>\n#1 0x56164fe99f00 <unknown>\n#2 0x56164fed7917 <unknown>\n#3 0x56164fed1a0c <unknown>\n#4 0x56164fecd4b6 <unknown>\n#5 0x56164ff1a7b6 <unknown>\n#6 0x56164ff19e06 <unknown>\n#7 0x56164ff0e343 <unknown>\n#8 0x56164fedb78a <unknown>\n#9 0x56164fedc9de <unknown>\n#10 0x5616503682cb <unknown>\n#11 0x56165036c242 <unknown>\n#12 0x5616503557ac <unknown>\n#13 0x56165036cdf7 <unknown>\n#14 0x561650339b2f <unknown>\n#15 0x56165038d1a8 <unknown>\n#16 0x56165038d370 <unknown>\n#17 0x56165039d3b6 <unknown>\n#18 0x7f143be9ca94 <unknown>\n#19 0x7f143bf29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+        "uid" : "5ce68319017d3bc7",
+        "parentUid" : "1d072773e9a512519a1d11b57dbdf488",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738907937935,
+          "stop" : 1738907937969,
+          "duration" : 34
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "password2", "Sarah Lim" ]
+      } ],
+      "uid" : "1d072773e9a512519a1d11b57dbdf488"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
