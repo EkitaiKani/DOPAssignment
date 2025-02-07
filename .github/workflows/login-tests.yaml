@@ -73,6 +73,14 @@ jobs:
       - name: Install Chrome driver
         uses: nanasess/setup-chromedriver@v2
 
+      - name: Check Environment Variables
+        run: |
+          echo "DB_NAME: $DB_NAME"
+          echo "DB_USER: $DB_USER"
+          echo "DB_PASSWORD: $DB_PASSWORD"
+          echo "DB_HOST: $DB_HOST"
+          echo "DB_PORT: $DB_PORT"
+
       - name: Run Flask App
         run: |
           nohup python ./server/app.py > flask.log 2>&1 &
@@ -103,25 +111,30 @@ jobs:
 
       - name: Generate Allure Report with History
         uses: simple-elf/allure-report-action@v1
+        if: always()
         with:
           allure_results: allure-results
           allure_history: gh-pages/allure-history
           keep_reports: 10
           gh_pages: gh-pages/allure-history
 
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: gh-pages/allure-history
-
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: gh-pages/allure-history
-          branch: gh-pages
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
+
+      - name: Post the link to the report
+        if: always()
+        uses: Sibz/github-status-action@v1
+        with: 
+            authToken: ${{secrets.GITHUB_TOKEN}}
+            context: 'Selenium test report'
+            state: 'success'
+            sha: ${{ github.event.pull_request.head.sha }}
+            target_url: simple-elf.github.io/github-allure-history/${{ github.run_number }}
 
       - name: Upload Flask logs
         if: always()
