@@ -92,22 +92,32 @@ jobs:
         run: |
           behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results
 
-      - name: Generate Allure Report
-        if: failure()
-        run: |
-          mkdir -p allure-history
-          python -m allure generate allure-results --clean -o allure-history
-          ls -la allure-history
-
-      - name: Upload Allure Report
+      - name: Download previous Allure history (if available)
+        uses: actions/checkout@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: allure-report
-          path: allure-history
+          ref: gh-pages  # This is where Allure history is stored
+          path: gh-pages
+          fetch-depth: 1
+
+      - name: Generate Allure Report with History
+        uses: simple-elf/allure-report-action@v1
+        with:
+          allure_results: allure-results
+          allure_history: gh-pages/allure-history
+          keep_reports: 10  # Keeps last 10 reports in history
+          gh_pages: gh-pages
+
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-history
+          branch: gh-pages  # This stores Allure history across runs
 
       - name: Upload Flask logs
-        if: always() # Changed to always upload logs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: flask-log
