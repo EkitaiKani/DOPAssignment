@@ -1,0 +1,70 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "Check Login title",
+    "uid" : "35aaa65268dfd33b",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1738908091029,
+      "stop" : 1738908108921,
+      "duration" : 17892
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Fill in student login with one incorrect userName data",
+    "uid" : "c5ea7e797c9c209f",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1738908108921,
+      "stop" : 1738908119230,
+      "duration" : 10309
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Fill in admin login with one correct user data",
+    "uid" : "4cc4d7231b08299c",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1738908119231,
+      "stop" : 1738908119267,
+      "duration" : 36
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+    "uid" : "5fcb625a7dac0416",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1738908119268,
+      "stop" : 1738908119305,
+      "duration" : 37
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "password1", "John Tan" ]
+  }, {
+    "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+    "uid" : "ab3f4e8028ab6f5c",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1738908119306,
+      "stop" : 1738908119341,
+      "duration" : 35
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "password2", "Sarah Lim" ]
+  } ],
+  "name" : "packages"
+}
