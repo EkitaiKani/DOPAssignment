@@ -84,15 +84,12 @@ jobs:
           echo "Flask server started"
           sleep 10
 
-      - name: List open ports in GitHub Actions
-        run: netstat -tuln
-
       - name: Run Behave Selenium Tests with Allure
         run: |
           behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results
 
       - name: Create issue on test failure
-        if: steps.behave-test.outcome == 'failure'
+        if: failure()
         uses: actions/github-script@v7
         with:
           script: |
