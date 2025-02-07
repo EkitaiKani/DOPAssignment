@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PG_USER: postgres
-      PG_PASSWORD: bafjoiaibudfkasf
-      PG_DATABASE: DOPAssignment
-      PG_HOST: localhost
-      PG_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: bafjoiaibudfkasf
+      DB_DATABASE: DOPAssignment
+      DB_HOST: localhost
+      DB_PORT: 5432
 
     services:
       postgres:
@@ -26,7 +26,7 @@ jobs:
           POSTGRES_DB: DOPAssignment
         ports:
           - 5432:5432
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        options: --health-cmd DB_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
       - name: Checkout for app
@@ -43,7 +43,7 @@ jobs:
 
       - name: Wait for PostgreSQL to be ready
         run: |
-          until PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -c '\q'; do
+          until DBPASSWORD=${{ env.DB_PASSWORD }} psql -h ${{ env.DB_HOST }} -U ${{ env.DB_USER }} -d ${{ env.DB_DATABASE }} -c '\q'; do
             echo "PostgreSQL is unavailable - sleeping"
             sleep 1
           done
@@ -51,9 +51,9 @@ jobs:
 
       - name: Initialize database
         env:
-          PGPASSWORD: ${{ env.PG_PASSWORD }}
+          DBPASSWORD: ${{ env.DB_PASSWORD }}
         run: |
-          psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
+          psql -h ${{ env.DB_HOST }} -U ${{ env.DB_USER }} -d ${{ env.DB_DATABASE }} -f ./server/database-setup.sql
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -67,7 +67,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
+          python -m pip install --uDBrade pip
           pip install -r requirements.txt
 
       - name: Install Chrome driver
