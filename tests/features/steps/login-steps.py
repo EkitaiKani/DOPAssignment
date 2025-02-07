@@ -114,6 +114,23 @@ def step_impl(context, username, password):
     except Exception as e:
         logger.error(f"Failed to input credentials: {str(e)}")
         raise
+    
+@then(u'Input multiple "{userName}" and "{passWord}"')
+def step_impl(context, userName, passWord):
+    try:
+        username_field = wait_for_element(context, (By.ID, "InputUsername"))
+        password_field = wait_for_element(context, (By.ID, "InputPassword"))
+        
+        username_field.clear()
+        username_field.send_keys(userName)
+        password_field.clear()
+        password_field.send_keys(passWord)
+        
+        logger.info(f"Entered credentials: {userName} / {passWord}")
+    except Exception as e:
+        logger.error(f"Failed to input credentials for multiple users: {str(e)}")
+        raise
+
 
 @then(u'Submit form')
 def step_impl(context):
