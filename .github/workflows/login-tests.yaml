@@ -18,7 +18,7 @@ jobs:
       PG_PORT: 5432
       DB_USER: postgres
       DB_PASSWORD: bafjoiaibudfkasf
-      DB_DATABASE: DOPAssignment
+      DB_NAME: DOPAssignment
       DB_HOST: localhost
       DB_PORT: 5432
 
