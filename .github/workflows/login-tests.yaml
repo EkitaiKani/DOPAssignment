@@ -9,7 +9,9 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
-
+    outputs:
+      db_ready: ${{ steps.db-check.outputs.ready }}
+    
     env:
       PG_USER: postgres
       PG_PASSWORD: bafjoiaibudfkasf
@@ -34,7 +36,7 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
-      - name: Checkout for app
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install PostgreSQL client
@@ -42,62 +44,73 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes postgresql-client
 
-      - name: Debug PostgreSQL logs
-        run: |
-          docker logs $(docker ps -q -f ancestor=postgres:17.2)
-
-      - name: Wait for PostgreSQL to be ready
+      - name: Wait for PostgreSQL and initialize
+        id: db-check
+        env:
+          PGPASSWORD: ${{ env.PG_PASSWORD }}
         run: |
           until PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -c '\q'; do
             echo "PostgreSQL is unavailable - sleeping"
             sleep 1
           done
           echo "PostgreSQL is up"
-
-      - name: Initialize database
-        env:
-          PGPASSWORD: ${{ env.PG_PASSWORD }}
-        run: |
           psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
+          echo "ready=true" >> $GITHUB_OUTPUT
 
-      - name: Setup Python
+      - name: Setup Python environment
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Create virtual environment
+      - name: Install dependencies
         run: |
           python -m venv venv
           source venv/bin/activate
-
-      - name: Install dependencies
-        run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Cache virtual environment
+        uses: actions/cache@v3
+        with:
+          path: venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
+
+  test:
+    needs: setup
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Restore virtual environment
+        uses: actions/cache@v3
+        with:
+          path: venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
 
       - name: Install Chrome driver
         uses: nanasess/setup-chromedriver@v2
 
-      - name: Run Flask App
+      - name: Start Flask App
         run: |
+          source venv/bin/activate
           nohup python ./server/app.py > flask.log 2>&1 &
           echo "Flask server started"
           sleep 10
 
-      - name: List open ports in GitHub Actions
-        run: netstat -tuln
-
-      - name: Run Behave Selenium Tests with Allure
+      - name: Run Behave Selenium Tests
+        id: behave-test
         run: |
+          source venv/bin/activate
           behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results
 
       - name: Create issue on test failure
-        if: steps.behave-test.outcome == 'failure'
+        if: failure()
         uses: actions/github-script@v7
         with:
           script: |
             const issueTitle = `Behave Selenium Test Failure - ${new Date().toISOString().split('T')[0]}`;
-            
             const issueBody = `
             ## Behave Selenium Test Failure Detected
             
@@ -125,60 +138,50 @@ jobs:
               body: issueBody,
               labels: ['test-failure', 'behave-selenium']
             });
-      
-      # If you want the workflow to actually fail after creating the issue
-      - name: Exit with test status
-        if: steps.behave-test.outcome == 'failure'
-        run: exit 1
 
-      - name: Upload Allure Results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: allure-results
-          path: allure-results
-
-      - name: Upload Flask logs
+      - name: Upload Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: flask-log
-          path: flask.log
+          name: test-artifacts
+          path: |
+            allure-results
+            flask.log
 
   allure_report:
-    needs: setup  # Only run after tests are done
+    needs: test
     runs-on: ubuntu-latest
-    if: always()  # Run even if tests fail
+    if: always()
 
     steps:
-      - name: Download Allure Results
+      - name: Download test artifacts
         uses: actions/download-artifact@v4
         with:
-          name: allure-results
-          path: allure-results
+          name: test-artifacts
+          path: .
 
-      - name: Download previous Allure history (if available)
+      - name: Download previous history
         uses: actions/checkout@v4
         with:
           ref: gh-pages
           path: gh-pages
           fetch-depth: 1
 
-      - name: Generate Allure Report with History
+      - name: Generate Allure Report
         uses: simple-elf/allure-report-action@v1
         with:
           allure_results: allure-results
           allure_history: gh-pages/allure-history/login
           gh_pages: gh-pages/allure-history/login
 
-      - name: Deploy Allure Report to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: gh-pages/allure-history/login
 
-      - name: Set GitHub Status for Selenium Test Report
+      - name: Update GitHub Status
         uses: Sibz/github-status-action@v1
         with:
           authToken: ${{ secrets.GITHUB_TOKEN }}
