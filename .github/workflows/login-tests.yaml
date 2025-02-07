@@ -114,7 +114,7 @@ jobs:
           path: flask.log
 
   allure_report:
-    needs: test  # Only run after tests are done
+    needs: setup  # Only run after tests are done
     runs-on: ubuntu-latest
     if: always()  # Run even if tests fail
 
