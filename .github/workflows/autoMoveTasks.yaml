@@ -1,0 +1,36 @@
+name: Move GitHub Project Tasks on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  move_tasks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Get Merged PRs
+        id: merged_prs
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/{owner}/{repo}/pulls?state=closed&base=main&per_page=5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move Tasks to Done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBERS=$(echo '${{ steps.merged_prs.outputs.data }}' | jq -r '.[] | select(.merged_at != null) | .number')
+
+          for PR in $PR_NUMBERS; do
+            ISSUE_NUMBERS=$(gh pr view $PR --json closingIssuesReferences -q '.closingIssuesReferences[].number')
+
+            for ISSUE in $ISSUE_NUMBERS; do
+              echo "Moving issue #$ISSUE to Done..."
+              gh project item-update --project "2" --id $(gh issue view $ISSUE --json projectItems -q '.projectItems[].id') --field "Status" --value "Done"
+            done
+          done
