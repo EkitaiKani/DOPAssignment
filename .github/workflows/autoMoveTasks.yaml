@@ -23,6 +23,7 @@ jobs:
           issue_number=$(echo "$pr_description" | grep -o '#[0-9]\+' | sed 's/#//')
           
           echo "Issue Number: $issue_number"
+          echo "ISSUE_NUMBER=$issue_number" >> $GITHUB_ENV
 
       - name: Move Linked Issues to Done
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
@@ -30,6 +31,6 @@ jobs:
           gh_token: ${{ secrets.GH_TOKEN }}
           user: EkitaiKani
           project_id: 2
-          issue_number: ${{ steps.pr.outputs.issue_number }} 
-          move_related_issues: true
+          resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: 'Done'
+          move_related_issues: true
