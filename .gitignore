@@ -2906,3 +2906,6 @@ server/__pycache__/config.cpython-313.pyc
 server/__pycache__/db.cpython-313.pyc
 server/controllers/__pycache__/student_controller.cpython-313.pyc
 server/routes/__pycache__/student_routes.cpython-313.pyc
+server/controllers/__pycache__/authentication_controller.cpython-313.pyc
+server/routes/__pycache__/authentication_routes.cpython-313.pyc
+server/.env
