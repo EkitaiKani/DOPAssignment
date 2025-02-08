@@ -1,4 +1,4 @@
-name: Move Task to Done on PR Merge
+name: Close Issue on PR Merge
 
 on:
   pull_request:
@@ -6,13 +6,13 @@ on:
       - closed
 
 jobs:
-  update-issue-status:
+  close-issue:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Get Issue linked to PR and Update Status
+      - name: Get Issue linked to PR and Close It
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
@@ -37,30 +37,14 @@ jobs:
               if [ -n "$ISSUE_NUMBER" ]; then
                 echo "Debug: Found linked issue #$ISSUE_NUMBER"
 
-                # Fetch Issue Node ID (Required for GraphQL API)
-                echo "Debug: Fetching issue Node ID..."
-                ISSUE_NODE_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
-                    -H "Accept: application/vnd.github.v3+json" \
-                    "https://api.github.com/repos/EkitaiKani/DOPAssignment/issues/$ISSUE_NUMBER" | jq -r '.node_id')
-                echo "Debug: Issue Node ID = $ISSUE_NODE_ID"
+                # Close the issue using REST API
+                echo "Debug: Closing issue #$ISSUE_NUMBER..."
+                curl -X PATCH -H "Authorization: token $GH_TOKEN" \
+                     -H "Accept: application/vnd.github.v3+json" \
+                     -d '{"state": "closed"}' \
+                     "https://api.github.com/repos/EkitaiKani/DOPAssignment/issues/$ISSUE_NUMBER"
 
-                # Update Issue Status to "Done" in GitHub Projects
-                echo "Debug: Updating issue status to 'Done'..."
-                GRAPHQL_QUERY='
-                mutation {
-                  updateIssue(input: {id: "'"$ISSUE_NODE_ID"'", state: CLOSED}) {
-                    issue {
-                      id
-                    }
-                  }
-                }'
-
-                curl -X POST -H "Authorization: token $GH_TOKEN" \
-                     -H "Content-Type: application/json" \
-                     -d "{\"query\": \"$GRAPHQL_QUERY\"}" \
-                     https://api.github.com/graphql
-
-                echo "Debug: Issue #$ISSUE_NUMBER status updated to 'Done'!"
+                echo "Debug: Issue #$ISSUE_NUMBER has been closed!"
               else
                 echo "Debug: No issue linked in PR body."
               fi
@@ -68,5 +52,5 @@ jobs:
               echo "Debug: PR body is empty or null."
             fi
           else
-            echo "Debug: PR was closed but not merged, skipping task update."
+            echo "Debug: PR was closed but not merged, skipping issue closure."
           fi
