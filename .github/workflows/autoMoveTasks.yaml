@@ -41,7 +41,7 @@ jobs:
                 echo "Debug: Fetching project cards from 'In Progress' column..."
                 CARDS_JSON=$(curl -s -H "Authorization: token $GH_TOKEN" \
                     "https://api.github.com/projects/columns/{IN_PROGRESS_COLUMN_ID}/cards")
-
+                echo "Debug: Raw CARDS_JSON = $CARDS_JSON"
                 CARD_ID=$(echo "$CARDS_JSON" | jq -r ".[] | select(.content_url | contains(\"/issues/$ISSUE_NUMBER\")) | .id")
 
                 if [ -n "$CARD_ID" ]; then
