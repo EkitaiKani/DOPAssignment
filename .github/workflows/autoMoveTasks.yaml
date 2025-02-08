@@ -1,37 +1,47 @@
-name: Move GitHub Project Tasks on Push
+name: Move Task to Done on PR Merge
 
 on:
-  push:
-    branches:
-      - main
-      - TestAutomaticTaskMovement
+  pull_request:
+    types:
+      - closed
 
 jobs:
-  move_tasks:
+  move-task:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v2
 
-      - name: Get Merged PRs
-        id: merged_prs
-        uses: octokit/request-action@v2.x
-        with:
-          route: GET /repos/{owner}/{repo}/pulls?state=closed&base=main&per_page=5
+      - name: Get Issue linked to PR and Move task to Done
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Move Tasks to Done
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          PR_NUMBERS=$(echo '${{ steps.merged_prs.outputs.data }}' | jq -r '.[] | select(.merged_at != null) | .number')
+          # Step 1: Check if PR was merged
+          if [[ "${{ github.event.pull_request.merged }}" == "true" ]]; then
+            PR_NUMBER="${{ github.event.pull_request.number }}"
+            echo "Debug: PR Number = $PR_NUMBER"
 
-          for PR in $PR_NUMBERS; do
-            ISSUE_NUMBERS=$(gh pr view $PR --json closingIssuesReferences -q '.closingIssuesReferences[].number')
+            # Step 2: Fetch PR details
+            echo "Debug: Fetching PR details from GitHub API"
+            PR_DETAILS=$(curl -s -H "Authorization: token $GH_TOKEN" \
+                "https://api.github.com/repos/EkitaiKani/DOPAssignment/pulls/$PR_NUMBER")
+            
+            echo "Debug: Raw PR Details = $PR_DETAILS"
 
-            for ISSUE in $ISSUE_NUMBERS; do
-              echo "Moving issue #$ISSUE to Done..."
-              gh project item-update --project "2" --id $(gh issue view $ISSUE --json projectItems -q '.projectItems[].id') --field "Status" --value "Done"
-            done
-          done
+            # Step 3: Extract PR body
+            PR_BODY=$(echo "$PR_DETAILS" | jq -r '.body')
+            echo "Debug: PR Body = $PR_BODY"
+
+            # Step 4: Extract Issue Number from PR Body
+            ISSUE_NUMBER=$(echo "$PR_BODY" | grep -o '#[0-9]\+' | tr -d '#')
+            echo "Debug: Extracted Issue Number = $ISSUE_NUMBER"
+
+            if [ -n "$ISSUE_NUMBER" ]; then
+              echo "Debug: Found linked issue #$ISSUE_NUMBER"
+              # (Move the task in GitHub Project here)
+            else
+              echo "Debug: No issue linked to PR #$PR_NUMBER"
+            fi
+          else
+            echo "Debug: PR was closed but not merged, skipping task movement."
+          fi
