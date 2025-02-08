@@ -1,9 +1,10 @@
-name: Move GitHub Project Tasks on PR Merge
+name: Move GitHub Project Tasks on Push
 
 on:
-  pull_request:
-    types:
-      - closed 
+  push:
+    branches:
+      - main
+      - TestAutomaticTaskMovement
 
 jobs:
   manage-project:
