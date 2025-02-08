@@ -22,6 +22,10 @@ def serve_index():
     if 'userID' in session:
         return render_template("index.html")
     return redirect("/login")
+    
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
 
 @app.route("/login")
 def serve_login():
