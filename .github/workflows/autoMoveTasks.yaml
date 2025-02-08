@@ -1,10 +1,9 @@
 name: Move Task to Done on PR Merge
 
 on:
-  push:
-    branches:
-      - main
-      - TestAutomaticTaskMovement
+  pull_request:
+    types:
+      - closed
 
 jobs:
   move-task:
@@ -17,51 +16,32 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          # Step 1: Extract PR number from the GitHub context
-          echo "Debug: Extracting PR number from GITHUB_REF"
-          PR_NUMBER=${GITHUB_REF#refs/pull/}
-          PR_NUMBER=${PR_NUMBER%/merge}
-          echo "Debug: PR Number = $PR_NUMBER"
+          # Step 1: Check if PR was merged
+          if [[ "${{ github.event.pull_request.merged }}" == "true" ]]; then
+            PR_NUMBER="${{ github.event.pull_request.number }}"
+            echo "Debug: PR Number = $PR_NUMBER"
 
-          # Step 2: Fetch PR details from GitHub API
-          echo "Debug: Fetching PR details from GitHub API"
-          PR_DETAILS=$(curl -s -H "Authorization: token $GH_TOKEN" \
-              "https://api.github.com/repos/EkitaiKani/DOPAssignment/pulls/$PR_NUMBER")
-          
-          # Debugging: Print out the raw PR details (full response)
-          echo "Debug: Raw PR Details = $PR_DETAILS"
+            # Step 2: Fetch PR details
+            echo "Debug: Fetching PR details from GitHub API"
+            PR_DETAILS=$(curl -s -H "Authorization: token $GH_TOKEN" \
+                "https://api.github.com/repos/EkitaiKani/DOPAssignment/pulls/$PR_NUMBER")
+            
+            echo "Debug: Raw PR Details = $PR_DETAILS"
 
-          # Step 3: Extract the body of the PR (description)
-          PR_BODY=$(echo "$PR_DETAILS" | jq -r '.body')
-          echo "Debug: PR Body = $PR_BODY"
+            # Step 3: Extract PR body
+            PR_BODY=$(echo "$PR_DETAILS" | jq -r '.body')
+            echo "Debug: PR Body = $PR_BODY"
 
-          # Step 4: Extract the issue number (task number) from the PR body
-          ISSUE_NUMBER=$(echo "$PR_BODY" | grep -o '#[0-9]\+' | tr -d '#')
-          echo "Debug: Extracted Issue Number = $ISSUE_NUMBER"
+            # Step 4: Extract Issue Number from PR Body
+            ISSUE_NUMBER=$(echo "$PR_BODY" | grep -o '#[0-9]\+' | tr -d '#')
+            echo "Debug: Extracted Issue Number = $ISSUE_NUMBER"
 
-          # Step 5: Check if an issue number was found
-          if [ -n "$ISSUE_NUMBER" ]; then
-            echo "Debug: Found linked issue number: $ISSUE_NUMBER"
-
-            # Step 6: Fetch the issue details (project card) from GitHub
-            echo "Debug: Fetching issue details from GitHub API"
-            ISSUE_DETAILS=$(curl -s -H "Authorization: token $GH_TOKEN" \
-                "https://api.github.com/repos/EkitaiKani/DOPAssignment/issues/$ISSUE_NUMBER")
-            echo "Debug: Raw Issue Details = $ISSUE_DETAILS"
-
-            # Step 7: Extract the project card ID (first card associated with the issue)
-            CARD_ID=$(echo "$ISSUE_DETAILS" | jq -r '.project_cards[0].id')
-            echo "Debug: Extracted Card ID = $CARD_ID"
-
-            # Step 8: If the card exists, move it to the "Done" column
-            if [ -n "$CARD_ID" ]; then
-              echo "Debug: Moving task #$ISSUE_NUMBER to Done column"
-              curl -X POST -H "Authorization: token $GH_TOKEN" \
-                -d '{"column_id": "DoneColumnID"}' \
-                "https://api.github.com/projects/columns/cards/$CARD_ID/moves"
+            if [ -n "$ISSUE_NUMBER" ]; then
+              echo "Debug: Found linked issue #$ISSUE_NUMBER"
+              # (Move the task in GitHub Project here)
             else
-              echo "Debug: No project card found for issue #$ISSUE_NUMBER"
+              echo "Debug: No issue linked to PR #$PR_NUMBER"
             fi
           else
-            echo "Debug: No issue linked to PR #$PR_NUMBER"
+            echo "Debug: PR was closed but not merged, skipping task movement."
           fi
