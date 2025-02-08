@@ -19,11 +19,11 @@ jobs:
         with:
           route: GET /repos/{owner}/{repo}/pulls?state=closed&base=main&per_page=5
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Move Tasks to Done
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           PR_NUMBERS=$(echo '${{ steps.merged_prs.outputs.data }}' | jq -r '.[] | select(.merged_at != null) | .number')
 
