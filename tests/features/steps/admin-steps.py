@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options  # Added for options import
+from selenium.webdriver.chrome.options import Options
 import common_steps
 
 def before_all(context):
@@ -46,7 +46,9 @@ def step_impl(context, student_name):
 
 @then('the search results should show the student "{student_name}"')
 def step_impl(context, student_name):
-    students_table = context.driver.find_element(By.ID, "students-table")
+    students_table = WebDriverWait(context.driver, 10).until(
+        EC.presence_of_element_located((By.ID, "students-table"))
+    )
     rows = students_table.find_elements(By.TAG_NAME, "tr")
     assert len(rows) > 1, "No student accounts found in the search results"
 
@@ -226,6 +228,10 @@ def step_impl(context):
 
 @then('the student "{student_name}" should no longer be in the student list')
 def step_impl(context, student_name):
+    WebDriverWait(context.driver, 10).until(
+        EC.staleness_of(context.driver.find_element(By.ID, "students-table"))
+    )
+
     students_table = WebDriverWait(context.driver, 10).until(
         EC.presence_of_element_located((By.ID, "students-table"))
     )
