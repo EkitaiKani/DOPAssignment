@@ -6,13 +6,13 @@ on:
       - closed
 
 jobs:
-  move-task:
+  update-issue-status:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Get Issue linked to PR and Move task to Done
+      - name: Get Issue linked to PR and Update Status
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
@@ -37,22 +37,30 @@ jobs:
               if [ -n "$ISSUE_NUMBER" ]; then
                 echo "Debug: Found linked issue #$ISSUE_NUMBER"
 
-                # Step 5: Move Task in GitHub Project
-                echo "Debug: Fetching project cards from 'In Progress' column..."
-                CARDS_JSON=$(curl -s -H "Authorization: token $GH_TOKEN" \
-                    "https://api.github.com/projects/columns/{IN_PROGRESS_COLUMN_ID}/cards")
-                echo "Debug: Raw CARDS_JSON = $CARDS_JSON"
-                CARD_ID=$(echo "$CARDS_JSON" | jq -r ".[] | select(.content_url | contains(\"/issues/$ISSUE_NUMBER\")) | .id")
+                # Fetch Issue Node ID (Required for GraphQL API)
+                echo "Debug: Fetching issue Node ID..."
+                ISSUE_NODE_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
+                    -H "Accept: application/vnd.github.v3+json" \
+                    "https://api.github.com/repos/EkitaiKani/DOPAssignment/issues/$ISSUE_NUMBER" | jq -r '.node_id')
+                echo "Debug: Issue Node ID = $ISSUE_NODE_ID"
 
-                if [ -n "$CARD_ID" ]; then
-                  echo "Debug: Moving task #$ISSUE_NUMBER to 'Done' column..."
-                  curl -X POST -H "Authorization: token $GH_TOKEN" \
-                    -d "{\"column_id\": \"{DONE_COLUMN_ID}\"}" \
-                    "https://api.github.com/projects/columns/cards/$CARD_ID/moves"
-                  echo "Debug: Task moved successfully!"
-                else
-                  echo "Debug: No project card found for issue #$ISSUE_NUMBER"
-                fi
+                # Update Issue Status to "Done" in GitHub Projects
+                echo "Debug: Updating issue status to 'Done'..."
+                GRAPHQL_QUERY='
+                mutation {
+                  updateIssue(input: {id: "'"$ISSUE_NODE_ID"'", state: CLOSED}) {
+                    issue {
+                      id
+                    }
+                  }
+                }'
+
+                curl -X POST -H "Authorization: token $GH_TOKEN" \
+                     -H "Content-Type: application/json" \
+                     -d "{\"query\": \"$GRAPHQL_QUERY\"}" \
+                     https://api.github.com/graphql
+
+                echo "Debug: Issue #$ISSUE_NUMBER status updated to 'Done'!"
               else
                 echo "Debug: No issue linked in PR body."
               fi
@@ -60,5 +68,5 @@ jobs:
               echo "Debug: PR body is empty or null."
             fi
           else
-            echo "Debug: PR was closed but not merged, skipping task movement."
+            echo "Debug: PR was closed but not merged, skipping task update."
           fi
