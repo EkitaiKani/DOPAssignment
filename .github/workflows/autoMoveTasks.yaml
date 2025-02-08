@@ -25,28 +25,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          for PR in $PR_NUMBERS; do
+            for PR in $PR_NUMBERS; do
             ISSUE_NUMBERS=$(gh pr view $PR --json closingIssuesReferences -q '.closingIssuesReferences[].number')
-          
+
             for ISSUE in $ISSUE_NUMBERS; do
-              echo "Processing Issue #$ISSUE"
-          
               PROJECT_ITEM_ID=$(gh issue view $ISSUE --json projectItems -q '.projectItems[].id')
-          
-              if [ -z "$PROJECT_ITEM_ID" ]; then
-                echo "❌ Issue #$ISSUE is NOT linked to a project!"
-                continue
+
+              if [[ -n "$PROJECT_ITEM_ID" ]]; then
+                echo "Moving issue #$ISSUE to Done..."
+                gh project item-update --project "2" --id "$PROJECT_ITEM_ID" --field "Status" --value "Done"
+              else
+                echo "Issue #$ISSUE is not linked to a project!"
               fi
-          
-              echo "✅ Issue #$ISSUE is linked to Project Item ID: $PROJECT_ITEM_ID"
-          
-              # Get current column name
-              CURRENT_COLUMN=$(gh project item-view --id $PROJECT_ITEM_ID --json column -q '.column.name')
-              echo "🔍 Issue #$ISSUE is currently in column: $CURRENT_COLUMN"
-          
-              # Move the issue
-              echo "➡️ Moving Issue #$ISSUE to Done..."
-              gh project item-update --project "2" --id $PROJECT_ITEM_ID --field "Status" --value "Done"
             done
-          done
+            done
+
+
 
