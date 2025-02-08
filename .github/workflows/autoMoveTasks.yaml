@@ -1,4 +1,4 @@
-name: Move GitHub Project Tasks on Push
+name: Move tasks to done on push
 
 on:
   push:
@@ -7,30 +7,38 @@ on:
       - TestAutomaticTaskMovement
 
 jobs:
-  manage-project:
+  move-task:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
-      - name: Get PR Description and Issue Number
-        id: pr
-        run: |
-          pr_number=${{ github.event.pull_request.number }}
-          
-          pr_description=$(curl -s -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/pulls/$pr_number" | jq -r .body)
-          
-          issue_number=$(echo "$pr_description" | grep -o '#[0-9]\+' | sed 's/#//')
-          
-          echo "Issue Number: $issue_number"
-          echo "ISSUE_NUMBER=$issue_number" >> $GITHUB_ENV
+      - name: Check out repository
+        uses: actions/checkout@v2
 
-      - name: Move Linked Issues to Done
-        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
-        with:
-          gh_token: ${{ secrets.GH_TOKEN }}
-          user: EkitaiKani
-          project_id: 2
-          resource_node_id: ${{ github.event.pull_request.node_id }}
-          status_value: 'Done'
-          move_related_issues: true
+      - name: Get Issue linked to PR and Move task to Done
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          PR_NUMBER=${GITHUB_REF#refs/pull/}
+          PR_NUMBER=${PR_NUMBER%/merge}
+
+          ISSUE_NUMBER=$(curl -s -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/repos/EkitaiKani/DOPAssignment/pulls/$PR_NUMBER" | \
+              jq -r '.body' | grep -o '#[0-9]\+' | tr -d '#')
+
+          if [ -n "$ISSUE_NUMBER" ]; then
+            echo "Found linked issue number: $ISSUE_NUMBER"
+
+            CARD_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
+                "https://api.github.com/repos/EkitaiKani/DOPAssignment/issues/$ISSUE_NUMBER" | \
+                jq -r '.project_cards[0].id')
+
+            if [ -n "$CARD_ID" ]; then
+              echo "Moving task #$ISSUE_NUMBER to Done column"
+              curl -X POST -H "Authorization: token $GH_TOKEN" \
+                -d '{"column_id": "DoneColumnID"}' \
+                "https://api.github.com/projects/columns/cards/$CARD_ID/moves"
+            else
+              echo "No project card found for issue #$ISSUE_NUMBER"
+            fi
+          else
+            echo "No issue linked to PR #$PR_NUMBER"
+          fi
