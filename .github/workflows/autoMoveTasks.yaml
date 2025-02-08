@@ -17,7 +17,7 @@ jobs:
         id: merged_prs
         uses: octokit/request-action@v2.x
         with:
-          route: GET /repos/{owner}/{repo}/pulls?state=closed&base=main&per_page=5
+          route: GET /repos/EkitaiKani/DOPAssignment/pulls?state=closed&base=main&per_page=5
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
