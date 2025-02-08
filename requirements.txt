@@ -2,6 +2,9 @@ flask
 python-dotenv
 pip
 psycopg2
+behave
+allure-behave
+allure-pytest
 flask_sqlalchemy
 behave
 selenium

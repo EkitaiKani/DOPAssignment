@@ -1,0 +1,150 @@
+name: Login test
+run-name: ${{ github.actor }} is testing the Login
+
+on:
+  push:
+    branches:
+      - github-actions
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    env:
+      PG_USER: postgres
+      PG_PASSWORD: bafjoiaibudfkasf
+      PG_DATABASE: DOPAssignment
+      PG_HOST: localhost
+      PG_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: bafjoiaibudfkasf
+      DB_NAME: DOPAssignment
+      DB_HOST: localhost
+      DB_PORT: 5432
+
+    services:
+      postgres:
+        image: postgres:17.2
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: bafjoiaibudfkasf
+          POSTGRES_DB: DOPAssignment
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Checkout for app
+        uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes postgresql-client
+
+      - name: Debug PostgreSQL logs
+        run: |
+          docker logs $(docker ps -q -f ancestor=postgres:17.2)
+
+      - name: Wait for PostgreSQL to be ready
+        run: |
+          until PGPASSWORD=${{ env.PG_PASSWORD }} psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -c '\q'; do
+            echo "PostgreSQL is unavailable - sleeping"
+            sleep 1
+          done
+          echo "PostgreSQL is up"
+
+      - name: Initialize database
+        env:
+          PGPASSWORD: ${{ env.PG_PASSWORD }}
+        run: |
+          psql -h ${{ env.PG_HOST }} -U ${{ env.PG_USER }} -d ${{ env.PG_DATABASE }} -f ./server/database-setup.sql
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Create virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Chrome driver
+        uses: nanasess/setup-chromedriver@v2
+
+      - name: Run Flask App
+        run: |
+          nohup python ./server/app.py > flask.log 2>&1 &
+          echo "Flask server started"
+          sleep 10
+
+      - name: List open ports in GitHub Actions
+        run: netstat -tuln
+
+      - name: Run Behave Selenium Tests with Allure
+        run: |
+          behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results
+          path: allure-results
+
+      - name: Upload Flask logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flask-log
+          path: flask.log
+
+  allure_report:
+    needs: setup  # Only run after tests are done
+    runs-on: ubuntu-latest
+    if: always()  # Run even if tests fail
+
+    steps:
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
+      - name: Download previous Allure history (if available)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+          fetch-depth: 1
+
+      - name: Generate Allure Report with History
+        uses: simple-elf/allure-report-action@v1
+        with:
+          allure_results: allure-results
+          allure_history: gh-pages/allure-history/login
+          gh_pages: gh-pages/allure-history/login
+
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: gh-pages/allure-history/login
+
+      - name: Set GitHub Status for Selenium Test Report
+        uses: Sibz/github-status-action@v1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Selenium test report
+          state: success
+          target_url: https://EkitaiKani.github.io/DOPAssignment/allure-history/login
+          owner: EkitaiKani
+          repository: EkitaiKani/DOPAssignment
+          sha: ${{ github.sha }}

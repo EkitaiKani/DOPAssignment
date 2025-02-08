@@ -125,6 +125,7 @@
               .then((result) => {
                 if (result.success) {
                   alert("Student created successfully!");
+                  window.location.href = "/admin";
                 } else {
                   alert("Failed to create student.");
                 }
