@@ -16,31 +16,48 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          # Step 1: Check if PR was merged
+          echo "Debug: Checking if PR was merged..."
           if [[ "${{ github.event.pull_request.merged }}" == "true" ]]; then
             PR_NUMBER="${{ github.event.pull_request.number }}"
             echo "Debug: PR Number = $PR_NUMBER"
 
-            # Step 2: Fetch PR details
-            echo "Debug: Fetching PR details from GitHub API"
+            echo "Debug: Fetching PR details from GitHub API..."
             PR_DETAILS=$(curl -s -H "Authorization: token $GH_TOKEN" \
                 "https://api.github.com/repos/EkitaiKani/DOPAssignment/pulls/$PR_NUMBER")
             
             echo "Debug: Raw PR Details = $PR_DETAILS"
 
-            # Step 3: Extract PR body
             PR_BODY=$(echo "$PR_DETAILS" | jq -r '.body')
             echo "Debug: PR Body = $PR_BODY"
 
-            # Step 4: Extract Issue Number from PR Body
-            ISSUE_NUMBER=$(echo "$PR_BODY" | grep -o '#[0-9]\+' | tr -d '#')
-            echo "Debug: Extracted Issue Number = $ISSUE_NUMBER"
+            if [ -n "$PR_BODY" ] && [[ "$PR_BODY" != "null" ]]; then
+              ISSUE_NUMBER=$(echo "$PR_BODY" | grep -o '#[0-9]\+' | tr -d '#')
+              echo "Debug: Extracted Issue Number = $ISSUE_NUMBER"
 
-            if [ -n "$ISSUE_NUMBER" ]; then
-              echo "Debug: Found linked issue #$ISSUE_NUMBER"
-              # (Move the task in GitHub Project here)
+              if [ -n "$ISSUE_NUMBER" ]; then
+                echo "Debug: Found linked issue #$ISSUE_NUMBER"
+
+                # Step 5: Move Task in GitHub Project
+                echo "Debug: Fetching project cards from 'In Progress' column..."
+                CARDS_JSON=$(curl -s -H "Authorization: token $GH_TOKEN" \
+                    "https://api.github.com/projects/columns/{IN_PROGRESS_COLUMN_ID}/cards")
+
+                CARD_ID=$(echo "$CARDS_JSON" | jq -r ".[] | select(.content_url | contains(\"/issues/$ISSUE_NUMBER\")) | .id")
+
+                if [ -n "$CARD_ID" ]; then
+                  echo "Debug: Moving task #$ISSUE_NUMBER to 'Done' column..."
+                  curl -X POST -H "Authorization: token $GH_TOKEN" \
+                    -d "{\"column_id\": \"{DONE_COLUMN_ID}\"}" \
+                    "https://api.github.com/projects/columns/cards/$CARD_ID/moves"
+                  echo "Debug: Task moved successfully!"
+                else
+                  echo "Debug: No project card found for issue #$ISSUE_NUMBER"
+                fi
+              else
+                echo "Debug: No issue linked in PR body."
+              fi
             else
-              echo "Debug: No issue linked to PR #$PR_NUMBER"
+              echo "Debug: PR body is empty or null."
             fi
           else
             echo "Debug: PR was closed but not merged, skipping task movement."
