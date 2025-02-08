@@ -7,19 +7,30 @@ on:
       - TestAutomaticTaskMovement
 
 jobs:
-  Moving_Tasks:
+  manage-project:
     runs-on: ubuntu-latest
     permissions:
       issues: write
     steps:
-      - name: Check if Merge Commit
+      - name: Set up GitHub CLI
         run: |
+          echo "***" | gh auth login --with-token
+          
+      - name: Get Pull Request Node ID
+        id: pr
+        run: |
+          pr_url=$(gh pr list --base main --head $GITHUB_SHA --json url -L 1 --jq ".[0].url")
+          echo "PR URL: $pr_url"
+          pr_node_id=$(gh pr view $pr_url --json nodeId -q ".nodeId")
+          echo "PR Node ID: $pr_node_id"
+          echo "RESOURCE_NODE_ID=$pr_node_id" >> $GITHUB_ENV
+          
       - name: Move Linked Issues to Done
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
           user: EkitaiKani
           project_id: 2
-          resource_node_id: ${{ github.event.pull_request.node_id }}
+          resource_node_id: ${{ env.RESOURCE_NODE_ID }}
           move_related_issues: true
           status_value: 'Done'
