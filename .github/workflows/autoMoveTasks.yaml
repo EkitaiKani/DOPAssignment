@@ -12,25 +12,24 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: Set up GitHub CLI
-        run: |
-          echo "***" | gh auth login --with-token
-          
-      - name: Get Pull Request Node ID
+      - name: Get PR Description and Issue Number
         id: pr
         run: |
-          pr_url=$(gh pr list --base main --head $GITHUB_SHA --json url -L 1 --jq ".[0].url")
-          echo "PR URL: $pr_url"
-          pr_node_id=$(gh pr view $pr_url --json nodeId -q ".nodeId")
-          echo "PR Node ID: $pr_node_id"
-          echo "RESOURCE_NODE_ID=$pr_node_id" >> $GITHUB_ENV
+          pr_number=${{ github.event.pull_request.number }}
           
+          pr_description=$(curl -s -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/$pr_number" | jq -r .body)
+          
+          issue_number=$(echo "$pr_description" | grep -o '#[0-9]\+' | sed 's/#//')
+          
+          echo "Issue Number: $issue_number"
+
       - name: Move Linked Issues to Done
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
           user: EkitaiKani
           project_id: 2
-          resource_node_id: ${{ env.RESOURCE_NODE_ID }}
+          issue_number: ${{ steps.pr.outputs.issue_number }} 
           move_related_issues: true
           status_value: 'Done'
