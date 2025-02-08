@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
+      contents: read 
     steps:
       - name: Move Linked Issues to Done
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
