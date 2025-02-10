@@ -1,0 +1,180 @@
+{
+  "uid" : "b7236d723f46ba1d",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "fullName" : "Verify Login is valid: Fill in student login with multiple correct user data",
+  "historyId" : "32f92818a8a829b8b22fca159efe65b5",
+  "time" : {
+    "start" : 1739195844590,
+    "stop" : 1739195846368,
+    "duration" : 1778
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739195844590,
+        "stop" : 1739195844980,
+        "duration" : 390
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739195844981,
+        "stop" : 1739195844981,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739195844981,
+        "stop" : 1739195845090,
+        "duration" : 109
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739195845090,
+        "stop" : 1739195845105,
+        "duration" : 15
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Input multiple \"John Tan\" and \"password1\"",
+      "time" : {
+        "start" : 1739195845105,
+        "stop" : 1739195845244,
+        "duration" : 139
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1739195845244,
+        "stop" : 1739195846299,
+        "duration" : 1055
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Verify student login",
+      "time" : {
+        "start" : 1739195846299,
+        "stop" : 1739195846304,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739195846304,
+        "stop" : 1739195846368,
+        "duration" : 64
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "passWord",
+    "value" : "password1"
+  }, {
+    "name" : "userName",
+    "value" : "John Tan"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b7236d723f46ba1d.json",
+  "parameterValues" : [ "password1", "John Tan" ]
+}
