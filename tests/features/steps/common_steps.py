@@ -53,11 +53,22 @@ def log_console_errors(context):
         return errors
     return None
 
+# Environment hooks
+def before_scenario(context):
+    """Initialize browser before each scenario"""
+    context.driver = setup_chrome_driver()
+    context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
+
+def after_scenario(context):
+    """Clean up after each scenario"""
+    if hasattr(context, 'driver'):
+        context.driver.quit()
+
 # Step definitions
 @given(u'Chrome browser is launch')
 def step_impl(context):
-    context.driver = setup_chrome_driver()
-    context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
+    # Browser is already launched in before_scenario
+    pass
 
 @given(u'Browser console logging is enabled for error tracking')
 def step_impl(context):

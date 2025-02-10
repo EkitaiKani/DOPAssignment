@@ -1,20 +1,17 @@
 from behave import *
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import common_steps
+import logging
 
-# Constants for actions
-WAIT_TIMEOUT = 10
-BASE_URL = "http://127.0.0.1:5000"
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-def before_all(context):
-    """Initialize the WebDriver before all tests."""
-    context.driver = common_steps.setup_chrome_driver()  # Fix here
-    context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
-
-def after_all(context):
-    """Quit the WebDriver after all tests."""
-    context.driver.quit()
+# Use constants from common_steps
+WAIT_TIMEOUT = common_steps.WAIT_TIMEOUT
+BASE_URL = common_steps.BASE_URL
 
 @given('I am logged in as an admin')
 def step_impl(context):
@@ -150,3 +147,9 @@ def step_impl(context, student_name):
         columns = row.find_elements(By.TAG_NAME, "td")
         if columns and student_name in [col.text for col in columns]:
             assert False, f"Student '{student_name}' is still in the student list after deletion"
+
+@then(u'Close browser')
+def step_impl(context):
+    # Browser will be closed automatically in after_scenario hook
+    logger.info("Browser will be closed in after_scenario hook")
+    pass

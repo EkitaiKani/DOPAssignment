@@ -1,7 +1,8 @@
 from behave import *
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 import time
 import common_steps
 import logging
@@ -10,20 +11,11 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Constants for actions
-WAIT_TIMEOUT = 10
-BASE_URL = "http://127.0.0.1:5000"
+# Use constants from common_steps
+WAIT_TIMEOUT = common_steps.WAIT_TIMEOUT
+BASE_URL = common_steps.BASE_URL
 
-def before_all(context):
-    """Initialize the WebDriver before all tests."""
-    context.driver = common_steps.setup_chrome_driver()  # Fix here
-    context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
-
-def after_all(context):
-    """Quit the WebDriver after all tests."""
-    context.driver.quit()
-
-@then(u'Input username "{username}" and password "{password}"')
+@then(u'Input userName "{username}" and passWord "{password}"')
 def step_impl(context, username, password):
     try:
         username_field = common_steps.wait_for_element(context, (By.ID, "InputUsername"))
@@ -37,12 +29,12 @@ def step_impl(context, username, password):
     except Exception as e:
         logger.error(f"Failed to input credentials: {str(e)}")
         raise
-    
+
 @then(u'Input multiple "{userName}" and "{passWord}"')
 def step_impl(context, userName, passWord):
     try:
-        username_field = wait_for_element(context, (By.ID, "InputUsername"))
-        password_field = wait_for_element(context, (By.ID, "InputPassword"))
+        username_field = common_steps.wait_for_element(context, (By.ID, "InputUsername"))
+        password_field = common_steps.wait_for_element(context, (By.ID, "InputPassword"))
         
         username_field.clear()
         username_field.send_keys(userName)
@@ -53,7 +45,6 @@ def step_impl(context, userName, passWord):
     except Exception as e:
         logger.error(f"Failed to input credentials for multiple users: {str(e)}")
         raise
-
 
 @then(u'Submit form')
 def step_impl(context):
@@ -87,7 +78,7 @@ def step_impl(context):
     except TimeoutException:
         logger.error("Alert not present for failed login")
         raise
-    
+
 @then(u'Verify admin login')
 def step_impl(context):
     try:
@@ -98,9 +89,8 @@ def step_impl(context):
         logger.error(f"Failed to verify admin login. Expected URL: {BASE_URL}/admin, Got: {current_url}")
         raise
 
-
 @then(u'Close browser')
 def step_impl(context):
-    if hasattr(context, 'driver'):
-        context.driver.quit()
-        logger.info("Browser closed successfully")
+    # Browser will be closed automatically in after_scenario hook
+    logger.info("Browser will be closed in after_scenario hook")
+    pass
