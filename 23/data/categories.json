@@ -1,0 +1,47 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: No student accounts found\n",
+      "children" : [ {
+        "name" : "Admin searches for a student account by Student ID",
+        "uid" : "51770d778fc5f8f5",
+        "parentUid" : "a98789458019d8a34eec9a3aced6b2e8",
+        "status" : "failed",
+        "time" : {
+          "start" : 1739180529836,
+          "stop" : 1739180531059,
+          "duration" : 1223
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a98789458019d8a34eec9a3aced6b2e8"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  }, {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Invalid password\nMessage: unexpected alert open: {Alert text : Invalid password}\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x5594736dd53a <unknown>\n#1 0x5594731d8f00 <unknown>\n#2 0x55947326ca0f <unknown>\n#3 0x55947324d343 <unknown>\n#4 0x55947321a78a <unknown>\n#5 0x55947321b9de <unknown>\n#6 0x5594736a72cb <unknown>\n#7 0x5594736ab242 <unknown>\n#8 0x5594736947ac <unknown>\n#9 0x5594736abdf7 <unknown>\n#10 0x559473678b2f <unknown>\n#11 0x5594736cc1a8 <unknown>\n#12 0x5594736cc370 <unknown>\n#13 0x5594736dc3b6 <unknown>\n#14 0x7f493669ca94 <unknown>\n#15 0x7f4936729c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+        "uid" : "9b21208225f64dce",
+        "parentUid" : "472d90e53b7afba10efb228dd4fb3fe8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739180542289,
+          "stop" : 1739180543960,
+          "duration" : 1671
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "password1", "John Tan" ]
+      } ],
+      "uid" : "472d90e53b7afba10efb228dd4fb3fe8"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
