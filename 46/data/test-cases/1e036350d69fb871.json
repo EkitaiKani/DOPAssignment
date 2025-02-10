@@ -1,0 +1,272 @@
+{
+  "uid" : "1e036350d69fb871",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "fullName" : "Verify Login is valid: Fill in student login with multiple correct user data",
+  "historyId" : "32f92818a8a829b8b22fca159efe65b5",
+  "time" : {
+    "start" : 1739201053904,
+    "stop" : 1739201055667,
+    "duration" : 1763
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739201053904,
+        "stop" : 1739201054277,
+        "duration" : 373
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739201054277,
+        "stop" : 1739201054278,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739201054278,
+        "stop" : 1739201054411,
+        "duration" : 133
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739201054412,
+        "stop" : 1739201054422,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Input multiple \"John Tan\" and \"password1\"",
+      "time" : {
+        "start" : 1739201054422,
+        "stop" : 1739201054547,
+        "duration" : 125
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1739201054548,
+        "stop" : 1739201055598,
+        "duration" : 1050
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Verify student login",
+      "time" : {
+        "start" : 1739201055598,
+        "stop" : 1739201055602,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739201055602,
+        "stop" : 1739201055667,
+        "duration" : 65
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "passWord",
+    "value" : "password1"
+  }, {
+    "name" : "userName",
+    "value" : "John Tan"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 10,
+        "unknown" : 0,
+        "total" : 10
+      },
+      "items" : [ {
+        "uid" : "e178ff1e057b46d1",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/45/#testresult/e178ff1e057b46d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200925460,
+          "stop" : 1739200927219,
+          "duration" : 1759
+        }
+      }, {
+        "uid" : "5702a119097dba06",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/44/#testresult/5702a119097dba06",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200868151,
+          "stop" : 1739200869860,
+          "duration" : 1709
+        }
+      }, {
+        "uid" : "8514e742f3e30a21",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/43/#testresult/8514e742f3e30a21",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200631259,
+          "stop" : 1739200632983,
+          "duration" : 1724
+        }
+      }, {
+        "uid" : "742505c8b29a0e63",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/41/#testresult/742505c8b29a0e63",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200277095,
+          "stop" : 1739200278785,
+          "duration" : 1690
+        }
+      }, {
+        "uid" : "c40f6cb697d979ac",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/42/#testresult/c40f6cb697d979ac",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200248550,
+          "stop" : 1739200250237,
+          "duration" : 1687
+        }
+      }, {
+        "uid" : "c052677b0561811a",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/40/#testresult/c052677b0561811a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200168449,
+          "stop" : 1739200170127,
+          "duration" : 1678
+        }
+      }, {
+        "uid" : "cc3d0fd3770c0666",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/cc3d0fd3770c0666",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196917605,
+          "stop" : 1739196919379,
+          "duration" : 1774
+        }
+      }, {
+        "uid" : "37f60cc14fad6050",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/37f60cc14fad6050",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196595256,
+          "stop" : 1739196596995,
+          "duration" : 1739
+        }
+      }, {
+        "uid" : "b7236d723f46ba1d",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/38/#testresult/b7236d723f46ba1d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739195844590,
+          "stop" : 1739195846368,
+          "duration" : 1778
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1e036350d69fb871.json",
+  "parameterValues" : [ "password1", "John Tan" ]
+}
