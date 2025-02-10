@@ -1,0 +1,111 @@
+[ {
+  "uid" : "490792e717b80d84",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1739150285865,
+    "stop" : 1739150286071,
+    "duration" : 206
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "621b84feda8dfc12",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739150284991,
+    "stop" : 1739150285193,
+    "duration" : 202
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9b65397ffa426d94",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1739150286481,
+    "stop" : 1739150286738,
+    "duration" : 257
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "b89d22aa5312a902",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739150282950,
+    "stop" : 1739150284787,
+    "duration" : 1837
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "462d60f5d88403d6",
+  "name" : "Admin deletes a student account",
+  "time" : {
+    "start" : 1739150285661,
+    "stop" : 1739150285864,
+    "duration" : 203
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "96d331c273066147",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739150285193,
+    "stop" : 1739150285398,
+    "duration" : 205
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "fbb9bc40fae1e3c5",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1739150286277,
+    "stop" : 1739150286480,
+    "duration" : 203
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "1b0199ff95668114",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1739150286071,
+    "stop" : 1739150286276,
+    "duration" : 205
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "90f3901a120fcd06",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1739150286739,
+    "stop" : 1739150286942,
+    "duration" : 203
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "28fa290f6d1c29b5",
+  "name" : "Admin searches for a student account by Student ID",
+  "time" : {
+    "start" : 1739150284788,
+    "stop" : 1739150284990,
+    "duration" : 202
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "c75b32dfc41f2068",
+  "name" : "Admin modifies a student account",
+  "time" : {
+    "start" : 1739150285398,
+    "stop" : 1739150285661,
+    "duration" : 263
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
