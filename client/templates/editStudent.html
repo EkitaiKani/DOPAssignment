@@ -91,7 +91,9 @@
           </div>
         </div>
       </div>
-      <button id="editStudent" class="btn btn-primary" type="submit">Save Changes</button>
+      <button id="editStudent" class="btn btn-primary" type="submit">
+        Save Changes
+      </button>
     </form>
 
     <script>
@@ -113,14 +115,16 @@
         fetch(`/devopsassignment1/students/${studentid}`)
           .then((response) => response.json())
           .then((data) => {
-            data = data[0]
+            data = data[0];
             password = data["password"];
-            document.getElementById("studentid").value = data['studentid'];
+            document.getElementById("studentid").value = data["studentid"];
             document.getElementById("password").value = "";
             document.getElementById("username").value = data["username"];
-            document.getElementById("diplomaofstudy").value = data["diplomaofstudy"];
+            document.getElementById("diplomaofstudy").value =
+              data["diplomaofstudy"];
             document.getElementById("yearofentry").value = data["yearofentry"];
-            document.getElementById("emailaddress").value = data["emailaddress"];
+            document.getElementById("emailaddress").value =
+              data["emailaddress"];
             document.getElementById("points").value = data["points"];
           })
           .catch((error) =>
@@ -134,7 +138,10 @@
             const data = {
               studentid: document.getElementById("studentid").value,
               username: document.getElementById("username").value,
-              password: document.getElementById("password").value === "" ? password : document.getElementById("password").value,
+              password:
+                document.getElementById("password").value.trim() === ""
+                  ? password
+                  : document.getElementById("password").value.trim(),
               diplomaofstudy: document.getElementById("diplomaofstudy").value,
               yearofentry: document.getElementById("yearofentry").value,
               emailaddress: document.getElementById("emailaddress").value,

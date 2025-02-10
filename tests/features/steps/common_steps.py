@@ -22,6 +22,7 @@ def setup_chrome_driver():
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--window-size=1920,1080')
     chrome_options.add_argument('--disable-extensions')
+    chrome_options.add_argument("--disable-usb-devices")
     return webdriver.Chrome(options=chrome_options)
 
 def wait_for_element(context, locator, timeout=WAIT_TIMEOUT):

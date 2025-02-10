@@ -40,6 +40,11 @@ def create_student():
     db.session.commit()
     return {"success": True}
 
+def handle_password(password):
+    if password.startswith('scrypt'):
+        return password
+    return generate_password_hash(password)
+
 def modify_student(student_id):
     data = request.json
     student = Student.query.filter_by(studentid=student_id).first() 
@@ -47,7 +52,7 @@ def modify_student(student_id):
     if student is None:
         return {"error": "Student not found"}
 
-    student.password = generate_password_hash(data.get('password'))
+    student.password = handle_password(data.get('password'))
     student.username = data.get('username')
     student.diplomaofstudy = data.get('diplomaofstudy')
     student.yearofentry = data.get('yearofentry')
@@ -57,7 +62,6 @@ def modify_student(student_id):
     db.session.commit()
     return {"success": True}
 
-# Delete a student
 def delete_student(student_id):
     student = Student.query.filter_by(studentid=student_id).first()
 

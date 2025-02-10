@@ -204,7 +204,7 @@ jobs:
           target_url: https://ekitaikani.github.io/DOPAssignment/
 
   deploy:
-    needs: [setup, allure_report]
+    needs: setup-and-test
     runs-on: ubuntu-latest
     if: success()
     steps:
