@@ -2,6 +2,8 @@ Feature: Verify Login is valid
 
 	Background: Common steps
 		Given Chrome browser is launch
+		Given Browser console logging is enabled for error tracking
+		Then  Verify page loads without console errors
 		When  Open Login Page
 
 	Scenario: Check Login title
