@@ -16,6 +16,15 @@ WAIT_TIMEOUT = common_steps.WAIT_TIMEOUT
 BASE_URL = common_steps.BASE_URL
 
 # Step Definitions
+@then(u'Verify Login title is present')
+def step_impl(context):
+    try:
+        context.wait.until(EC.title_is("Student Login"))
+        logger.info("Login title verified successfully")
+    except TimeoutException:
+        actual_title = context.driver.title
+        logger.error(f"Expected title 'Student Login', got '{actual_title}'")
+        raise
 
 @then(u'Input userName "{username}" and passWord "{password}"')
 def step_impl(context, username, password):

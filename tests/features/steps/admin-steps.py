@@ -119,3 +119,83 @@ def step_impl(context, student_name):
         if columns[1].text == student_name:
             return
     assert False, f"Student '{student_name}' not found in the student list"
+
+@given('I choose to edit student "{student_name}"')
+def step_impl(context, student_name):
+    students_table = common_steps.wait_for_element(context, (By.ID, "students-table"))
+    rows = students_table.find_elements(By.TAG_NAME, "tr")
+    for row in rows[1:]:
+        columns = row.find_elements(By.TAG_NAME, "td")
+        if columns and student_name in [col.text for col in columns]:
+            try:
+                edit_button = row.find_element(By.ID, "editStudent")
+                edit_button.click()
+                WebDriverWait(context.driver, 10).until(EC.title_is("Edit Student"))
+                return
+            except Exception as e:
+                assert False, f"Failed to click 'Edit' button for student '{student_name}': {str(e)}'"
+    assert False, f"Student '{student_name}' not found in the student list"
+
+@given('I update the diploma of study to "{diploma}"')
+def step_impl(context, diploma):
+    diploma_input = common_steps.wait_for_element(context, (By.ID, "diplomaofstudy"))
+    diploma_input.clear()
+    diploma_input.send_keys(diploma)
+
+@given('I save the changes')
+def step_impl(context):
+    edit_student_button = common_steps.wait_for_element(context, (By.ID, "editStudent"))
+    edit_student_button.click()
+    WebDriverWait(context.driver, 10).until(EC.alert_is_present())
+    alert = context.driver.switch_to.alert
+    alert_message = alert.text
+    assert alert_message == "Student updated successfully!", f"Expected alert message 'Student updated successfully!', but got '{alert_message}'"
+    alert.accept()
+    context.driver.get("http://127.0.0.1:5000/admin")
+
+@then('the student "{student_name}" should be in "{diploma}" as his diploma of study')
+def step_impl(context, student_name, diploma):
+    students_table = common_steps.wait_for_element(context, (By.ID, "students-table"))
+    rows = students_table.find_elements(By.TAG_NAME, "tr")
+    for row in rows[1:]:
+        columns = row.find_elements(By.TAG_NAME, "td")
+        if columns and student_name in [col.text for col in columns]:
+            try:
+                assert columns[2].text == diploma, f"Expected diploma '{diploma}', but found '{columns[2].text}'"
+                return
+            except AssertionError as e:
+                assert False, str(e)
+    assert False, f"Student '{student_name}' not found in the student list"
+
+@given('I choose to delete student "{student_name}"')
+def step_impl(context, student_name):
+    students_table = common_steps.wait_for_element(context, (By.ID, "students-table"))
+    rows = students_table.find_elements(By.TAG_NAME, "tr")
+    for row in rows[1:]:
+        columns = row.find_elements(By.TAG_NAME, "td")
+        if columns and student_name in [col.text for col in columns]:
+            try:
+                delete_button = row.find_element(By.ID, "deleteStudent")
+                delete_button.click()
+                return
+            except Exception as e:
+                assert False, f"Failed to click 'Delete' button for student '{student_name}': {str(e)}'"
+    assert False, f"Student '{student_name}' not found in the student list"
+
+@when('I confirm deletion')
+def step_impl(context):
+    WebDriverWait(context.driver, 10).until(EC.alert_is_present())
+    alert = context.driver.switch_to.alert
+    alert_message = alert.text
+    assert alert_message == "Are you sure you want to delete this student?", f"Expected alert message 'Are you sure you want to delete this student?', but got '{alert_message}'"
+    alert.accept()
+
+@then('the student "{student_name}" should no longer be in the student list')
+def step_impl(context, student_name):
+    WebDriverWait(context.driver, 10).until(EC.staleness_of(common_steps.wait_for_element(context, (By.ID, "students-table"))))
+    students_table = common_steps.wait_for_element(context, (By.ID, "students-table"))
+    rows = students_table.find_elements(By.TAG_NAME, "tr")
+    for row in rows[1:]:
+        columns = row.find_elements(By.TAG_NAME, "td")
+        if columns and student_name in [col.text for col in columns]:
+            assert False, f"Student '{student_name}' is still in the student list after deletion"
