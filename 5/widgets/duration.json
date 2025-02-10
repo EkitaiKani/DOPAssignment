@@ -1,0 +1,41 @@
+[ {
+  "uid" : "4a33a0501f09d0fe",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739159033286,
+    "stop" : 1739159033437,
+    "duration" : 151
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "7940926a68af344e",
+  "name" : "Admin searches for a student account by Student ID",
+  "time" : {
+    "start" : 1739158902891,
+    "stop" : 1739158903024,
+    "duration" : 133
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "7fc73bd04e92cdbd",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739158901886,
+    "stop" : 1739158902890,
+    "duration" : 1004
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "37fb5dbb3edc6a30",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739158903025,
+    "stop" : 1739159033285,
+    "duration" : 130260
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
