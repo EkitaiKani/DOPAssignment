@@ -68,7 +68,8 @@ def after_scenario(context):
 @given(u'Chrome browser is launch')
 def step_impl(context):
     # Browser is already launched in before_scenario
-    pass
+    if not hasattr(context, 'driver'):
+        raise AttributeError("Driver is not initialized. Check 'before_scenario' hook.")
 
 @given(u'Browser console logging is enabled for error tracking')
 def step_impl(context):
@@ -76,24 +77,32 @@ def step_impl(context):
 
 @when(u'Open Login Page')
 def step_impl(context):
-    context.driver.get(f"{BASE_URL}/login")
-    
+    if hasattr(context, 'driver'):
+        context.driver.get(f"{BASE_URL}/login")
+    else:
+        raise AttributeError("Driver is not initialized. Check 'before_scenario' hook.")
+
 @then(u'Verify page loads without console errors')
 def step_impl(context):
     # Get browser console errors
-    errors = log_console_errors(context)
-    if errors:
-        assert False, f"Found {len(errors)} console errors"
+    if hasattr(context, 'driver'):
+        errors = log_console_errors(context)
+        if errors:
+            assert False, f"Found {len(errors)} console errors"
 
-    # Verify essential elements are present
-    try:
-        context.wait.until(EC.presence_of_element_located((By.ID, "InputUsername")))
-        context.wait.until(EC.presence_of_element_located((By.ID, "InputPassword")))
-    except TimeoutException:
-        assert False, "Username or Password field not found on the login page"
+        # Verify essential elements are present
+        try:
+            context.wait.until(EC.presence_of_element_located((By.ID, "InputUsername")))
+            context.wait.until(EC.presence_of_element_located((By.ID, "InputPassword")))
+        except TimeoutException:
+            assert False, "Username or Password field not found on the login page"
+    else:
+        raise AttributeError("Driver is not initialized. Check 'before_scenario' hook.")
 
 @then(u'Close browser')
 def step_impl(context):
-    # Browser will be closed automatically in after_scenario hook
-    logger.info("Browser will be closed in after_scenario hook")
-    pass
+    if hasattr(context, 'driver'):
+        # Browser will be closed automatically in after_scenario hook
+        logger.info("Browser will be closed in after_scenario hook")
+    else:
+        raise AttributeError("Driver is not initialized. Check 'before_scenario' hook.")
