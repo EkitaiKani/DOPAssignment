@@ -1,0 +1,227 @@
+{
+  "uid" : "5e0e954dd5240b1e",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "fullName" : "Verify Login is valid: Fill in student login with multiple correct user data",
+  "historyId" : "38734b3559bb2ffcb5ec94b675640db6",
+  "time" : {
+    "start" : 1739195238108,
+    "stop" : 1739195239760,
+    "duration" : 1652
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739195238108,
+        "stop" : 1739195238417,
+        "duration" : 309
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739195238417,
+        "stop" : 1739195238417,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739195238418,
+        "stop" : 1739195238513,
+        "duration" : 95
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739195238514,
+        "stop" : 1739195238523,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Input multiple \"Sarah Lim\" and \"password2\"",
+      "time" : {
+        "start" : 1739195238523,
+        "stop" : 1739195238645,
+        "duration" : 122
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1739195238645,
+        "stop" : 1739195239694,
+        "duration" : 1049
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Verify student login",
+      "time" : {
+        "start" : 1739195239694,
+        "stop" : 1739195239698,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739195239698,
+        "stop" : 1739195239760,
+        "duration" : 62
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "passWord",
+    "value" : "password2"
+  }, {
+    "name" : "userName",
+    "value" : "Sarah Lim"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 5,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "49fe0db837cb412f",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/33/#testresult/49fe0db837cb412f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739194516803,
+          "stop" : 1739194518483,
+          "duration" : 1680
+        }
+      }, {
+        "uid" : "9fb94eae17502ecd",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/24/#testresult/9fb94eae17502ecd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739182456201,
+          "stop" : 1739182457906,
+          "duration" : 1705
+        }
+      }, {
+        "uid" : "fcde346a583f2390",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/23/#testresult/fcde346a583f2390",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739180543961,
+          "stop" : 1739180545665,
+          "duration" : 1704
+        }
+      }, {
+        "uid" : "bbda9d6ca4e15ce1",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/22/#testresult/bbda9d6ca4e15ce1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739179663819,
+          "stop" : 1739179665500,
+          "duration" : 1681
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "5e0e954dd5240b1e.json",
+  "parameterValues" : [ "password2", "Sarah Lim" ]
+}
