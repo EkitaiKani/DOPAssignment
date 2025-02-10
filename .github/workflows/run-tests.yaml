@@ -206,6 +206,9 @@ jobs:
   deploy:
     needs: setup-and-test
     runs-on: ubuntu-latest
+    env:
+       RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+       RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
