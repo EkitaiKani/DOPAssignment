@@ -1,0 +1,101 @@
+[ {
+  "uid" : "c76b5f67599f73ab",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739200915549,
+    "stop" : 1739200917796,
+    "duration" : 2247
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e178ff1e057b46d1",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1739200925460,
+    "stop" : 1739200927219,
+    "duration" : 1759
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "250e1d125221c5b5",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1739200922037,
+    "stop" : 1739200923749,
+    "duration" : 1712
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "14d80bd55121cdbf",
+  "name" : "Admin modifies a student account",
+  "time" : {
+    "start" : 1739200917797,
+    "stop" : 1739200919974,
+    "duration" : 2177
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ea6b531b38671f16",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739200901858,
+    "stop" : 1739200904298,
+    "duration" : 2440
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5e2b6b4d7a85544a",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739200904299,
+    "stop" : 1739200915549,
+    "duration" : 11250
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2025e485ef2a437e",
+  "name" : "Admin deletes a student account",
+  "time" : {
+    "start" : 1739200919975,
+    "stop" : 1739200921503,
+    "duration" : 1528
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "38f9f984b516b178",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1739200923749,
+    "stop" : 1739200925459,
+    "duration" : 1710
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b7f3025762bf232",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1739200927220,
+    "stop" : 1739200928926,
+    "duration" : 1706
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "de6a02240d1968c5",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1739200921504,
+    "stop" : 1739200922037,
+    "duration" : 533
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
