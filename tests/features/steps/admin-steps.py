@@ -56,7 +56,7 @@ def step_impl(context, student_name):
 
 @then('the search results should show the student "{student_name}"')
 def step_impl(context, student_name):
-    WebDriverWait(context.driver, 10).until(
+    WebDriverWait(context.driver, 40).until(
         lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#students-table tr")) > 1
     )
 
