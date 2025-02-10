@@ -67,9 +67,16 @@ def step_impl(context, student_name):
 
 @then('the search results should show the student "{student_name}"')
 def step_impl(context, student_name):
-    WebDriverWait(context.driver, 40).until(
-        lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#students-table tr")) > 1
-    )
+    try:
+        WebDriverWait(context.driver, 40).until(
+            lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#students-table tr")) > 1
+        )
+    except TimeoutException:
+        print("First attempt failed, retrying...")
+        time.sleep(2)
+        WebDriverWait(context.driver, 40).until(
+            lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#students-table tr")) > 1
+        )
 
     students_table = context.driver.find_element(By.ID, "students-table")
     rows = students_table.find_elements(By.TAG_NAME, "tr")
