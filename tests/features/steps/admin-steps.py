@@ -5,6 +5,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import common_steps
+import logging
+import time
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Use constants from common_steps
+WAIT_TIMEOUT = common_steps.WAIT_TIMEOUT
+BASE_URL = common_steps.BASE_URL
 
 def before_all(context):
     options = Options()
@@ -14,7 +24,6 @@ def before_all(context):
 
     context.driver = webdriver.Chrome(options=options)
     context.driver.implicitly_wait(5)
-
 def after_all(context):
     context.driver.quit()
 
@@ -47,12 +56,14 @@ def step_impl(context, student_id):
     search_bar = context.driver.find_element(By.ID, "search-bar")
     search_bar.send_keys(student_id)
     assert wait_for_updated_table(context), "Table was not updated with search results."
+    time.sleep(10)
 
 @given('I enter username, "{student_name}" into the search bar')
 def step_impl(context, student_name):
     search_bar = context.driver.find_element(By.ID, "search-bar")
     search_bar.send_keys(student_name)
     assert wait_for_updated_table(context), "Table was not updated with search results."
+    time.sleep(10)
 
 @then('the search results should show the student "{student_name}"')
 def step_impl(context, student_name):
