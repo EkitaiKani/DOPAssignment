@@ -1,10 +1,13 @@
 name: Login test
-run-name: ${{ github.actor }} is testing the Login
+run-name: ${{ github.actor }} is testing the features
 
 on:
+  pull_request:
+    branches:
+      - tests
   push:
     branches:
-      - main
+      - tests
 
 jobs:
   setup:
@@ -86,42 +89,42 @@ jobs:
 
       - name: Run Behave Selenium Tests with Allure
         run: |
-          behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results
-
-      - name: Create issue on test failure
-        if: failure()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const issueTitle = `Behave Selenium Test Failure - ${new Date().toISOString().split('T')[0]}`;
+          python -m behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results --no-capture
+          
+      # - name: Create issue on test failure
+      #   if: failure()
+      #   uses: actions/github-script@v7
+      #   with:
+      #     script: |
+      #       const issueTitle = `Behave Selenium Test Failure - ${new Date().toISOString().split('T')[0]}`;
             
-            const issueBody = `
-            ## Behave Selenium Test Failure Detected
+      #       const issueBody = `
+      #       ## Behave Selenium Test Failure Detected
             
-            - **Failed at**: ${new Date().toISOString()}
-            - **Workflow Run**: ${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}
-            - **Commit**: ${process.env.GITHUB_SHA}
-            - **Branch**: ${process.env.GITHUB_REF}
+      #       - **Failed at**: ${new Date().toISOString()}
+      #       - **Workflow Run**: ${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}
+      #       - **Commit**: ${process.env.GITHUB_SHA}
+      #       - **Branch**: ${process.env.GITHUB_REF}
             
-            ### Test Details
-            The Behave Selenium test suite failed. Check the workflow run for detailed Allure reports and test outputs.
+      #       ### Test Details
+      #       The Behave Selenium test suite failed. Check the workflow run for detailed Allure reports and test outputs.
             
-            ### Next Steps
-            1. Review the Allure test results
-            2. Check for any browser compatibility issues
-            3. Verify test environment configuration
-            4. Investigate potential application changes that might have affected the tests
+      #       ### Next Steps
+      #       1. Review the Allure test results
+      #       2. Check for any browser compatibility issues
+      #       3. Verify test environment configuration
+      #       4. Investigate potential application changes that might have affected the tests
             
-            Please investigate the test failure and update the test suite if necessary.
-            `;
+      #       Please investigate the test failure and update the test suite if necessary.
+      #       `;
             
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: issueTitle,
-              body: issueBody,
-              labels: ['test-failure', 'behave-selenium']
-            });
+      #       await github.rest.issues.create({
+      #         owner: context.repo.owner,
+      #         repo: context.repo.repo,
+      #         title: issueTitle,
+      #         body: issueBody,
+      #         labels: ['test-failure', 'behave-selenium']
+      #       });
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
@@ -137,38 +140,60 @@ jobs:
           name: flask-log
           path: flask.log
 
+      # - name: Revert commit if tests fail
+      #   if: failure()
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      #     git revert --no-edit HEAD
+      #     git push origin HEAD:main  # Adjust branch if necessary
+
   allure_report:
     needs: setup  # Only run after tests are done
     runs-on: ubuntu-latest
     if: always()  # Run even if tests fail
 
     steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history to avoid missing history
+
       - name: Download Allure Results
         uses: actions/download-artifact@v4
         with:
           name: allure-results
           path: allure-results
 
-      - name: Download previous Allure history (if available)
+      - name: Ensure gh-pages branch exists
+        run: |
+          git fetch origin gh-pages || git checkout --orphan gh-pages
+
+      - name: Checkout previous Allure history
         uses: actions/checkout@v4
         with:
           ref: gh-pages
           path: gh-pages
-          fetch-depth: 1
+          fetch-depth: 0  # Ensure full history is available
+
+      - name: Copy previous history to results
+        run: |
+          mkdir -p allure-results/history
+          cp -r gh-pages/allure-history/history allure-results/ || true
 
       - name: Generate Allure Report with History
         uses: simple-elf/allure-report-action@v1
         with:
           allure_results: allure-results
-          allure_history: gh-pages/allure-history/login
-          gh_pages: gh-pages/allure-history/login
+          allure_history: gh-pages/allure-history
+          gh_pages: gh-pages/allure-history
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: gh-pages/allure-history/login
+          PUBLISH_DIR: gh-pages/allure-history
 
       - name: Set GitHub Status for Selenium Test Report
         uses: Sibz/github-status-action@v1
@@ -180,6 +205,7 @@ jobs:
           owner: EkitaiKani
           repository: EkitaiKani/DOPAssignment
           sha: ${{ github.sha }}
+
   deploy:
     needs: [setup, allure_report] 
     runs-on: ubuntu-latest
