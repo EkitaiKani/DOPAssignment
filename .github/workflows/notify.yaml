@@ -47,7 +47,7 @@ jobs:
         if: github.event_name == 'issues'
         uses: Sniddl/discord-commits@v1.6
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          webhook: ${{ secrets.DISCORD_ISSUES_URL }}
           template: "avatar-with-link"
           include-extras: true
           username: "GitHub Issues"
@@ -58,7 +58,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_UPDATES }}
+          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_ISSUES }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
