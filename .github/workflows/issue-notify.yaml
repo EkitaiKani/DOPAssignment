@@ -25,13 +25,15 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_ISSUES }}  # Rename to TOPIC_ID
-
+          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_ISSUES }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
           curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -H "Content-Type: application/json" \
-          -d '{
-            "chat_id": "'"${TELEGRAM_CHAT_ID}"'",
-            "parse_mode": "Markdown",
-            "text": "🆕 *New Issue Opened!*\n\n*Title:* '"${{ github.event.issue.title }}"'\n*Created by:* '"${{ github.event.issue.user.login }}"'\n*Link:* '"${{ github.event.issue.html_url }}"'"
-          }'
+          -d "{
+            \"chat_id\": \"${TELEGRAM_CHAT_ID}\",
+            \"parse_mode\": \"Markdown\",
+            \"text\": \"🆕 *New Issue Opened!*\n\n*Title:* ${ISSUE_TITLE}\n*Created by:* ${ISSUE_AUTHOR}\n[View Issue](${ISSUE_URL})\"
+          }"
