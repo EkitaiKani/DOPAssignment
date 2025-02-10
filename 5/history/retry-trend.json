@@ -1,9 +1,0 @@
-[ {
-  "buildOrder" : 5,
-  "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/5",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "run" : 4,
-    "retry" : 0
-  }
-} ]

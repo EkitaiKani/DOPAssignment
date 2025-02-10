@@ -1,0 +1,184 @@
+{
+  "uid" : "79db1ec3aa506134",
+  "name" : "Fill in admin login with one correct user data",
+  "fullName" : "Verify Login is valid: Fill in admin login with one correct user data",
+  "historyId" : "fe6f588b76fa1e1af42187d89229b268",
+  "time" : {
+    "start" : 1739159558522,
+    "stop" : 1739159558523,
+    "duration" : 1
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'Context' object has no attribute 'driver'\n",
+  "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 79, in step_impl\n    context.driver.get(f\"{BASE_URL}/login\")\n    ^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/runner.py\", line 321, in __getattr__\n    raise AttributeError(msg)\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "AttributeError: 'Context' object has no attribute 'driver'\n",
+    "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 79, in step_impl\n    context.driver.get(f\"{BASE_URL}/login\")\n    ^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/runner.py\", line 321, in __getattr__\n    raise AttributeError(msg)\n",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739159558522,
+        "stop" : 1739159558522,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739159558522,
+        "stop" : 1739159558522,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739159558522,
+        "stop" : 1739159558523,
+        "duration" : 1
+      },
+      "status" : "broken",
+      "statusMessage" : "AttributeError: 'Context' object has no attribute 'driver'\n",
+      "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 79, in step_impl\n    context.driver.get(f\"{BASE_URL}/login\")\n    ^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/runner.py\", line 321, in __getattr__\n    raise AttributeError(msg)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739159558523,
+        "stop" : 1739159558523,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Input userName \"Admin\" and passWord \"supersecretpassword\"",
+      "time" : {
+        "start" : 1739159558523,
+        "stop" : 1739159558523,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1739159558523,
+        "stop" : 1739159558523,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Verify admin login",
+      "time" : {
+        "start" : 1739159558523,
+        "stop" : 1739159558523,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739159558523,
+        "stop" : 1739159558523,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "79db1ec3aa506134.json",
+  "parameterValues" : [ ]
+}
