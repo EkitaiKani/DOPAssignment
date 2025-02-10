@@ -1,0 +1,101 @@
+[ {
+  "uid" : "b0a6387dd42ed123",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1739203042774,
+    "stop" : 1739203043194,
+    "duration" : 420
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9374977de3a0b582",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1739203041882,
+    "stop" : 1739203042308,
+    "duration" : 426
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9f87c2c1df4b5597",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1739203041439,
+    "stop" : 1739203041882,
+    "duration" : 443
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "5ed32340bb172133",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1739203042308,
+    "stop" : 1739203042774,
+    "duration" : 466
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "900be3b3ec8c99f",
+  "name" : "Admin modifies a student account",
+  "time" : {
+    "start" : 1739203040158,
+    "stop" : 1739203040600,
+    "duration" : 442
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "758e6ff931abe891",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739203039713,
+    "stop" : 1739203040157,
+    "duration" : 444
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "32215edded149da7",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739203038428,
+    "stop" : 1739203039265,
+    "duration" : 837
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "8efdd49215b5d401",
+  "name" : "Admin deletes a student account",
+  "time" : {
+    "start" : 1739203040601,
+    "stop" : 1739203041016,
+    "duration" : 415
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "75cd674292292113",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739203039266,
+    "stop" : 1739203039712,
+    "duration" : 446
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9d3bbaacdf0fa603",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1739203041017,
+    "stop" : 1739203041438,
+    "duration" : 421
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
