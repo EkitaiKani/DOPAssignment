@@ -91,40 +91,40 @@ jobs:
         run: |
           python -m behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results --no-capture
 
-      # - name: Create issue on test failure
-      #   if: failure()
-      #   uses: actions/github-script@v7
-      #   with:
-      #     script: |
-      #       const issueTitle = `Behave Selenium Test Failure - ${new Date().toISOString().split('T')[0]}`;
+      - name: Create issue on test failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueTitle = `Behave Selenium Test Failure - ${new Date().toISOString().split('T')[0]}`;
 
-      #       const issueBody = `
-      #       ## Behave Selenium Test Failure Detected
+            const issueBody = `
+            ## Behave Selenium Test Failure Detected
 
-      #       - **Failed at**: ${new Date().toISOString()}
-      #       - **Workflow Run**: ${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}
-      #       - **Commit**: ${process.env.GITHUB_SHA}
-      #       - **Branch**: ${process.env.GITHUB_REF}
+            - **Failed at**: ${new Date().toISOString()}
+            - **Workflow Run**: ${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}
+            - **Commit**: ${process.env.GITHUB_SHA}
+            - **Branch**: ${process.env.GITHUB_REF}
 
-      #       ### Test Details
-      #       The Behave Selenium test suite failed. Check the workflow run for detailed Allure reports and test outputs.
+            ### Test Details
+            The Behave Selenium test suite failed. Check the workflow run for detailed Allure reports and test outputs.
 
-      #       ### Next Steps
-      #       1. Review the Allure test results
-      #       2. Check for any browser compatibility issues
-      #       3. Verify test environment configuration
-      #       4. Investigate potential application changes that might have affected the tests
+            ### Next Steps
+            1. Review the Allure test results
+            2. Check for any browser compatibility issues
+            3. Verify test environment configuration
+            4. Investigate potential application changes that might have affected the tests
 
-      #       Please investigate the test failure and update the test suite if necessary.
-      #       `;
+            Please investigate the test failure and update the test suite if necessary.
+            `;
 
-      #       await github.rest.issues.create({
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo,
-      #         title: issueTitle,
-      #         body: issueBody,
-      #         labels: ['test-failure', 'behave-selenium']
-      #       });
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issueTitle,
+              body: issueBody,
+              labels: ['test-failure', 'behave-selenium']
+            });
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
