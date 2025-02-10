@@ -1,0 +1,101 @@
+[ {
+  "uid" : "6df8e5939f528bc1",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739202658438,
+    "stop" : 1739202662963,
+    "duration" : 4525
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "2cc72f9403bf755d",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739202662963,
+    "stop" : 1739202663398,
+    "duration" : 435
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "cd90be2ab7e73d40",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1739202666415,
+    "stop" : 1739202666865,
+    "duration" : 450
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "6e2e36a8e2f2db36",
+  "name" : "Admin deletes a student account",
+  "time" : {
+    "start" : 1739202664266,
+    "stop" : 1739202664711,
+    "duration" : 445
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "1f2885d40c2289f2",
+  "name" : "Admin modifies a student account",
+  "time" : {
+    "start" : 1739202663833,
+    "stop" : 1739202664265,
+    "duration" : 432
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "7a81707b27d26f61",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1739202665547,
+    "stop" : 1739202665985,
+    "duration" : 438
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "e4e0c247faff71eb",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1739202665130,
+    "stop" : 1739202665546,
+    "duration" : 416
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "a4cf51760bfbb78c",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739202663399,
+    "stop" : 1739202663832,
+    "duration" : 433
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "c8ff19a6f59ecc45",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1739202665985,
+    "stop" : 1739202666415,
+    "duration" : 430
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "ad3ae330749b4a96",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1739202664712,
+    "stop" : 1739202665130,
+    "duration" : 418
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
