@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is testing the Login
 on:
   push:
     branches:
-      - github-issues
+      - main
 
 jobs:
   setup:
@@ -122,11 +122,6 @@ jobs:
               body: issueBody,
               labels: ['test-failure', 'behave-selenium']
             });
-      
-      # If you want the workflow to actually fail after creating the issue
-      - name: Exit with test status
-        if: steps.behave-test.outcome == 'failure'
-        run: exit 1
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4

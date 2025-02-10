@@ -1,0 +1,37 @@
+name: Issue Notification
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord Notification
+        uses: Sniddl/discord-commits@v1.6
+        with:
+          webhook: ${{ secrets.DISCORD_ISSUES_URL }}
+          template: "avatar-with-link"
+          username: "GitHub Issues"
+          message: |
+            🆕 New Issue Opened!
+            **Title:** ${{ github.event.issue.title }}
+            **Description:** ${{ github.event.issue.body }}
+            **Created by:** ${{ github.event.issue.user.login }}
+            **Link:** ${{ github.event.issue.html_url }}
+
+      - name: Send Telegram Notification
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_ISSUES }}  # Rename to TOPIC_ID
+
+        run: |
+          curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "chat_id": "'"${TELEGRAM_CHAT_ID}"'",
+            "parse_mode": "Markdown",
+            "text": "🆕 *New Issue Opened!*\n\n*Title:* '"${{ github.event.issue.title }}"'\n*Created by:* '"${{ github.event.issue.user.login }}"'\n*Link:* '"${{ github.event.issue.html_url }}"'"
+          }'
