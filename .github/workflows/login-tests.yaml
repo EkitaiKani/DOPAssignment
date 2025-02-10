@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is testing the Login
 on:
   push:
     branches:
-      - github-actions
+      - main
 
 jobs:
   setup:
@@ -84,12 +84,44 @@ jobs:
           echo "Flask server started"
           sleep 10
 
-      - name: List open ports in GitHub Actions
-        run: netstat -tuln
-
       - name: Run Behave Selenium Tests with Allure
         run: |
           behave ./tests/features -f allure_behave.formatter:AllureFormatter -o allure-results
+
+      - name: Create issue on test failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueTitle = `Behave Selenium Test Failure - ${new Date().toISOString().split('T')[0]}`;
+            
+            const issueBody = `
+            ## Behave Selenium Test Failure Detected
+            
+            - **Failed at**: ${new Date().toISOString()}
+            - **Workflow Run**: ${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}
+            - **Commit**: ${process.env.GITHUB_SHA}
+            - **Branch**: ${process.env.GITHUB_REF}
+            
+            ### Test Details
+            The Behave Selenium test suite failed. Check the workflow run for detailed Allure reports and test outputs.
+            
+            ### Next Steps
+            1. Review the Allure test results
+            2. Check for any browser compatibility issues
+            3. Verify test environment configuration
+            4. Investigate potential application changes that might have affected the tests
+            
+            Please investigate the test failure and update the test suite if necessary.
+            `;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issueTitle,
+              body: issueBody,
+              labels: ['test-failure', 'behave-selenium']
+            });
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
@@ -148,3 +180,16 @@ jobs:
           owner: EkitaiKani
           repository: EkitaiKani/DOPAssignment
           sha: ${{ github.sha }}
+  deploy:
+    needs: [setup, allure_report] 
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Trigger Render Deployment
+        run: |
+          curl -X POST "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys" \
+               -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+               -H "Content-Type: application/json"
