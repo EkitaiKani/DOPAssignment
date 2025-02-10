@@ -1,4 +1,4 @@
-name: Login test
+name: Automated Tests
 run-name: ${{ github.actor }} is testing the features
 
 on:
@@ -10,7 +10,7 @@ on:
       - tests
 
 jobs:
-  setup:
+  setup-and-test:
     runs-on: ubuntu-latest
 
     env:
