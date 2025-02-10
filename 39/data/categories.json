@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "NameError: name 'TimeoutException' is not defined\n",
+      "children" : [ {
+        "name" : "Admin searches for a student account by Student ID",
+        "uid" : "1c241b0d1a70352d",
+        "parentUid" : "1c6e99586a71fa5e693a09b6664f75b7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739196542289,
+          "stop" : 1739196584016,
+          "duration" : 41727
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1c6e99586a71fa5e693a09b6664f75b7"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
