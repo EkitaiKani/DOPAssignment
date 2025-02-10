@@ -2,6 +2,7 @@ name: Issue Notification
 on:
   issues:
     types: [opened]
+  workflow_dispatch:  # Enables manual trigger
 
 jobs:
   notify:
