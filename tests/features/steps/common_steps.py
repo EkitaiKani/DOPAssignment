@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 # Constants
 WAIT_TIMEOUT = 10
 BASE_URL = "http://127.0.0.1:5000"
+CHROME_DRIVER_PATH = '/usr/bin/chromedriver'
 
 def setup_chrome_options():
     """Configure Chrome options for headless mode, no GPU, etc."""
