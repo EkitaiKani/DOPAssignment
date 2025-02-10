@@ -7,17 +7,16 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send Discord Notification
-        uses: Sniddl/discord-commits@v1.6
+      - name: Send issue to Discord
+        uses: dawidd6/action-send-discord-message@v3
         with:
-          webhook: ${{ secrets.DISCORD_ISSUES_URL }}
-          template: "avatar-with-link"
+          webhook_url: ${{ secrets.DISCORD_ISSUES_URL }}
           message: |
-            🆕 New Issue Opened!
-            **Title:** ${{ github.event.issue.title }}
-            **Description:** ${{ github.event.issue.body }}
-            **Created by:** ${{ github.event.issue.user.login }}
-            **Link:** ${{ github.event.issue.html_url }}
+            **New Issue Created**:
+            - **Title**: ${{ github.event.issue.title }}
+            - **URL**: ${{ github.event.issue.html_url }}
+            - **Author**: ${{ github.event.issue.user.login }}
+            - **Description**: ${{ github.event.issue.body }}
 
       - name: Send Telegram Notification
         env:
