@@ -1,0 +1,348 @@
+{
+  "uid" : "f96cecaf55295cf2",
+  "name" : "Admin modifies a student account",
+  "fullName" : "Admin Page Features: Admin modifies a student account",
+  "historyId" : "5b5f71369e9ec6cac373c4b8a577c4db",
+  "time" : {
+    "start" : 1739202911631,
+    "stop" : 1739202912073,
+    "duration" : 442
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55cc0678853a <unknown>\n#1 0x55cc06283f00 <unknown>\n#2 0x55cc0627c114 <unknown>\n#3 0x55cc0626c4b9 <unknown>\n#4 0x55cc0626e1c4 <unknown>\n#5 0x55cc0626c76d <unknown>\n#6 0x55cc0626c1e5 <unknown>\n#7 0x55cc0626bec2 <unknown>\n#8 0x55cc06269e56 <unknown>\n#9 0x55cc0626a4ca <unknown>\n#10 0x55cc06286879 <unknown>\n#11 0x55cc06317bf5 <unknown>\n#12 0x55cc062f85a2 <unknown>\n#13 0x55cc06316f84 <unknown>\n#14 0x55cc062f8343 <unknown>\n#15 0x55cc062c578a <unknown>\n#16 0x55cc062c69de <unknown>\n#17 0x55cc067522cb <unknown>\n#18 0x55cc06756242 <unknown>\n#19 0x55cc0673f7ac <unknown>\n#20 0x55cc06756df7 <unknown>\n#21 0x55cc06723b2f <unknown>\n#22 0x55cc067771a8 <unknown>\n#23 0x55cc06777370 <unknown>\n#24 0x55cc067873b6 <unknown>\n#25 0x7f0a4849ca94 <unknown>\n#26 0x7f0a48529c3c <unknown>\n\n",
+  "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 65, in step_impl\n    context.driver.get(f\"{BASE_URL}/login\")\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 454, in get\n    self.execute(Command.GET, {\"url\": url})\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55cc0678853a <unknown>\n#1 0x55cc06283f00 <unknown>\n#2 0x55cc0627c114 <unknown>\n#3 0x55cc0626c4b9 <unknown>\n#4 0x55cc0626e1c4 <unknown>\n#5 0x55cc0626c76d <unknown>\n#6 0x55cc0626c1e5 <unknown>\n#7 0x55cc0626bec2 <unknown>\n#8 0x55cc06269e56 <unknown>\n#9 0x55cc0626a4ca <unknown>\n#10 0x55cc06286879 <unknown>\n#11 0x55cc06317bf5 <unknown>\n#12 0x55cc062f85a2 <unknown>\n#13 0x55cc06316f84 <unknown>\n#14 0x55cc062f8343 <unknown>\n#15 0x55cc062c578a <unknown>\n#16 0x55cc062c69de <unknown>\n#17 0x55cc067522cb <unknown>\n#18 0x55cc06756242 <unknown>\n#19 0x55cc0673f7ac <unknown>\n#20 0x55cc06756df7 <unknown>\n#21 0x55cc06723b2f <unknown>\n#22 0x55cc067771a8 <unknown>\n#23 0x55cc06777370 <unknown>\n#24 0x55cc067873b6 <unknown>\n#25 0x7f0a4849ca94 <unknown>\n#26 0x7f0a48529c3c <unknown>\n\n",
+    "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 65, in step_impl\n    context.driver.get(f\"{BASE_URL}/login\")\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 454, in get\n    self.execute(Command.GET, {\"url\": url})\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739202911631,
+        "stop" : 1739202911948,
+        "duration" : 317
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739202911948,
+        "stop" : 1739202911948,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739202911948,
+        "stop" : 1739202912072,
+        "duration" : 124
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55cc0678853a <unknown>\n#1 0x55cc06283f00 <unknown>\n#2 0x55cc0627c114 <unknown>\n#3 0x55cc0626c4b9 <unknown>\n#4 0x55cc0626e1c4 <unknown>\n#5 0x55cc0626c76d <unknown>\n#6 0x55cc0626c1e5 <unknown>\n#7 0x55cc0626bec2 <unknown>\n#8 0x55cc06269e56 <unknown>\n#9 0x55cc0626a4ca <unknown>\n#10 0x55cc06286879 <unknown>\n#11 0x55cc06317bf5 <unknown>\n#12 0x55cc062f85a2 <unknown>\n#13 0x55cc06316f84 <unknown>\n#14 0x55cc062f8343 <unknown>\n#15 0x55cc062c578a <unknown>\n#16 0x55cc062c69de <unknown>\n#17 0x55cc067522cb <unknown>\n#18 0x55cc06756242 <unknown>\n#19 0x55cc0673f7ac <unknown>\n#20 0x55cc06756df7 <unknown>\n#21 0x55cc06723b2f <unknown>\n#22 0x55cc067771a8 <unknown>\n#23 0x55cc06777370 <unknown>\n#24 0x55cc067873b6 <unknown>\n#25 0x7f0a4849ca94 <unknown>\n#26 0x7f0a48529c3c <unknown>\n\n",
+      "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 65, in step_impl\n    context.driver.get(f\"{BASE_URL}/login\")\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 454, in get\n    self.execute(Command.GET, {\"url\": url})\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739202912073,
+        "stop" : 1739202912073,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given I am logged in as an admin",
+      "time" : {
+        "start" : 1739202912073,
+        "stop" : 1739202912073,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I choose to edit student \"John Tan\"",
+      "time" : {
+        "start" : 1739202912073,
+        "stop" : 1739202912073,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I update the diploma of study to \"Diploma in Business\"",
+      "time" : {
+        "start" : 1739202912073,
+        "stop" : 1739202912073,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I save the changes",
+      "time" : {
+        "start" : 1739202912073,
+        "stop" : 1739202912073,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then the student \"John Tan\" should be in \"Diploma in Business\" as his diploma of study",
+      "time" : {
+        "start" : 1739202912073,
+        "stop" : 1739202912073,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Admin Page Features"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 4,
+        "skipped" : 0,
+        "passed" : 12,
+        "unknown" : 0,
+        "total" : 16
+      },
+      "items" : [ {
+        "uid" : "1f2885d40c2289f2",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/54/#testresult/1f2885d40c2289f2",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55bedafd053a <unknown>\n#1 0x55bedaacbf00 <unknown>\n#2 0x55bedaac4114 <unknown>\n#3 0x55bedaab44b9 <unknown>\n#4 0x55bedaab61c4 <unknown>\n#5 0x55bedaab476d <unknown>\n#6 0x55bedaab41e5 <unknown>\n#7 0x55bedaab3ec2 <unknown>\n#8 0x55bedaab1e56 <unknown>\n#9 0x55bedaab24ca <unknown>\n#10 0x55bedaace879 <unknown>\n#11 0x55bedab5fbf5 <unknown>\n#12 0x55bedab405a2 <unknown>\n#13 0x55bedab5ef84 <unknown>\n#14 0x55bedab40343 <unknown>\n#15 0x55bedab0d78a <unknown>\n#16 0x55bedab0e9de <unknown>\n#17 0x55bedaf9a2cb <unknown>\n#18 0x55bedaf9e242 <unknown>\n#19 0x55bedaf877ac <unknown>\n#20 0x55bedaf9edf7 <unknown>\n#21 0x55bedaf6bb2f <unknown>\n#22 0x55bedafbf1a8 <unknown>\n#23 0x55bedafbf370 <unknown>\n#24 0x55bedafcf3b6 <unknown>\n#25 0x7fe18c49ca94 <unknown>\n#26 0x7fe18c529c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739202663833,
+          "stop" : 1739202664265,
+          "duration" : 432
+        }
+      }, {
+        "uid" : "5cd4f52dc7e0c1bf",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/51/#testresult/5cd4f52dc7e0c1bf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739202042102,
+          "stop" : 1739202044236,
+          "duration" : 2134
+        }
+      }, {
+        "uid" : "a33011ec534fdedc",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/50/#testresult/a33011ec534fdedc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201782020,
+          "stop" : 1739201784166,
+          "duration" : 2146
+        }
+      }, {
+        "uid" : "1fafed9964909cc4",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/49/#testresult/1fafed9964909cc4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201665153,
+          "stop" : 1739201667281,
+          "duration" : 2128
+        }
+      }, {
+        "uid" : "ae8082e62a70e2bf",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/48/#testresult/ae8082e62a70e2bf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201225278,
+          "stop" : 1739201227467,
+          "duration" : 2189
+        }
+      }, {
+        "uid" : "3338c3745ebcbfd9",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/46/#testresult/3338c3745ebcbfd9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201046328,
+          "stop" : 1739201048517,
+          "duration" : 2189
+        }
+      }, {
+        "uid" : "14d80bd55121cdbf",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/45/#testresult/14d80bd55121cdbf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200917797,
+          "stop" : 1739200919974,
+          "duration" : 2177
+        }
+      }, {
+        "uid" : "1cd61c06f3b24036",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/44/#testresult/1cd61c06f3b24036",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200860709,
+          "stop" : 1739200862856,
+          "duration" : 2147
+        }
+      }, {
+        "uid" : "e0d915c0307f8da3",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/43/#testresult/e0d915c0307f8da3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200623803,
+          "stop" : 1739200625876,
+          "duration" : 2073
+        }
+      }, {
+        "uid" : "53806daf98e217d8",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/41/#testresult/53806daf98e217d8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200269663,
+          "stop" : 1739200271695,
+          "duration" : 2032
+        }
+      }, {
+        "uid" : "b835ac7968f8ebb8",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/42/#testresult/b835ac7968f8ebb8",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'find_element'\n",
+        "time" : {
+          "start" : 1739200243215,
+          "stop" : 1739200243704,
+          "duration" : 489
+        }
+      }, {
+        "uid" : "86c1a79b606b535a",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/40/#testresult/86c1a79b606b535a",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'find_element'\n",
+        "time" : {
+          "start" : 1739200163475,
+          "stop" : 1739200164019,
+          "duration" : 544
+        }
+      }, {
+        "uid" : "b32d519af21eda71",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/b32d519af21eda71",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196909981,
+          "stop" : 1739196912085,
+          "duration" : 2104
+        }
+      }, {
+        "uid" : "257171a0592f97a9",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/257171a0592f97a9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196587718,
+          "stop" : 1739196589783,
+          "duration" : 2065
+        }
+      }, {
+        "uid" : "7fc83cbc0215c3b",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/38/#testresult/7fc83cbc0215c3b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739195836810,
+          "stop" : 1739195838937,
+          "duration" : 2127
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "f96cecaf55295cf2.json",
+  "parameterValues" : [ ]
+}
