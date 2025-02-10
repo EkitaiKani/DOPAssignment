@@ -41,6 +41,12 @@ def serve_admin():
         return render_template("admin.html")
     return redirect("/login")
 
+@app.route("/redemptionItem")
+def serve_redemptionItem():
+    if 'userID' in session:
+        return render_template("redemptionItem.html")
+    return redirect("/login")
+
 @app.route("/editStudent")
 def serve_editStudent():
     if 'userID' in session:
