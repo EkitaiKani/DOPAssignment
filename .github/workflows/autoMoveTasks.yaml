@@ -1,0 +1,44 @@
+name: Close Issue on PR Merge
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  close-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Get Issue linked to PR and Close It
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          if [[ "${{ github.event.pull_request.merged }}" == "true" ]]; then
+            PR_NUMBER="${{ github.event.pull_request.number }}"
+            
+            PR_DETAILS=$(curl -s -H "Authorization: token $GH_TOKEN" \
+                "https://api.github.com/repos/EkitaiKani/DOPAssignment/pulls/$PR_NUMBER")
+            
+            PR_BODY=$(echo "$PR_DETAILS" | jq -r '.body')
+
+            if [ -n "$PR_BODY" ] && [[ "$PR_BODY" != "null" ]]; then
+              ISSUE_NUMBER=$(echo "$PR_BODY" | grep -o '#[0-9]\+' | tr -d '#')
+              echo "Debug: Extracted Issue Number = $ISSUE_NUMBER"
+
+              if [ -n "$ISSUE_NUMBER" ]; then
+                echo "Debug: Found linked issue #$ISSUE_NUMBER"
+
+                echo "Debug: Closing issue #$ISSUE_NUMBER..."
+                curl -X PATCH -H "Authorization: token $GH_TOKEN" \
+                     -H "Accept: application/vnd.github.v3+json" \
+                     -d '{"state": "closed"}' \
+                     "https://api.github.com/repos/EkitaiKani/DOPAssignment/issues/$ISSUE_NUMBER"
+
+              fi
+            fi
+          else
+            echo "Debug: PR was closed but not merged, skipping issue closure."
+          fi
