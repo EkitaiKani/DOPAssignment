@@ -1,0 +1,239 @@
+{
+  "uid" : "dcb60791df20f805",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "fullName" : "Verify Login is valid: Fill in student login with multiple correct user data",
+  "historyId" : "32f92818a8a829b8b22fca159efe65b5",
+  "time" : {
+    "start" : 1739195303120,
+    "stop" : 1739195304822,
+    "duration" : 1702
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739195303121,
+        "stop" : 1739195303435,
+        "duration" : 314
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739195303436,
+        "stop" : 1739195303436,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739195303436,
+        "stop" : 1739195303562,
+        "duration" : 126
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739195303562,
+        "stop" : 1739195303571,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Input multiple \"John Tan\" and \"password1\"",
+      "time" : {
+        "start" : 1739195303571,
+        "stop" : 1739195303700,
+        "duration" : 129
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1739195303700,
+        "stop" : 1739195304753,
+        "duration" : 1053
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Verify student login",
+      "time" : {
+        "start" : 1739195304753,
+        "stop" : 1739195304758,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739195304758,
+        "stop" : 1739195304821,
+        "duration" : 63
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "passWord",
+    "value" : "password1"
+  }, {
+    "name" : "userName",
+    "value" : "John Tan"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "d849c8d9abaf3239",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/34/#testresult/d849c8d9abaf3239",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739195236440,
+          "stop" : 1739195238107,
+          "duration" : 1667
+        }
+      }, {
+        "uid" : "83910c27ec25dbfc",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/33/#testresult/83910c27ec25dbfc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739194515050,
+          "stop" : 1739194516802,
+          "duration" : 1752
+        }
+      }, {
+        "uid" : "6386cfcffff57b96",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/24/#testresult/6386cfcffff57b96",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Invalid password\nMessage: unexpected alert open: {Alert text : Invalid password}\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55ac0a87553a <unknown>\n#1 0x55ac0a370f00 <unknown>\n#2 0x55ac0a404a0f <unknown>\n#3 0x55ac0a3e5343 <unknown>\n#4 0x55ac0a3b278a <unknown>\n#5 0x55ac0a3b39de <unknown>\n#6 0x55ac0a83f2cb <unknown>\n#7 0x55ac0a843242 <unknown>\n#8 0x55ac0a82c7ac <unknown>\n#9 0x55ac0a843df7 <unknown>\n#10 0x55ac0a810b2f <unknown>\n#11 0x55ac0a8641a8 <unknown>\n#12 0x55ac0a864370 <unknown>\n#13 0x55ac0a8743b6 <unknown>\n#14 0x7f64aea9ca94 <unknown>\n#15 0x7f64aeb29c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739182454474,
+          "stop" : 1739182456200,
+          "duration" : 1726
+        }
+      }, {
+        "uid" : "9b21208225f64dce",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/23/#testresult/9b21208225f64dce",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Invalid password\nMessage: unexpected alert open: {Alert text : Invalid password}\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x5594736dd53a <unknown>\n#1 0x5594731d8f00 <unknown>\n#2 0x55947326ca0f <unknown>\n#3 0x55947324d343 <unknown>\n#4 0x55947321a78a <unknown>\n#5 0x55947321b9de <unknown>\n#6 0x5594736a72cb <unknown>\n#7 0x5594736ab242 <unknown>\n#8 0x5594736947ac <unknown>\n#9 0x5594736abdf7 <unknown>\n#10 0x559473678b2f <unknown>\n#11 0x5594736cc1a8 <unknown>\n#12 0x5594736cc370 <unknown>\n#13 0x5594736dc3b6 <unknown>\n#14 0x7f493669ca94 <unknown>\n#15 0x7f4936729c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739180542289,
+          "stop" : 1739180543960,
+          "duration" : 1671
+        }
+      }, {
+        "uid" : "a4b9ccdcbede5e05",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/22/#testresult/a4b9ccdcbede5e05",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Invalid password\nMessage: unexpected alert open: {Alert text : Invalid password}\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55bcd6fe453a <unknown>\n#1 0x55bcd6adff00 <unknown>\n#2 0x55bcd6b73a0f <unknown>\n#3 0x55bcd6b54343 <unknown>\n#4 0x55bcd6b2178a <unknown>\n#5 0x55bcd6b229de <unknown>\n#6 0x55bcd6fae2cb <unknown>\n#7 0x55bcd6fb2242 <unknown>\n#8 0x55bcd6f9b7ac <unknown>\n#9 0x55bcd6fb2df7 <unknown>\n#10 0x55bcd6f7fb2f <unknown>\n#11 0x55bcd6fd31a8 <unknown>\n#12 0x55bcd6fd3370 <unknown>\n#13 0x55bcd6fe33b6 <unknown>\n#14 0x7f49c1e9ca94 <unknown>\n#15 0x7f49c1f29c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739179662181,
+          "stop" : 1739179663818,
+          "duration" : 1637
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "dcb60791df20f805.json",
+  "parameterValues" : [ "password1", "John Tan" ]
+}
