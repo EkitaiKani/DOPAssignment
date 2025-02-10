@@ -5,24 +5,20 @@ Feature: Admin Page Features
         And Browser console logging is enabled for error tracking
         When Open Login Page
         Then Verify page loads without console errors
-        And     Close browser
 
     Scenario: Admin lists all student accounts
         Given I am logged in as an admin
         Then I should see a list of all student accounts
-        And     Close browser
     
     Scenario: Admin searches for a student account by Student ID
         Given I am logged in as an admin
         And I enter studentID, "A1234567X" into the search bar
         Then the search results should show the student "John Tan"
-        And     Close browser
 
     Scenario: Admin searches for a student account by Student Name
         Given I am logged in as an admin
         And I enter username, "John Tan" into the search bar
         Then the search results should show the student "John Tan"
-		And     Close browser
 
     Scenario: Admin creates a new student account
         Given I am logged in as an admin
@@ -37,14 +33,6 @@ Feature: Admin Page Features
         And I enter "Email Address" as "johnpork@test.com"
         And I submit the form
         Then the student "John Pork" should be added to the student list
-		And     Close browser
-
-    #Scenario: Admin uploads a CSV file to create student accounts
-    #    Given I am logged in as an admin
-    #    And I click on "Upload CSV"
-    #    And I select "students.csv" file
-    #    And I submit the upload form
-    #    Then student accounts should be populated from the file
 
     Scenario: Admin modifies a student account
         Given I am logged in as an admin
@@ -52,11 +40,9 @@ Feature: Admin Page Features
         And I update the diploma of study to "Diploma in Business"
         And I save the changes
         Then the student "John Tan" should be in "Diploma in Business" as his diploma of study
-		And     Close browser
 
     Scenario: Admin deletes a student account
         Given I am logged in as an admin
         And I choose to delete student "John Pork"
         When I confirm deletion
         Then the student "John Pork" should no longer be in the student list
-		And     Close browser
