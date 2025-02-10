@@ -50,6 +50,6 @@ Feature: Admin Page Features
 
     Scenario: Admin deletes a student account
         Given I am logged in as an admin
-        And I choose to delete student "John Tan"
+        And I choose to delete student "John Pork"
         When I confirm deletion
-        Then the student "John Tan" should no longer be in the student list
+        Then the student "John Pork" should no longer be in the student list
