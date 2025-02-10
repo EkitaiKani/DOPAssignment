@@ -149,7 +149,7 @@ jobs:
       #     git push origin HEAD:main  # Adjust branch if necessary
 
   allure_report:
-    needs: setup
+    needs: setup-and-test
     runs-on: ubuntu-latest
     if: always()
 
