@@ -2,7 +2,6 @@ name: Issue Notification
 on:
   issues:
     types: [opened]
-  workflow_dispatch:  # Enables manual trigger
 
 jobs:
   notify:
@@ -13,7 +12,6 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_ISSUES_URL }}
           template: "avatar-with-link"
-          username: "GitHub Issues"
           message: |
             🆕 New Issue Opened!
             **Title:** ${{ github.event.issue.title }}
