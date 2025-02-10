@@ -1,0 +1,218 @@
+{
+  "uid" : "19fac95808fd9767",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "fullName" : "Verify Login is valid: Fill in student login with multiple correct user data",
+  "historyId" : "38734b3559bb2ffcb5ec94b675640db6",
+  "time" : {
+    "start" : 1739200170128,
+    "stop" : 1739200171812,
+    "duration" : 1684
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739200170128,
+        "stop" : 1739200170457,
+        "duration" : 329
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739200170457,
+        "stop" : 1739200170457,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739200170458,
+        "stop" : 1739200170559,
+        "duration" : 101
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739200170559,
+        "stop" : 1739200170569,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Input multiple \"Sarah Lim\" and \"password2\"",
+      "time" : {
+        "start" : 1739200170569,
+        "stop" : 1739200170693,
+        "duration" : 124
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1739200170693,
+        "stop" : 1739200171744,
+        "duration" : 1051
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Verify student login",
+      "time" : {
+        "start" : 1739200171744,
+        "stop" : 1739200171748,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739200171748,
+        "stop" : 1739200171812,
+        "duration" : 64
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "passWord",
+    "value" : "password2"
+  }, {
+    "name" : "userName",
+    "value" : "Sarah Lim"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "aeb9abdfa9eb5d7c",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/aeb9abdfa9eb5d7c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196919380,
+          "stop" : 1739196921085,
+          "duration" : 1705
+        }
+      }, {
+        "uid" : "4491b7baaa77ed69",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/4491b7baaa77ed69",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196596995,
+          "stop" : 1739196598674,
+          "duration" : 1679
+        }
+      }, {
+        "uid" : "7dcb9b57fa602029",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/38/#testresult/7dcb9b57fa602029",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739195846369,
+          "stop" : 1739195848068,
+          "duration" : 1699
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "19fac95808fd9767.json",
+  "parameterValues" : [ "password2", "Sarah Lim" ]
+}
