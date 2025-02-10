@@ -54,7 +54,7 @@ def log_console_errors(context):
     return None
 
 # Step definitions
-@given(u'Chrome browser is launched')
+@given(u'Chrome browser is launch')
 def step_impl(context):
     context.driver = setup_chrome_driver()
     context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
