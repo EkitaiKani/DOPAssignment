@@ -16,6 +16,17 @@ logger = logging.getLogger(__name__)
 WAIT_TIMEOUT = common_steps.WAIT_TIMEOUT
 BASE_URL = common_steps.BASE_URL
 
+def before_all(context):
+    options = Options()
+    options.add_argument("--headless")  
+    options.add_argument("--disable-gpu")  
+    options.add_argument("--window-size=1920x1080") 
+
+    context.driver = webdriver.Chrome(options=options)
+    context.driver.implicitly_wait(5)
+def after_all(context):
+    context.driver.quit()
+
 @given('I am logged in as an admin')
 def step_impl(context):
     context.driver.find_element(By.ID, "InputUsername").send_keys("Admin")
