@@ -207,8 +207,8 @@ jobs:
     needs: setup-and-test
     runs-on: ubuntu-latest
     env:
-       RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
-       RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+       RENDER_SERVICE_ID: srv-cub0n952ng1s73al9d10
+       RENDER_API_KEY: rnd_LCopwoiRrFjrciCuPrJaJodXhrbu
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
