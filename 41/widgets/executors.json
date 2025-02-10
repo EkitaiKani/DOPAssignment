@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://EkitaiKani.github.io/DOPAssignment",
+  "buildOrder" : 41,
+  "buildName" : "GitHub Actions Run #13243981565",
+  "buildUrl" : "https://github.com/EkitaiKani/DOPAssignment/actions/runs/13243981565",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/41"
+} ]
