@@ -21,6 +21,10 @@ CREATE TABLE admins (
     password VARCHAR(255) NOT NULL
 );
 
+TRUNCATE TABLE redeemable_items;
+TRUNCATE TABLE students;
+TRUNCATE TABLE admins;
+
 INSERT INTO students (studentid, password, username, diplomaofstudy, yearofentry, emailaddress, points) VALUES
     ('A1234567X', 'scrypt:32768:8:1$ZiUQqpsICuLqh5NS$8a6f2803d1986af8d539fb3a7e662bb66b2fdef774889e8cf327abaecbf46194b9f0fbac3dbb05eaee47b50286d9d6b2518089e5e7b02f0efa7cbdd89ea5e3e1', 'John Tan', 'Diploma in IT', 2024, 'john.tan.2024@example.edu', 50),
     ('A1234568Y', 'scrypt:32768:8:1$5dQddlxx4ydcFYec$e77847efc6ea5f0717f98af177ff31f25993aa3f9840c692313af547d1760c526331611011600ad2fadb8c321d0a47de54945cfe4da9b5d97e9be8c403ffe459', 'Sarah Lim', 'Diploma in Business', 2023, 'sarah.lim.2024@example.edu', 80);

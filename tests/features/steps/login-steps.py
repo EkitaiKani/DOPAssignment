@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import TimeoutException, WebDriverException
 import time
+import common_steps
 import os
 import logging
 
@@ -30,65 +31,6 @@ def setup_chrome_options():
     chrome_options.add_argument('--window-size=1920,1080')
     chrome_options.add_argument('--disable-extensions')
     return chrome_options
-
-@given(u'Chrome browser is launch')
-def step_impl(context):
-    try:
-        chrome_options = setup_chrome_options()
-        service = Service(CHROME_DRIVER_PATH)
-        context.driver = webdriver.Chrome(service=service, options=chrome_options)
-        context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
-        logger.info("Chrome browser launched successfully")
-    except WebDriverException as e:
-        logger.error(f"Failed to launch Chrome browser: {str(e)}")
-        raise
-
-@given(u'Browser console logging is enabled for error tracking')
-def step_impl(context):
-    context.console_logs = []
-    logger.info("Console logging enabled")
-
-@when(u'Open Login Page')
-def step_impl(context):
-    try:
-        context.driver.get(f"{BASE_URL}/login")
-        context.wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-        logger.info("Login page loaded successfully")
-    except TimeoutException:
-        logger.error("Timeout while loading login page")
-        raise
-
-def wait_for_element(context, locator, timeout=WAIT_TIMEOUT):
-    """Utility function to wait for and return an element"""
-    try:
-        element = WebDriverWait(context.driver, timeout).until(
-            EC.presence_of_element_located(locator)
-        )
-        return element
-    except TimeoutException:
-        logger.error(f"Element not found: {locator}")
-        raise
-
-@then('Verify page loads without console errors')
-def step_verify_no_console_errors(context):
-    browser_logs = context.driver.get_log('browser')
-    errors = [log for log in browser_logs if log['level'] in ['SEVERE', 'ERROR']]
-    
-    # Log all console entries for debugging
-    for log in browser_logs:
-        logger.debug(f"Console log: {log}")
-    
-    if errors:
-        for error in errors:
-            logger.error(f"Console error: {error['message']}")
-        raise AssertionError(f"Found {len(errors)} console errors")
-    
-    # Verify essential elements with custom wait function
-    username_field = wait_for_element(context, (By.ID, "InputUsername"))
-    password_field = wait_for_element(context, (By.ID, "InputPassword"))
-    
-    assert username_field.is_displayed(), "Username field not visible"
-    assert password_field.is_displayed(), "Password field not visible"
 
 @then(u'Verify Login title is present')
 def step_impl(context):
