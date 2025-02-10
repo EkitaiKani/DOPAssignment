@@ -55,7 +55,6 @@
           .then((response) => response.json())
           .then((data) => {
             tableBody.innerHTML = "";
-            console.log(data);
             data.forEach((student) => {
               const row = document.createElement("tr");
               row.innerHTML = `
