@@ -1,0 +1,111 @@
+[ {
+  "uid" : "9c3cc5ec9e8788fb",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1739200627787,
+    "stop" : 1739200629575,
+    "duration" : 1788
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c26200281ab091e4",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1739200627293,
+    "stop" : 1739200627786,
+    "duration" : 493
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8514e742f3e30a21",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1739200631259,
+    "stop" : 1739200632983,
+    "duration" : 1724
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "616ae5303c9516f",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739200610167,
+    "stop" : 1739200621358,
+    "duration" : 11191
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9963b1495c0d8025",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1739200629575,
+    "stop" : 1739200631259,
+    "duration" : 1684
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "16069022efdd488a",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1739200632983,
+    "stop" : 1739200634659,
+    "duration" : 1676
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a92eb3747107023a",
+  "name" : "Admin deletes a student account",
+  "time" : {
+    "start" : 1739200625876,
+    "stop" : 1739200627292,
+    "duration" : 1416
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "66492bf1f568d6dd",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739200557149,
+    "stop" : 1739200558560,
+    "duration" : 1411
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "32e509440c4d0978",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739200621359,
+    "stop" : 1739200623802,
+    "duration" : 2443
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e0d915c0307f8da3",
+  "name" : "Admin modifies a student account",
+  "time" : {
+    "start" : 1739200623803,
+    "stop" : 1739200625876,
+    "duration" : 2073
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c78893d7c7671206",
+  "name" : "Admin searches for a student account by Student ID",
+  "time" : {
+    "start" : 1739200558560,
+    "stop" : 1739200610166,
+    "duration" : 51606
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
