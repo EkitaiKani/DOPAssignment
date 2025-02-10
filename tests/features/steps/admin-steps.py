@@ -32,10 +32,8 @@ def step_impl(context):
     students_table = context.driver.find_element(By.ID, "students-table")
     assert students_table.is_displayed(), "Students table is not displayed"
 
-# Wait for the student table to be present after search
 def wait_for_updated_table(context):
     try:
-        # Wait for the table rows to load or be updated
         WebDriverWait(context.driver, 10).until(
             EC.presence_of_all_elements_located((By.XPATH, "//table[@id='students-table']//tr"))
         )
@@ -44,41 +42,32 @@ def wait_for_updated_table(context):
         print("Table rows did not load in time.")
         return False
 
-# After entering the student ID or name in the search bar
 @given('I enter studentID, "{student_id}" into the search bar')
 def step_impl(context, student_id):
     search_bar = context.driver.find_element(By.ID, "search-bar")
     search_bar.send_keys(student_id)
-
-    # Wait for the table to update after search
     assert wait_for_updated_table(context), "Table was not updated with search results."
 
 @given('I enter username, "{student_name}" into the search bar')
 def step_impl(context, student_name):
     search_bar = context.driver.find_element(By.ID, "search-bar")
     search_bar.send_keys(student_name)
-
-    # Wait for the table to update after search
     assert wait_for_updated_table(context), "Table was not updated with search results."
 
-# After the table is updated, check if the student's name appears in the results
 @then('the search results should show the student "{student_name}"')
 def step_impl(context, student_name):
-    students_table = context.driver.find_element(By.ID, "students-table")
-    
-    # Wait for table rows to be updated after search results
-    rows = students_table.find_elements(By.TAG_NAME, "tr")
-    assert len(rows) > 1, "No student accounts found in the search results"  # Ensure there are rows present
+    WebDriverWait(context.driver, 10).until(
+        lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#students-table tr")) > 1
+    )
 
-    # Search through the rows for the student name
-    found = False
-    for row in rows[1:]:  # Skip the header row (first row)
-        columns = row.find_elements(By.TAG_NAME, "td")
-        if columns[1].text == student_name:
-            found = True
-            break
+    students_table = context.driver.find_element(By.ID, "students-table")
+    rows = students_table.find_elements(By.TAG_NAME, "tr")
+    assert len(rows) > 1, "No student accounts found in the search results"
+
+    first_row = rows[1]
+    columns = first_row.find_elements(By.TAG_NAME, "td")
+    assert columns[1].text == student_name, f"Expected student name '{student_name}' but found '{columns[1].text}'"
     
-    assert found, f"Student with name '{student_name}' not found in search results."
 @given('I click on create student account')
 def step_impl(context):
     create_student_button = WebDriverWait(context.driver, 10).until(

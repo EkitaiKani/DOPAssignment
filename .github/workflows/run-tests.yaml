@@ -140,13 +140,13 @@ jobs:
           name: flask-log
           path: flask.log
 
-      # - name: Revert commit if tests fail
-      #   if: failure()
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      #     git revert --no-edit HEAD
-      #     git push origin HEAD:main  # Adjust branch if necessary
+      - name: Revert commit if tests fail
+        if: failure()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git revert --no-edit HEAD
+          git push origin HEAD:main  # Adjust branch if necessary
 
   allure_report:
     needs: setup-and-test
@@ -204,7 +204,7 @@ jobs:
           target_url: https://ekitaikani.github.io/DOPAssignment/
 
   deploy:
-    needs: [setup, allure_report]
+    needs: setup-and-test
     runs-on: ubuntu-latest
     if: success()
     steps:
