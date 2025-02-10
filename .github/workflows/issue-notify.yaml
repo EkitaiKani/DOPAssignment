@@ -11,7 +11,7 @@ jobs:
       - name: Send Discord Notification
         uses: Sniddl/discord-commits@v1.6
         with:
-          webhook: ${{ secrets.DISCORD_ISSUES_URL }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
           template: "avatar-with-link"
           username: "GitHub Issues"
           message: |
