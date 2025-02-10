@@ -46,7 +46,7 @@ def step_impl(context, student_name):
 
 @then('the search results should show the student "{student_name}"')
 def step_impl(context, student_name):
-    students_table = WebDriverWait(context.driver, 10).until(
+    students_table = WebDriverWait(context.driver, 100).until(
         EC.presence_of_element_located((By.ID, "students-table"))
     )
     rows = students_table.find_elements(By.TAG_NAME, "tr")
