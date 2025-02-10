@@ -14,22 +14,6 @@ logger = logging.getLogger(__name__)
 BASE_URL = "http://127.0.0.1:5000"
 CHROME_DRIVER_PATH = '/usr/bin/chromedriver'
 
-@given(u'Chrome browser is launched')
-def step_impl(context):
-    chrome_options = common_steps.setup_chrome_options()
-    context.driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH, options=chrome_options)
-    context.wait = WebDriverWait(context.driver, 10)
-
-@then(u'Verify Login title is present')
-def step_impl(context):
-    try:
-        context.wait.until(EC.title_is("Student Login"))
-        logger.info("Login title verified successfully")
-    except TimeoutException:
-        actual_title = context.driver.title
-        logger.error(f"Expected title 'Student Login', got '{actual_title}'")
-        raise
-
 @then(u'Input username "{username}" and password "{password}"')
 def step_impl(context, username, password):
     try:
