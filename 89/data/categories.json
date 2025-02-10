@@ -1,0 +1,196 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55ab776c853a <unknown>\n#1 0x55ab771c3f00 <unknown>\n#2 0x55ab771fac53 <unknown>\n#3 0x55ab771f74b6 <unknown>\n#4 0x55ab772447b6 <unknown>\n#5 0x55ab77243e06 <unknown>\n#6 0x55ab77238343 <unknown>\n#7 0x55ab7720578a <unknown>\n#8 0x55ab772069de <unknown>\n#9 0x55ab776922cb <unknown>\n#10 0x55ab77696242 <unknown>\n#11 0x55ab7767f7ac <unknown>\n#12 0x55ab77696df7 <unknown>\n#13 0x55ab77663b2f <unknown>\n#14 0x55ab776b71a8 <unknown>\n#15 0x55ab776b7370 <unknown>\n#16 0x55ab776c73b6 <unknown>\n#17 0x7f09f4c9ca94 <unknown>\n#18 0x7f09f4d29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin lists all student accounts",
+        "uid" : "88f63d8c9cba6a8c",
+        "parentUid" : "a114bfa9155c42e1d4beb154bb9ff732",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147400324,
+          "stop" : 1739147402870,
+          "duration" : 2546
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a114bfa9155c42e1d4beb154bb9ff732"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55e1343fe53a <unknown>\n#1 0x55e133ef9f00 <unknown>\n#2 0x55e133f30c53 <unknown>\n#3 0x55e133f2d4b6 <unknown>\n#4 0x55e133f7a7b6 <unknown>\n#5 0x55e133f79e06 <unknown>\n#6 0x55e133f6e343 <unknown>\n#7 0x55e133f3b78a <unknown>\n#8 0x55e133f3c9de <unknown>\n#9 0x55e1343c82cb <unknown>\n#10 0x55e1343cc242 <unknown>\n#11 0x55e1343b57ac <unknown>\n#12 0x55e1343ccdf7 <unknown>\n#13 0x55e134399b2f <unknown>\n#14 0x55e1343ed1a8 <unknown>\n#15 0x55e1343ed370 <unknown>\n#16 0x55e1343fd3b6 <unknown>\n#17 0x7f3bc4c9ca94 <unknown>\n#18 0x7f3bc4d29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin searches for a student account by Student ID",
+        "uid" : "17cd47148efc021a",
+        "parentUid" : "5ebeb2a2d21797017506929fe8b4ac49",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147402871,
+          "stop" : 1739147403132,
+          "duration" : 261
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5ebeb2a2d21797017506929fe8b4ac49"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x560ad373853a <unknown>\n#1 0x560ad3233f00 <unknown>\n#2 0x560ad326ac53 <unknown>\n#3 0x560ad32674b6 <unknown>\n#4 0x560ad32b47b6 <unknown>\n#5 0x560ad32b3e06 <unknown>\n#6 0x560ad32a8343 <unknown>\n#7 0x560ad327578a <unknown>\n#8 0x560ad32769de <unknown>\n#9 0x560ad37022cb <unknown>\n#10 0x560ad3706242 <unknown>\n#11 0x560ad36ef7ac <unknown>\n#12 0x560ad3706df7 <unknown>\n#13 0x560ad36d3b2f <unknown>\n#14 0x560ad37271a8 <unknown>\n#15 0x560ad3727370 <unknown>\n#16 0x560ad37373b6 <unknown>\n#17 0x7f195d09ca94 <unknown>\n#18 0x7f195d129c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin searches for a student account by Student Name",
+        "uid" : "c9706eb3dac41a45",
+        "parentUid" : "47f2c308cf0c4bb2386b5f07784c4cd4",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147403132,
+          "stop" : 1739147403392,
+          "duration" : 260
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "47f2c308cf0c4bb2386b5f07784c4cd4"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55ecaa57353a <unknown>\n#1 0x55ecaa06ef00 <unknown>\n#2 0x55ecaa0a5c53 <unknown>\n#3 0x55ecaa0a24b6 <unknown>\n#4 0x55ecaa0ef7b6 <unknown>\n#5 0x55ecaa0eee06 <unknown>\n#6 0x55ecaa0e3343 <unknown>\n#7 0x55ecaa0b078a <unknown>\n#8 0x55ecaa0b19de <unknown>\n#9 0x55ecaa53d2cb <unknown>\n#10 0x55ecaa541242 <unknown>\n#11 0x55ecaa52a7ac <unknown>\n#12 0x55ecaa541df7 <unknown>\n#13 0x55ecaa50eb2f <unknown>\n#14 0x55ecaa5621a8 <unknown>\n#15 0x55ecaa562370 <unknown>\n#16 0x55ecaa5723b6 <unknown>\n#17 0x7fe956e9ca94 <unknown>\n#18 0x7fe956f29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin creates a new student account",
+        "uid" : "f0c942fd8127f8ff",
+        "parentUid" : "fe0ba19b79810edab2801ce068b91b92",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147403392,
+          "stop" : 1739147403653,
+          "duration" : 261
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fe0ba19b79810edab2801ce068b91b92"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x560d4033653a <unknown>\n#1 0x560d3fe31f00 <unknown>\n#2 0x560d3fe68c53 <unknown>\n#3 0x560d3fe654b6 <unknown>\n#4 0x560d3feb27b6 <unknown>\n#5 0x560d3feb1e06 <unknown>\n#6 0x560d3fea6343 <unknown>\n#7 0x560d3fe7378a <unknown>\n#8 0x560d3fe749de <unknown>\n#9 0x560d403002cb <unknown>\n#10 0x560d40304242 <unknown>\n#11 0x560d402ed7ac <unknown>\n#12 0x560d40304df7 <unknown>\n#13 0x560d402d1b2f <unknown>\n#14 0x560d403251a8 <unknown>\n#15 0x560d40325370 <unknown>\n#16 0x560d403353b6 <unknown>\n#17 0x7f28bc69ca94 <unknown>\n#18 0x7f28bc729c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin modifies a student account",
+        "uid" : "a4f328c9f55bf690",
+        "parentUid" : "f244e9f83a53e34111f86c3f1ea94c9a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147403654,
+          "stop" : 1739147403916,
+          "duration" : 262
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f244e9f83a53e34111f86c3f1ea94c9a"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55baa147653a <unknown>\n#1 0x55baa0f71f00 <unknown>\n#2 0x55baa0fa8c53 <unknown>\n#3 0x55baa0fa54b6 <unknown>\n#4 0x55baa0ff27b6 <unknown>\n#5 0x55baa0ff1e06 <unknown>\n#6 0x55baa0fe6343 <unknown>\n#7 0x55baa0fb378a <unknown>\n#8 0x55baa0fb49de <unknown>\n#9 0x55baa14402cb <unknown>\n#10 0x55baa1444242 <unknown>\n#11 0x55baa142d7ac <unknown>\n#12 0x55baa1444df7 <unknown>\n#13 0x55baa1411b2f <unknown>\n#14 0x55baa14651a8 <unknown>\n#15 0x55baa1465370 <unknown>\n#16 0x55baa14753b6 <unknown>\n#17 0x7f216de9ca94 <unknown>\n#18 0x7f216df29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin deletes a student account",
+        "uid" : "ff50c97b9cbc78d4",
+        "parentUid" : "2afc169339079790652eda82733c812b",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147403917,
+          "stop" : 1739147404178,
+          "duration" : 261
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2afc169339079790652eda82733c812b"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55656f23153a <unknown>\n#1 0x55656ed2cf00 <unknown>\n#2 0x55656ed63c53 <unknown>\n#3 0x55656ed604b6 <unknown>\n#4 0x55656edad7b6 <unknown>\n#5 0x55656edace06 <unknown>\n#6 0x55656eda1343 <unknown>\n#7 0x55656ed6e78a <unknown>\n#8 0x55656ed6f9de <unknown>\n#9 0x55656f1fb2cb <unknown>\n#10 0x55656f1ff242 <unknown>\n#11 0x55656f1e87ac <unknown>\n#12 0x55656f1ffdf7 <unknown>\n#13 0x55656f1ccb2f <unknown>\n#14 0x55656f2201a8 <unknown>\n#15 0x55656f220370 <unknown>\n#16 0x55656f2303b6 <unknown>\n#17 0x7f1dfd29ca94 <unknown>\n#18 0x7f1dfd329c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Check Login title",
+        "uid" : "23308670ab701703",
+        "parentUid" : "cdeaa613d0d64fa87f0db9c7e6a73892",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147404179,
+          "stop" : 1739147404440,
+          "duration" : 261
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "cdeaa613d0d64fa87f0db9c7e6a73892"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55d3419d853a <unknown>\n#1 0x55d3414d3f00 <unknown>\n#2 0x55d34150ac53 <unknown>\n#3 0x55d3415074b6 <unknown>\n#4 0x55d3415547b6 <unknown>\n#5 0x55d341553e06 <unknown>\n#6 0x55d341548343 <unknown>\n#7 0x55d34151578a <unknown>\n#8 0x55d3415169de <unknown>\n#9 0x55d3419a22cb <unknown>\n#10 0x55d3419a6242 <unknown>\n#11 0x55d34198f7ac <unknown>\n#12 0x55d3419a6df7 <unknown>\n#13 0x55d341973b2f <unknown>\n#14 0x55d3419c71a8 <unknown>\n#15 0x55d3419c7370 <unknown>\n#16 0x55d3419d73b6 <unknown>\n#17 0x7fb85909ca94 <unknown>\n#18 0x7fb859129c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with one incorrect userName data",
+        "uid" : "8ad3df70a0468736",
+        "parentUid" : "bacefcf7d2ad787c667099596d58f39b",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147404440,
+          "stop" : 1739147404648,
+          "duration" : 208
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bacefcf7d2ad787c667099596d58f39b"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55fa9268653a <unknown>\n#1 0x55fa92181f00 <unknown>\n#2 0x55fa921b8c53 <unknown>\n#3 0x55fa921b54b6 <unknown>\n#4 0x55fa922027b6 <unknown>\n#5 0x55fa92201e06 <unknown>\n#6 0x55fa921f6343 <unknown>\n#7 0x55fa921c378a <unknown>\n#8 0x55fa921c49de <unknown>\n#9 0x55fa926502cb <unknown>\n#10 0x55fa92654242 <unknown>\n#11 0x55fa9263d7ac <unknown>\n#12 0x55fa92654df7 <unknown>\n#13 0x55fa92621b2f <unknown>\n#14 0x55fa926751a8 <unknown>\n#15 0x55fa92675370 <unknown>\n#16 0x55fa926853b6 <unknown>\n#17 0x7f05e6c9ca94 <unknown>\n#18 0x7f05e6d29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in admin login with one correct user data",
+        "uid" : "2178134db513179f",
+        "parentUid" : "8380dca70c76546364ef9e5fbbcc21de",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147404648,
+          "stop" : 1739147404855,
+          "duration" : 207
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8380dca70c76546364ef9e5fbbcc21de"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55f2fcfb653a <unknown>\n#1 0x55f2fcab1f00 <unknown>\n#2 0x55f2fcae8c53 <unknown>\n#3 0x55f2fcae54b6 <unknown>\n#4 0x55f2fcb327b6 <unknown>\n#5 0x55f2fcb31e06 <unknown>\n#6 0x55f2fcb26343 <unknown>\n#7 0x55f2fcaf378a <unknown>\n#8 0x55f2fcaf49de <unknown>\n#9 0x55f2fcf802cb <unknown>\n#10 0x55f2fcf84242 <unknown>\n#11 0x55f2fcf6d7ac <unknown>\n#12 0x55f2fcf84df7 <unknown>\n#13 0x55f2fcf51b2f <unknown>\n#14 0x55f2fcfa51a8 <unknown>\n#15 0x55f2fcfa5370 <unknown>\n#16 0x55f2fcfb53b6 <unknown>\n#17 0x7f231389ca94 <unknown>\n#18 0x7f2313929c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+        "uid" : "6db1d7b23403b6a8",
+        "parentUid" : "e8504d91321aa1537ffb30190874218f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147404856,
+          "stop" : 1739147405064,
+          "duration" : 208
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "password1", "John Tan" ]
+      } ],
+      "uid" : "e8504d91321aa1537ffb30190874218f"
+    }, {
+      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55eef6f0f53a <unknown>\n#1 0x55eef6a0af00 <unknown>\n#2 0x55eef6a41c53 <unknown>\n#3 0x55eef6a3e4b6 <unknown>\n#4 0x55eef6a8b7b6 <unknown>\n#5 0x55eef6a8ae06 <unknown>\n#6 0x55eef6a7f343 <unknown>\n#7 0x55eef6a4c78a <unknown>\n#8 0x55eef6a4d9de <unknown>\n#9 0x55eef6ed92cb <unknown>\n#10 0x55eef6edd242 <unknown>\n#11 0x55eef6ec67ac <unknown>\n#12 0x55eef6edddf7 <unknown>\n#13 0x55eef6eaab2f <unknown>\n#14 0x55eef6efe1a8 <unknown>\n#15 0x55eef6efe370 <unknown>\n#16 0x55eef6f0e3b6 <unknown>\n#17 0x7f2ac2e9ca94 <unknown>\n#18 0x7f2ac2f29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+        "uid" : "4b95e505b5c0086b",
+        "parentUid" : "678560d8127c991014449ea472338c25",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739147405065,
+          "stop" : 1739147405326,
+          "duration" : 261
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "password2", "Sarah Lim" ]
+      } ],
+      "uid" : "678560d8127c991014449ea472338c25"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
