@@ -4,7 +4,6 @@ run-name: ${{ github.actor }} is testing the Login
 on:
   push:
     branches:
-      - main
       - tests
 
 jobs:
