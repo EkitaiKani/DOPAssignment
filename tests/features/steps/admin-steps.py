@@ -147,9 +147,3 @@ def step_impl(context, student_name):
         columns = row.find_elements(By.TAG_NAME, "td")
         if columns and student_name in [col.text for col in columns]:
             assert False, f"Student '{student_name}' is still in the student list after deletion"
-
-@then(u'Close browser')
-def step_impl(context):
-    # Browser will be closed automatically in after_scenario hook
-    logger.info("Browser will be closed in after_scenario hook")
-    pass

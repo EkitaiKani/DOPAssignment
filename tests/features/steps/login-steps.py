@@ -89,8 +89,3 @@ def step_impl(context):
         logger.error(f"Failed to verify admin login. Expected URL: {BASE_URL}/admin, Got: {current_url}")
         raise
 
-@then(u'Close browser')
-def step_impl(context):
-    # Browser will be closed automatically in after_scenario hook
-    logger.info("Browser will be closed in after_scenario hook")
-    pass

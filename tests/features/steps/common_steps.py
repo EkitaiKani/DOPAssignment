@@ -91,3 +91,9 @@ def step_impl(context):
         context.wait.until(EC.presence_of_element_located((By.ID, "InputPassword")))
     except TimeoutException:
         assert False, "Username or Password field not found on the login page"
+
+@then(u'Close browser')
+def step_impl(context):
+    # Browser will be closed automatically in after_scenario hook
+    logger.info("Browser will be closed in after_scenario hook")
+    pass
