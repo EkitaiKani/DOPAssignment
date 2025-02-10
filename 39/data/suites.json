@@ -2,143 +2,143 @@
   "uid" : "98d3104e051c652961429bf95fa0b5d6",
   "children" : [ {
     "name" : "Admin lists all student accounts",
-    "uid" : "2fd44d64ded73172",
+    "uid" : "71b798121593df74",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196518140,
-      "stop" : 1739196542289,
-      "duration" : 24149
+      "start" : 1739196859912,
+      "stop" : 1739196865073,
+      "duration" : 5161
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Admin searches for a student account by Student ID",
-    "uid" : "1c241b0d1a70352d",
+    "uid" : "7dcb073336ac4d7f",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "broken",
     "time" : {
-      "start" : 1739196542289,
-      "stop" : 1739196584016,
-      "duration" : 41727
+      "start" : 1739196865074,
+      "stop" : 1739196906309,
+      "duration" : 41235
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Admin searches for a student account by Student Name",
-    "uid" : "3c5d79e313ce89a2",
+    "uid" : "76f59541066f1442",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196584017,
-      "stop" : 1739196585201,
-      "duration" : 1184
+      "start" : 1739196906309,
+      "stop" : 1739196907517,
+      "duration" : 1208
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Admin creates a new student account",
-    "uid" : "9beef5a146733fc9",
+    "uid" : "ba62438b47baf357",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196585201,
-      "stop" : 1739196587718,
-      "duration" : 2517
+      "start" : 1739196907517,
+      "stop" : 1739196909981,
+      "duration" : 2464
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Admin modifies a student account",
-    "uid" : "257171a0592f97a9",
+    "uid" : "b32d519af21eda71",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196587718,
-      "stop" : 1739196589783,
-      "duration" : 2065
+      "start" : 1739196909981,
+      "stop" : 1739196912085,
+      "duration" : 2104
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Admin deletes a student account",
-    "uid" : "7c805b66887d9665",
+    "uid" : "23dddac7b1f46b49",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196589784,
-      "stop" : 1739196591273,
-      "duration" : 1489
+      "start" : 1739196912086,
+      "stop" : 1739196913571,
+      "duration" : 1485
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Check Login title",
-    "uid" : "a87e5afdafd62160",
+    "uid" : "768e34fd1a652070",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196591274,
-      "stop" : 1739196591775,
-      "duration" : 501
+      "start" : 1739196913572,
+      "stop" : 1739196914084,
+      "duration" : 512
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Fill in student login with one incorrect userName data",
-    "uid" : "ae0b9dd1f32af8e1",
+    "uid" : "54b29614b1776194",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196591775,
-      "stop" : 1739196593587,
-      "duration" : 1812
+      "start" : 1739196914084,
+      "stop" : 1739196915913,
+      "duration" : 1829
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Fill in admin login with one correct user data",
-    "uid" : "3a0266b33ae7b9f7",
+    "uid" : "4e9a6c32737b6b81",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196593588,
-      "stop" : 1739196595256,
-      "duration" : 1668
+      "start" : 1739196915914,
+      "stop" : 1739196917605,
+      "duration" : 1691
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Fill in student login with multiple correct user data -- @1.1 ",
-    "uid" : "37f60cc14fad6050",
+    "uid" : "cc3d0fd3770c0666",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196595256,
-      "stop" : 1739196596995,
-      "duration" : 1739
+      "start" : 1739196917605,
+      "stop" : 1739196919379,
+      "duration" : 1774
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ "password1", "John Tan" ]
   }, {
     "name" : "Fill in student login with multiple correct user data -- @1.2 ",
-    "uid" : "4491b7baaa77ed69",
+    "uid" : "aeb9abdfa9eb5d7c",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "passed",
     "time" : {
-      "start" : 1739196596995,
-      "stop" : 1739196598674,
-      "duration" : 1679
+      "start" : 1739196919380,
+      "stop" : 1739196921085,
+      "duration" : 1705
     },
     "flaky" : false,
     "newFailed" : false,

@@ -1,0 +1,203 @@
+{
+  "uid" : "54b29614b1776194",
+  "name" : "Fill in student login with one incorrect userName data",
+  "fullName" : "Verify Login is valid: Fill in student login with one incorrect userName data",
+  "historyId" : "694a16d8783e3102fa429ceb7f6a7ec2",
+  "time" : {
+    "start" : 1739196914084,
+    "stop" : 1739196915913,
+    "duration" : 1829
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739196914085,
+        "stop" : 1739196914527,
+        "duration" : 442
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739196914527,
+        "stop" : 1739196914527,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739196914527,
+        "stop" : 1739196914626,
+        "duration" : 99
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739196914626,
+        "stop" : 1739196914637,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Then Input userName \"A1234567X\" and passWord \"password1\"",
+      "time" : {
+        "start" : 1739196914637,
+        "stop" : 1739196914768,
+        "duration" : 131
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1739196914768,
+        "stop" : 1739196915821,
+        "duration" : 1053
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "And Verify failed student login",
+      "time" : {
+        "start" : 1739196915822,
+        "stop" : 1739196915848,
+        "duration" : 26
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739196915848,
+        "stop" : 1739196915913,
+        "duration" : 65
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 8
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "ae0b9dd1f32af8e1",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/ae0b9dd1f32af8e1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196591775,
+          "stop" : 1739196593587,
+          "duration" : 1812
+        }
+      }, {
+        "uid" : "bc76693c4c7f10ca",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/38/#testresult/bc76693c4c7f10ca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739195841026,
+          "stop" : 1739195842880,
+          "duration" : 1854
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "54b29614b1776194.json",
+  "parameterValues" : [ ]
+}
