@@ -4,10 +4,10 @@ run-name: ${{ github.actor }} is testing the features
 on:
   pull_request:
     branches:
-      - tests
+      - main
   push:
     branches:
-      - tests
+      - main
 
 jobs:
   setup-and-test:
