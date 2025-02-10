@@ -1,0 +1,212 @@
+{
+  "uid" : "2f695a3937bc84cb",
+  "name" : "Admin deletes a student account",
+  "fullName" : "Admin Page Features: Admin deletes a student account",
+  "historyId" : "8c4b2772cddc320b528f4da98f29e7f8",
+  "time" : {
+    "start" : 1739194509648,
+    "stop" : 1739194511074,
+    "duration" : 1426
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739194509649,
+        "stop" : 1739194509968,
+        "duration" : 319
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739194509968,
+        "stop" : 1739194509969,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739194509969,
+        "stop" : 1739194510069,
+        "duration" : 100
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739194510069,
+        "stop" : 1739194510079,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given I am logged in as an admin",
+      "time" : {
+        "start" : 1739194510079,
+        "stop" : 1739194510727,
+        "duration" : 648
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I choose to delete student \"John Pork\"",
+      "time" : {
+        "start" : 1739194510727,
+        "stop" : 1739194510904,
+        "duration" : 177
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When I confirm deletion",
+      "time" : {
+        "start" : 1739194510904,
+        "stop" : 1739194510935,
+        "duration" : 31
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then the student \"John Pork\" should no longer be in the student list",
+      "time" : {
+        "start" : 1739194510935,
+        "stop" : 1739194511074,
+        "duration" : 139
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Admin Page Features"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "aa8f387da4e6db99",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/24/#testresult/aa8f387da4e6db99",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739182448939,
+          "stop" : 1739182450438,
+          "duration" : 1499
+        }
+      }, {
+        "uid" : "81e6bc3e23fd9690",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/23/#testresult/81e6bc3e23fd9690",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739180536553,
+          "stop" : 1739180538028,
+          "duration" : 1475
+        }
+      }, {
+        "uid" : "f3ebf5ee2037ae1f",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/22/#testresult/f3ebf5ee2037ae1f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739179656750,
+          "stop" : 1739179658133,
+          "duration" : 1383
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "2f695a3937bc84cb.json",
+  "parameterValues" : [ ]
+}

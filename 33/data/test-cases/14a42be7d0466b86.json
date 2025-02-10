@@ -1,0 +1,182 @@
+{
+  "uid" : "14a42be7d0466b86",
+  "name" : "Check Login title",
+  "fullName" : "Verify Login is valid: Check Login title",
+  "historyId" : "bf8bd00354bfb1ece039b07d8165f522",
+  "time" : {
+    "start" : 1739194511076,
+    "stop" : 1739194511592,
+    "duration" : 516
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739194511076,
+        "stop" : 1739194511411,
+        "duration" : 335
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739194511411,
+        "stop" : 1739194511411,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739194511411,
+        "stop" : 1739194511515,
+        "duration" : 104
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739194511515,
+        "stop" : 1739194511525,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify Login title is present",
+      "time" : {
+        "start" : 1739194511525,
+        "stop" : 1739194511529,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739194511529,
+        "stop" : 1739194511592,
+        "duration" : 63
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "2f0d1749b85fbbb6",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/24/#testresult/2f0d1749b85fbbb6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739182450439,
+          "stop" : 1739182450963,
+          "duration" : 524
+        }
+      }, {
+        "uid" : "e60a8cebe908b997",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/23/#testresult/e60a8cebe908b997",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739180538029,
+          "stop" : 1739180538554,
+          "duration" : 525
+        }
+      }, {
+        "uid" : "8894cd256a6483ed",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/22/#testresult/8894cd256a6483ed",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739179658134,
+          "stop" : 1739179658633,
+          "duration" : 499
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "14a42be7d0466b86.json",
+  "parameterValues" : [ ]
+}
