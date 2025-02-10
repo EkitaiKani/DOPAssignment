@@ -1,0 +1,91 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "AttributeError: 'NoneType' object has no attribute 'find_element'\n",
+      "children" : [ {
+        "name" : "Admin lists all student accounts",
+        "uid" : "788eeeb3b772735c",
+        "parentUid" : "eaf911f79e03dfc89b31d191b1cb16cf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739200231810,
+          "stop" : 1739200241721,
+          "duration" : 9911
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Admin searches for a student account by Student ID",
+        "uid" : "1b6456b8270eb472",
+        "parentUid" : "eaf911f79e03dfc89b31d191b1cb16cf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739200241722,
+          "stop" : 1739200242211,
+          "duration" : 489
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Admin searches for a student account by Student Name",
+        "uid" : "533272866d95e064",
+        "parentUid" : "eaf911f79e03dfc89b31d191b1cb16cf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739200242211,
+          "stop" : 1739200242709,
+          "duration" : 498
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Admin creates a new student account",
+        "uid" : "1ccf1b382c7389bd",
+        "parentUid" : "eaf911f79e03dfc89b31d191b1cb16cf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739200242709,
+          "stop" : 1739200243213,
+          "duration" : 504
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Admin modifies a student account",
+        "uid" : "b835ac7968f8ebb8",
+        "parentUid" : "eaf911f79e03dfc89b31d191b1cb16cf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739200243215,
+          "stop" : 1739200243704,
+          "duration" : 489
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Admin deletes a student account",
+        "uid" : "d0a2a1e424d7940",
+        "parentUid" : "eaf911f79e03dfc89b31d191b1cb16cf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739200243704,
+          "stop" : 1739200244204,
+          "duration" : 500
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "eaf911f79e03dfc89b31d191b1cb16cf"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
