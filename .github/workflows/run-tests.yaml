@@ -179,21 +179,21 @@ jobs:
       - name: Copy previous history to results
         run: |
           mkdir -p allure-results/history
-          cp -r gh-pages/allure-history/history allure-results/ || true
+          cp -r gh-pages/last-history/* allure-results/history/ || echo "No history found yet"
 
       - name: Generate Allure Report with History
         uses: simple-elf/allure-report-action@v1
         with:
           allure_results: allure-results
-          allure_history: gh-pages/allure-history
-          gh_pages: gh-pages/allure-history
+          allure_history: gh-pages/last-history  # Changed from allure-history
+          gh_pages: gh-pages/last-history        # Changed from allure-history
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: gh-pages/allure-history
+          PUBLISH_DIR: gh-pages/last-history     # Changed from allure-history
 
       - name: Set GitHub Status for Selenium Test Report
         uses: Sibz/github-status-action@v1
@@ -201,7 +201,7 @@ jobs:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Selenium test report
           state: success
-          target_url: https://EkitaiKani.github.io/DOPAssignment/allure-history/login
+          target_url: https://EkitaiKani.github.io/DOPAssignment/allure-history/
           owner: EkitaiKani
           repository: EkitaiKani/DOPAssignment
           sha: ${{ github.sha }}
