@@ -23,6 +23,12 @@ def setup_chrome_options():
     chrome_options.add_argument('--disable-extensions')
     return chrome_options
 
+def setup_chrome_driver():
+    """Initialize Chrome WebDriver with options."""
+    chrome_options = setup_chrome_options()
+    driver = webdriver.Chrome(options=chrome_options)
+    return driver
+
 def wait_for_element(context, locator, timeout=WAIT_TIMEOUT):
     """Wait for an element to be present."""
     return WebDriverWait(context.driver, timeout).until(
@@ -50,8 +56,7 @@ def log_console_errors(context):
 # Step definitions
 @given(u'Chrome browser is launched')
 def step_impl(context):
-    chrome_options = setup_chrome_options()
-    context.driver = webdriver.Chrome(options=chrome_options)
+    context.driver = setup_chrome_driver()
     context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
 
 @given(u'Browser console logging is enabled for error tracking')

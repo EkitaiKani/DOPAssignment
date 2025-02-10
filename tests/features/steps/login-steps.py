@@ -10,9 +10,18 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Constants
+# Constants for actions
+WAIT_TIMEOUT = 10
 BASE_URL = "http://127.0.0.1:5000"
-CHROME_DRIVER_PATH = '/usr/bin/chromedriver'
+
+def before_all(context):
+    """Initialize the WebDriver before all tests."""
+    context.driver = common_steps.setup_chrome_driver()  # Fix here
+    context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
+
+def after_all(context):
+    """Quit the WebDriver after all tests."""
+    context.driver.quit()
 
 @then(u'Input username "{username}" and password "{password}"')
 def step_impl(context, username, password):

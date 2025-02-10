@@ -9,7 +9,8 @@ BASE_URL = "http://127.0.0.1:5000"
 
 def before_all(context):
     """Initialize the WebDriver before all tests."""
-    context.driver = common_steps.setup_chrome_driver()
+    context.driver = common_steps.setup_chrome_driver()  # Fix here
+    context.wait = WebDriverWait(context.driver, WAIT_TIMEOUT)
 
 def after_all(context):
     """Quit the WebDriver after all tests."""
