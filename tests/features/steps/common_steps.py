@@ -30,7 +30,7 @@ def setup_chrome_driver():
     """Initialize Chrome WebDriver with options."""
     try:
         chrome_options = setup_chrome_options()
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH, options=chrome_options)  # Specify the driver path       
         return driver
     except Exception as e:
         logger.error(f"Failed to initialize Chrome driver: {str(e)}")
