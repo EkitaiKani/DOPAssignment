@@ -1,0 +1,415 @@
+{
+  "uid" : "26910b9d983617c2",
+  "name" : "Admin creates a new student account",
+  "fullName" : "Admin Page Features: Admin creates a new student account",
+  "historyId" : "beba1ead6253636e8f0aed63593070f2",
+  "time" : {
+    "start" : 1739201779829,
+    "stop" : 1739201782019,
+    "duration" : 2190
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739201779829,
+        "stop" : 1739201780142,
+        "duration" : 313
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739201780142,
+        "stop" : 1739201780143,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739201780143,
+        "stop" : 1739201780229,
+        "duration" : 86
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739201780229,
+        "stop" : 1739201780238,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given I am logged in as an admin",
+      "time" : {
+        "start" : 1739201780239,
+        "stop" : 1739201780887,
+        "duration" : 648
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on create student account",
+      "time" : {
+        "start" : 1739201780887,
+        "stop" : 1739201780977,
+        "duration" : 90
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter \"Student ID\" as \"A99999999Y\"",
+      "time" : {
+        "start" : 1739201780977,
+        "stop" : 1739201781040,
+        "duration" : 63
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter \"Student Name\" as \"John Pork\"",
+      "time" : {
+        "start" : 1739201781041,
+        "stop" : 1739201781099,
+        "duration" : 58
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter \"Student current points\" as \"100\"",
+      "time" : {
+        "start" : 1739201781099,
+        "stop" : 1739201781177,
+        "duration" : 78
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter \"Username\" as \"John Pork\"",
+      "time" : {
+        "start" : 1739201781177,
+        "stop" : 1739201781232,
+        "duration" : 55
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter \"Password\" as \"securepassword123\"",
+      "time" : {
+        "start" : 1739201781233,
+        "stop" : 1739201781292,
+        "duration" : 59
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter \"Diploma of Study\" as \"Diploma in Business\"",
+      "time" : {
+        "start" : 1739201781292,
+        "stop" : 1739201781352,
+        "duration" : 60
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter \"Year of Entry\" as \"2024\"",
+      "time" : {
+        "start" : 1739201781352,
+        "stop" : 1739201781403,
+        "duration" : 51
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter \"Email Address\" as \"johnpork@test.com\"",
+      "time" : {
+        "start" : 1739201781404,
+        "stop" : 1739201781568,
+        "duration" : 164
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I submit the form",
+      "time" : {
+        "start" : 1739201781568,
+        "stop" : 1739201781941,
+        "duration" : 373
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then the student \"John Pork\" should be added to the student list",
+      "time" : {
+        "start" : 1739201781941,
+        "stop" : 1739201782019,
+        "duration" : 78
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 16,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Admin Page Features"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 11,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "e571c27205b5d311",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/49/#testresult/e571c27205b5d311",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201662856,
+          "stop" : 1739201665153,
+          "duration" : 2297
+        }
+      }, {
+        "uid" : "aaaa448c11ddebc",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/48/#testresult/aaaa448c11ddebc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201222932,
+          "stop" : 1739201225278,
+          "duration" : 2346
+        }
+      }, {
+        "uid" : "838eedad6a532dd2",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/46/#testresult/838eedad6a532dd2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201043944,
+          "stop" : 1739201046328,
+          "duration" : 2384
+        }
+      }, {
+        "uid" : "c76b5f67599f73ab",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/45/#testresult/c76b5f67599f73ab",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200915549,
+          "stop" : 1739200917796,
+          "duration" : 2247
+        }
+      }, {
+        "uid" : "7d63ab0b28b54e06",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/44/#testresult/7d63ab0b28b54e06",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200858359,
+          "stop" : 1739200860709,
+          "duration" : 2350
+        }
+      }, {
+        "uid" : "32e509440c4d0978",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/43/#testresult/32e509440c4d0978",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200621359,
+          "stop" : 1739200623802,
+          "duration" : 2443
+        }
+      }, {
+        "uid" : "abc00711c54f255b",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/41/#testresult/abc00711c54f255b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200267224,
+          "stop" : 1739200269663,
+          "duration" : 2439
+        }
+      }, {
+        "uid" : "1ccf1b382c7389bd",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/42/#testresult/1ccf1b382c7389bd",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'find_element'\n",
+        "time" : {
+          "start" : 1739200242709,
+          "stop" : 1739200243213,
+          "duration" : 504
+        }
+      }, {
+        "uid" : "b04b1ee2385df3e8",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/40/#testresult/b04b1ee2385df3e8",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'find_element'\n",
+        "time" : {
+          "start" : 1739200162972,
+          "stop" : 1739200163473,
+          "duration" : 501
+        }
+      }, {
+        "uid" : "ba62438b47baf357",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/ba62438b47baf357",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196907517,
+          "stop" : 1739196909981,
+          "duration" : 2464
+        }
+      }, {
+        "uid" : "9beef5a146733fc9",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/9beef5a146733fc9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196585201,
+          "stop" : 1739196587718,
+          "duration" : 2517
+        }
+      }, {
+        "uid" : "d658e9ca2ebdd27e",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/38/#testresult/d658e9ca2ebdd27e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739195834257,
+          "stop" : 1739195836809,
+          "duration" : 2552
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "26910b9d983617c2.json",
+  "parameterValues" : [ ]
+}
