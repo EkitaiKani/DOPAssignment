@@ -9,7 +9,7 @@ import os
 load_dotenv()
 app = Flask(__name__, static_folder="../client/static", template_folder="../client/templates")
 app.secret_key = os.urandom(24)
-app.config.from_object(ProductionConfig)
+app.config.from_object(DevelopmentConfig)
 init_db(app)
 
 users = {}
@@ -39,6 +39,12 @@ def serve_recover_password():
 def serve_admin():
     if 'userID' in session:
         return render_template("admin.html")
+    return redirect("/login")
+
+@app.route("/redemptionItem")
+def serve_redemptionItem():
+    if 'userID' in session:
+        return render_template("redemptionItem.html")
     return redirect("/login")
 
 @app.route("/editStudent")
