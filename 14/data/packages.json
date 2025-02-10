@@ -1,0 +1,148 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "Admin lists all student accounts",
+    "uid" : "48875b6a5335abc7",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "passed",
+    "time" : {
+      "start" : 1739169324730,
+      "stop" : 1739169336837,
+      "duration" : 12107
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Admin searches for a student account by Student ID",
+    "uid" : "608b08e6d3a5cf2a",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "failed",
+    "time" : {
+      "start" : 1739169336838,
+      "stop" : 1739169338030,
+      "duration" : 1192
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Admin searches for a student account by Student Name",
+    "uid" : "2d705081e1593f6d",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "passed",
+    "time" : {
+      "start" : 1739169338031,
+      "stop" : 1739169339228,
+      "duration" : 1197
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Admin creates a new student account",
+    "uid" : "804de1016aeb441f",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1739169339228,
+      "stop" : 1739169340429,
+      "duration" : 1201
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Admin modifies a student account",
+    "uid" : "231df8f1478737d2",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1739169340430,
+      "stop" : 1739169341532,
+      "duration" : 1102
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Admin deletes a student account",
+    "uid" : "daab47ef2527286",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "passed",
+    "time" : {
+      "start" : 1739169341533,
+      "stop" : 1739169343185,
+      "duration" : 1652
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Check Login title",
+    "uid" : "d278cf1374f2f6a",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1739169343186,
+      "stop" : 1739169343643,
+      "duration" : 457
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Fill in student login with one incorrect userName data",
+    "uid" : "e6748d1bdace956e",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "passed",
+    "time" : {
+      "start" : 1739169343643,
+      "stop" : 1739169345350,
+      "duration" : 1707
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Fill in admin login with one correct user data",
+    "uid" : "bbf8a910830c4ebe",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "passed",
+    "time" : {
+      "start" : 1739169345350,
+      "stop" : 1739169347039,
+      "duration" : 1689
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+    "uid" : "98505a22050c9d41",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "broken",
+    "time" : {
+      "start" : 1739169347039,
+      "stop" : 1739169348785,
+      "duration" : 1746
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "password1", "John Tan" ]
+  }, {
+    "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+    "uid" : "f6dd216c61f0e4dd",
+    "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+    "status" : "passed",
+    "time" : {
+      "start" : 1739169348786,
+      "stop" : 1739169350477,
+      "duration" : 1691
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "password2", "Sarah Lim" ]
+  } ],
+  "name" : "packages"
+}

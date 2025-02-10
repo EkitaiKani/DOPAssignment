@@ -1,0 +1,98 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: No student accounts found in the search results\n",
+      "children" : [ {
+        "name" : "Admin searches for a student account by Student ID",
+        "uid" : "608b08e6d3a5cf2a",
+        "parentUid" : "13952dde5b55afc2a6672e9b27d839a3",
+        "status" : "failed",
+        "time" : {
+          "start" : 1739169336838,
+          "stop" : 1739169338030,
+          "duration" : 1192
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "13952dde5b55afc2a6672e9b27d839a3"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  }, {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "\nYou can implement step definitions for undefined steps with these snippets:\n\n@given(u'I enter \"Student ID\" as \"A99999999Y\"')\ndef step_impl(context):\n    raise NotImplementedError(u'STEP: Given I enter \"Student ID\" as \"A99999999Y\"')\n\n",
+      "children" : [ {
+        "name" : "Admin creates a new student account",
+        "uid" : "804de1016aeb441f",
+        "parentUid" : "5b8233662ee86bc5439d48c1bd80fa82",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739169339228,
+          "stop" : 1739169340429,
+          "duration" : 1201
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5b8233662ee86bc5439d48c1bd80fa82"
+    }, {
+      "name" : "\nYou can implement step definitions for undefined steps with these snippets:\n\n@given(u'I choose to edit student \"John Tan\"')\ndef step_impl(context):\n    raise NotImplementedError(u'STEP: Given I choose to edit student \"John Tan\"')\n\n",
+      "children" : [ {
+        "name" : "Admin modifies a student account",
+        "uid" : "231df8f1478737d2",
+        "parentUid" : "7d3b9a6a5ec3c727b011e1c6e56369b3",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739169340430,
+          "stop" : 1739169341532,
+          "duration" : 1102
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7d3b9a6a5ec3c727b011e1c6e56369b3"
+    }, {
+      "name" : "\nYou can implement step definitions for undefined steps with these snippets:\n\n@then(u'Verify Login title is present')\ndef step_impl(context):\n    raise NotImplementedError(u'STEP: Then Verify Login title is present')\n\n",
+      "children" : [ {
+        "name" : "Check Login title",
+        "uid" : "d278cf1374f2f6a",
+        "parentUid" : "cee98c0df1da9443b90afb2fa7cda80c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739169343186,
+          "stop" : 1739169343643,
+          "duration" : 457
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "cee98c0df1da9443b90afb2fa7cda80c"
+    }, {
+      "name" : "selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Invalid username\nMessage: unexpected alert open: {Alert text : Invalid username}\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x5560d9c8e53a <unknown>\n#1 0x5560d9789f00 <unknown>\n#2 0x5560d981da0f <unknown>\n#3 0x5560d97fe343 <unknown>\n#4 0x5560d97cb78a <unknown>\n#5 0x5560d97cc9de <unknown>\n#6 0x5560d9c582cb <unknown>\n#7 0x5560d9c5c242 <unknown>\n#8 0x5560d9c457ac <unknown>\n#9 0x5560d9c5cdf7 <unknown>\n#10 0x5560d9c29b2f <unknown>\n#11 0x5560d9c7d1a8 <unknown>\n#12 0x5560d9c7d370 <unknown>\n#13 0x5560d9c8d3b6 <unknown>\n#14 0x7f18cd69ca94 <unknown>\n#15 0x7f18cd729c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+        "uid" : "98505a22050c9d41",
+        "parentUid" : "149df06a90e6e01e885bc76ab1c6c289",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739169347039,
+          "stop" : 1739169348785,
+          "duration" : 1746
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "password1", "John Tan" ]
+      } ],
+      "uid" : "149df06a90e6e01e885bc76ab1c6c289"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
