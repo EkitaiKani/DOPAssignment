@@ -19,12 +19,12 @@ BASE_URL = common_steps.BASE_URL
 def step_impl(context):
     """Login as an admin."""
     try:
-        context.driver.find_element(By.ID, "InputUsername").send_keys("Admin")
-        context.driver.find_element(By.ID, "InputPassword").send_keys("supersecretpassword")
-        context.driver.find_element(By.ID, "login").click()
+        common_steps.find_element(By.ID, "InputUsername").send_keys("Admin")
+        common_steps.find_element(By.ID, "InputPassword").send_keys("supersecretpassword")
+        common_steps.find_element(By.ID, "login").click()
         
         # Wait for admin page to load
-        WebDriverWait(context.driver, WAIT_TIMEOUT).until(
+        WebDriverWait(common_steps, WAIT_TIMEOUT).until(
             EC.title_is("Admin")
         )
         logger.info("Logged in successfully as admin")
@@ -47,7 +47,7 @@ def step_impl(context):
 def step_impl(context, student_id):
     """Enter student ID into the search bar."""
     try:
-        search_bar = context.driver.find_element(By.ID, "search-bar")
+        search_bar = common_steps.find_element(By.ID, "search-bar")
         search_bar.send_keys(student_id)
         assert search_bar.get_attribute("value") == student_id, f"Expected student ID '{student_id}' to be in the search bar, but found '{search_bar.get_attribute('value')}'"
         logger.info(f"Entered student ID: {student_id}")
@@ -59,7 +59,7 @@ def step_impl(context, student_id):
 def step_impl(context, student_name):
     """Enter student name into the search bar."""
     try:
-        search_bar = context.driver.find_element(By.ID, "search-bar")
+        search_bar = common_steps.find_element(By.ID, "search-bar")
         search_bar.send_keys(student_name)
         assert search_bar.get_attribute("value") == student_name, f"Expected student name '{student_name}' to be in the search bar, but found '{search_bar.get_attribute('value')}'"
         logger.info(f"Entered student name: {student_name}")
@@ -71,7 +71,7 @@ def step_impl(context, student_name):
 def step_impl(context, student_name):
     """Verify search results show the correct student."""
     try:
-        students_table = WebDriverWait(context.driver, WAIT_TIMEOUT).until(
+        students_table = WebDriverWait(common_steps, WAIT_TIMEOUT).until(
             EC.presence_of_element_located((By.ID, "students-table"))
         )
         rows = students_table.find_elements(By.TAG_NAME, "tr")
@@ -89,13 +89,13 @@ def step_impl(context, student_name):
 def step_impl(context):
     """Click the button to create a student account."""
     try:
-        create_student_button = WebDriverWait(context.driver, WAIT_TIMEOUT).until(
+        create_student_button = WebDriverWait(common_steps, WAIT_TIMEOUT).until(
             EC.element_to_be_clickable((By.ID, "create-student"))
         )
         create_student_button.click()
         
         # Wait for the Create Student page to load
-        WebDriverWait(context.driver, WAIT_TIMEOUT).until(
+        WebDriverWait(common_steps, WAIT_TIMEOUT).until(
             EC.title_is("Create Student")
         )
         logger.info("Navigated to Create Student page")
@@ -107,13 +107,13 @@ def step_impl(context):
 def step_impl(context):
     """Fill in student details for creating or updating the student."""
     try:
-        context.driver.find_element(By.ID, "studentid").send_keys("S12345")
-        context.driver.find_element(By.ID, "username").send_keys("John Doe")
-        context.driver.find_element(By.ID, "points").send_keys("50")
-        context.driver.find_element(By.ID, "password").send_keys("password123")
-        context.driver.find_element(By.ID, "diplomaofstudy").send_keys("BSc Computer Science")
-        context.driver.find_element(By.ID, "yearofentry").send_keys("2025")
-        context.driver.find_element(By.ID, "emailaddress").send_keys("johndoe@example.com")
+        common_steps.find_element(By.ID, "studentid").send_keys("S12345")
+        common_steps.find_element(By.ID, "username").send_keys("John Doe")
+        common_steps.find_element(By.ID, "points").send_keys("50")
+        common_steps.find_element(By.ID, "password").send_keys("password123")
+        common_steps.find_element(By.ID, "diplomaofstudy").send_keys("BSc Computer Science")
+        common_steps.find_element(By.ID, "yearofentry").send_keys("2025")
+        common_steps.find_element(By.ID, "emailaddress").send_keys("johndoe@example.com")
         logger.info("Student details entered successfully")
     except Exception as e:
         logger.error(f"Failed to enter student details: {str(e)}")
@@ -123,14 +123,14 @@ def step_impl(context):
 def step_impl(context):
     """Submit the student creation form."""
     try:
-        create_student_button = context.driver.find_element(By.ID, "createStudent")
+        create_student_button = common_steps.find_element(By.ID, "createStudent")
         create_student_button.click()
         
         # Wait for the alert to confirm successful creation
-        WebDriverWait(context.driver, WAIT_TIMEOUT).until(
+        WebDriverWait(common_steps, WAIT_TIMEOUT).until(
             EC.alert_is_present()
         )
-        alert = context.driver.switch_to.alert
+        alert = common_steps.switch_to.alert
         alert_message = alert.text
         assert alert_message == "Student created successfully!", f"Expected alert message 'Student created successfully!', but got '{alert_message}'"
         alert.accept()
@@ -146,7 +146,7 @@ def step_impl(context):
 def step_impl(context, student_name):
     """Verify the student was added to the student list."""
     try:
-        students_table = context.driver.find_element(By.ID, "students-table")
+        students_table = common_steps.find_element(By.ID, "students-table")
         rows = students_table.find_elements(By.TAG_NAME, "tr")
         for row in rows[1:]:
             columns = row.find_elements(By.TAG_NAME, "td")
@@ -162,7 +162,7 @@ def step_impl(context, student_name):
 def step_impl(context, student_name):
     """Choose to delete a student."""
     try:
-        students_table = WebDriverWait(context.driver, WAIT_TIMEOUT).until(
+        students_table = WebDriverWait(common_steps, WAIT_TIMEOUT).until(
             EC.presence_of_element_located((By.ID, "students-table"))
         )
         rows = students_table.find_elements(By.TAG_NAME, "tr")
@@ -183,10 +183,10 @@ def step_impl(context, student_name):
 def step_impl(context):
     """Confirm the deletion of a student."""
     try:
-        WebDriverWait(context.driver, WAIT_TIMEOUT).until(
+        WebDriverWait(common_steps, WAIT_TIMEOUT).until(
             EC.alert_is_present()
         )
-        alert = context.driver.switch_to.alert
+        alert = common_steps.switch_to.alert
         alert_message = alert.text
         assert alert_message == "Are you sure you want to delete this student?", f"Expected alert message 'Are you sure you want to delete this student?', but got '{alert_message}'"
         alert.accept()
@@ -202,10 +202,10 @@ def step_impl(context):
 def step_impl(context, student_name):
     """Verify the student was removed from the student list."""
     try:
-        WebDriverWait(context.driver, WAIT_TIMEOUT).until(
-            EC.staleness_of(context.driver.find_element(By.ID, "students-table"))
+        WebDriverWait(common_steps, WAIT_TIMEOUT).until(
+            EC.staleness_of(common_steps.find_element(By.ID, "students-table"))
         )
-        students_table = WebDriverWait(context.driver, WAIT_TIMEOUT).until(
+        students_table = WebDriverWait(common_steps, WAIT_TIMEOUT).until(
             EC.presence_of_element_located((By.ID, "students-table"))
         )
         rows = students_table.find_elements(By.TAG_NAME, "tr")
