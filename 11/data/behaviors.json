@@ -1,0 +1,156 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "Admin Page Features",
+    "children" : [ {
+      "name" : "Admin lists all student accounts",
+      "uid" : "bc2f4e99c6d49da7",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288973,
+        "stop" : 1739161288974,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin searches for a student account by Student ID",
+      "uid" : "3ecb4383021ffc8f",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288975,
+        "stop" : 1739161288976,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin searches for a student account by Student Name",
+      "uid" : "207447709d1334fe",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288976,
+        "stop" : 1739161288977,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin creates a new student account",
+      "uid" : "f0b94da7e8e8f020",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288978,
+        "stop" : 1739161288979,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin modifies a student account",
+      "uid" : "57a5a45371d61559",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288980,
+        "stop" : 1739161288981,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin deletes a student account",
+      "uid" : "e56959b1c3183419",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288981,
+        "stop" : 1739161288983,
+        "duration" : 2
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "2273fbf011b68a8f6b10e4baf6ad47e5"
+  }, {
+    "name" : "Verify Login is valid",
+    "children" : [ {
+      "name" : "Check Login title",
+      "uid" : "c67331a12ee8dba1",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288983,
+        "stop" : 1739161288985,
+        "duration" : 2
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Fill in student login with one incorrect userName data",
+      "uid" : "faf324fa7e68b604",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288985,
+        "stop" : 1739161288986,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Fill in admin login with one correct user data",
+      "uid" : "a3e80a63854eb29e",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288986,
+        "stop" : 1739161288988,
+        "duration" : 2
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+      "uid" : "fa118791c0645522",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288988,
+        "stop" : 1739161288989,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "password1", "John Tan" ]
+    }, {
+      "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+      "uid" : "ecd8a14bae13460",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "failed",
+      "time" : {
+        "start" : 1739161288989,
+        "stop" : 1739161288990,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "password2", "Sarah Lim" ]
+    } ],
+    "uid" : "d9b076f658f0216dcb302880bce89ade"
+  } ],
+  "name" : "behaviors"
+}
