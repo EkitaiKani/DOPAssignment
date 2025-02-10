@@ -9,7 +9,7 @@ import os
 load_dotenv()
 app = Flask(__name__, static_folder="../client/static", template_folder="../client/templates")
 app.secret_key = os.urandom(24)
-app.config.from_object(ProductionConfig)
+app.config.from_object(DevelopmentConfig)
 init_db(app)
 
 users = {}
