@@ -180,3 +180,16 @@ jobs:
           owner: EkitaiKani
           repository: EkitaiKani/DOPAssignment
           sha: ${{ github.sha }}
+  deploy:
+    needs: [setup, allure_report] 
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Trigger Render Deployment
+        run: |
+          curl -X POST "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys" \
+               -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+               -H "Content-Type: application/json"
