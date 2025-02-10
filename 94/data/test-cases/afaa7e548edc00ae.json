@@ -1,0 +1,154 @@
+{
+  "uid" : "afaa7e548edc00ae",
+  "name" : "Admin lists all student accounts",
+  "fullName" : "Admin Page Features: Admin lists all student accounts",
+  "historyId" : "8da640e5c96b3fd742baa8e1f227fc39",
+  "time" : {
+    "start" : 1739155537642,
+    "stop" : 1739155541106,
+    "duration" : 3464
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55da7fa8453a <unknown>\n#1 0x55da7f57ff00 <unknown>\n#2 0x55da7f5b6c53 <unknown>\n#3 0x55da7f5b34b6 <unknown>\n#4 0x55da7f6007b6 <unknown>\n#5 0x55da7f5ffe06 <unknown>\n#6 0x55da7f5f4343 <unknown>\n#7 0x55da7f5c178a <unknown>\n#8 0x55da7f5c29de <unknown>\n#9 0x55da7fa4e2cb <unknown>\n#10 0x55da7fa52242 <unknown>\n#11 0x55da7fa3b7ac <unknown>\n#12 0x55da7fa52df7 <unknown>\n#13 0x55da7fa1fb2f <unknown>\n#14 0x55da7fa731a8 <unknown>\n#15 0x55da7fa73370 <unknown>\n#16 0x55da7fa833b6 <unknown>\n#17 0x7f1f3ce9ca94 <unknown>\n#18 0x7f1f3cf29c3c <unknown>\n\n",
+  "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 10, in step_impl\n    context.driver = webdriver.Chrome()\n                     ^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py\", line 45, in __init__\n    super().__init__(\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py\", line 66, in __init__\n    super().__init__(command_executor=executor, options=options)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 250, in __init__\n    self.start_session(capabilities)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 342, in start_session\n    response = self.execute(Command.NEW_SESSION, caps)[\"value\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55da7fa8453a <unknown>\n#1 0x55da7f57ff00 <unknown>\n#2 0x55da7f5b6c53 <unknown>\n#3 0x55da7f5b34b6 <unknown>\n#4 0x55da7f6007b6 <unknown>\n#5 0x55da7f5ffe06 <unknown>\n#6 0x55da7f5f4343 <unknown>\n#7 0x55da7f5c178a <unknown>\n#8 0x55da7f5c29de <unknown>\n#9 0x55da7fa4e2cb <unknown>\n#10 0x55da7fa52242 <unknown>\n#11 0x55da7fa3b7ac <unknown>\n#12 0x55da7fa52df7 <unknown>\n#13 0x55da7fa1fb2f <unknown>\n#14 0x55da7fa731a8 <unknown>\n#15 0x55da7fa73370 <unknown>\n#16 0x55da7fa833b6 <unknown>\n#17 0x7f1f3ce9ca94 <unknown>\n#18 0x7f1f3cf29c3c <unknown>\n\n",
+    "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 10, in step_impl\n    context.driver = webdriver.Chrome()\n                     ^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py\", line 45, in __init__\n    super().__init__(\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py\", line 66, in __init__\n    super().__init__(command_executor=executor, options=options)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 250, in __init__\n    self.start_session(capabilities)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 342, in start_session\n    response = self.execute(Command.NEW_SESSION, caps)[\"value\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739155537642,
+        "stop" : 1739155541105,
+        "duration" : 3463
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\n#0 0x55da7fa8453a <unknown>\n#1 0x55da7f57ff00 <unknown>\n#2 0x55da7f5b6c53 <unknown>\n#3 0x55da7f5b34b6 <unknown>\n#4 0x55da7f6007b6 <unknown>\n#5 0x55da7f5ffe06 <unknown>\n#6 0x55da7f5f4343 <unknown>\n#7 0x55da7f5c178a <unknown>\n#8 0x55da7f5c29de <unknown>\n#9 0x55da7fa4e2cb <unknown>\n#10 0x55da7fa52242 <unknown>\n#11 0x55da7fa3b7ac <unknown>\n#12 0x55da7fa52df7 <unknown>\n#13 0x55da7fa1fb2f <unknown>\n#14 0x55da7fa731a8 <unknown>\n#15 0x55da7fa73370 <unknown>\n#16 0x55da7fa833b6 <unknown>\n#17 0x7f1f3ce9ca94 <unknown>\n#18 0x7f1f3cf29c3c <unknown>\n\n",
+      "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"/home/runner/work/DOPAssignment/DOPAssignment/tests/features/steps/common_steps.py\", line 10, in step_impl\n    context.driver = webdriver.Chrome()\n                     ^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py\", line 45, in __init__\n    super().__init__(\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py\", line 66, in __init__\n    super().__init__(command_executor=executor, options=options)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 250, in __init__\n    self.start_session(capabilities)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 342, in start_session\n    response = self.execute(Command.NEW_SESSION, caps)[\"value\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py\", line 429, in execute\n    self.error_handler.check_response(response)\n  File \"/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739155541105,
+        "stop" : 1739155541105,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739155541105,
+        "stop" : 1739155541106,
+        "duration" : 1
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739155541106,
+        "stop" : 1739155541106,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given I am logged in as an admin",
+      "time" : {
+        "start" : 1739155541106,
+        "stop" : 1739155541106,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then I should see a list of all student accounts",
+      "time" : {
+        "start" : 1739155541106,
+        "stop" : 1739155541106,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Admin Page Features"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "afaa7e548edc00ae.json",
+  "parameterValues" : [ ]
+}
