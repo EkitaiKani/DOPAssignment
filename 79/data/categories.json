@@ -1,0 +1,179 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55aebb25153a <unknown>\n#1 0x55aebad4cf00 <unknown>\n#2 0x55aebad45114 <unknown>\n#3 0x55aebad354b9 <unknown>\n#4 0x55aebad371c4 <unknown>\n#5 0x55aebad3576d <unknown>\n#6 0x55aebad351e5 <unknown>\n#7 0x55aebad34ec2 <unknown>\n#8 0x55aebad32e56 <unknown>\n#9 0x55aebad334ca <unknown>\n#10 0x55aebad4f879 <unknown>\n#11 0x55aebade0bf5 <unknown>\n#12 0x55aebadc15a2 <unknown>\n#13 0x55aebaddff84 <unknown>\n#14 0x55aebadc1343 <unknown>\n#15 0x55aebad8e78a <unknown>\n#16 0x55aebad8f9de <unknown>\n#17 0x55aebb21b2cb <unknown>\n#18 0x55aebb21f242 <unknown>\n#19 0x55aebb2087ac <unknown>\n#20 0x55aebb21fdf7 <unknown>\n#21 0x55aebb1ecb2f <unknown>\n#22 0x55aebb2401a8 <unknown>\n#23 0x55aebb240370 <unknown>\n#24 0x55aebb2503b6 <unknown>\n#25 0x7fab4d09ca94 <unknown>\n#26 0x7fab4d129c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin lists all student accounts",
+        "uid" : "13c8e023b4a7643e",
+        "parentUid" : "2a56c89d86506ede99bc50902d26efe2",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253235373,
+          "stop" : 1739253236194,
+          "duration" : 821
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2a56c89d86506ede99bc50902d26efe2"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x56371ef2d53a <unknown>\n#1 0x56371ea28f00 <unknown>\n#2 0x56371ea21114 <unknown>\n#3 0x56371ea114b9 <unknown>\n#4 0x56371ea131c4 <unknown>\n#5 0x56371ea1176d <unknown>\n#6 0x56371ea111e5 <unknown>\n#7 0x56371ea10ec2 <unknown>\n#8 0x56371ea0ee56 <unknown>\n#9 0x56371ea0f4ca <unknown>\n#10 0x56371ea2b879 <unknown>\n#11 0x56371eabcbf5 <unknown>\n#12 0x56371ea9d5a2 <unknown>\n#13 0x56371eabbf84 <unknown>\n#14 0x56371ea9d343 <unknown>\n#15 0x56371ea6a78a <unknown>\n#16 0x56371ea6b9de <unknown>\n#17 0x56371eef72cb <unknown>\n#18 0x56371eefb242 <unknown>\n#19 0x56371eee47ac <unknown>\n#20 0x56371eefbdf7 <unknown>\n#21 0x56371eec8b2f <unknown>\n#22 0x56371ef1c1a8 <unknown>\n#23 0x56371ef1c370 <unknown>\n#24 0x56371ef2c3b6 <unknown>\n#25 0x7efdc009ca94 <unknown>\n#26 0x7efdc0129c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin searches for a student account by Student Name",
+        "uid" : "80f125af9eb93b16",
+        "parentUid" : "cc49f5aa1f5f9548c25794672daf4499",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253236195,
+          "stop" : 1739253236623,
+          "duration" : 428
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "cc49f5aa1f5f9548c25794672daf4499"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55f56a5e553a <unknown>\n#1 0x55f56a0e0f00 <unknown>\n#2 0x55f56a0d9114 <unknown>\n#3 0x55f56a0c94b9 <unknown>\n#4 0x55f56a0cb1c4 <unknown>\n#5 0x55f56a0c976d <unknown>\n#6 0x55f56a0c91e5 <unknown>\n#7 0x55f56a0c8ec2 <unknown>\n#8 0x55f56a0c6e56 <unknown>\n#9 0x55f56a0c74ca <unknown>\n#10 0x55f56a0e3879 <unknown>\n#11 0x55f56a174bf5 <unknown>\n#12 0x55f56a1555a2 <unknown>\n#13 0x55f56a173f84 <unknown>\n#14 0x55f56a155343 <unknown>\n#15 0x55f56a12278a <unknown>\n#16 0x55f56a1239de <unknown>\n#17 0x55f56a5af2cb <unknown>\n#18 0x55f56a5b3242 <unknown>\n#19 0x55f56a59c7ac <unknown>\n#20 0x55f56a5b3df7 <unknown>\n#21 0x55f56a580b2f <unknown>\n#22 0x55f56a5d41a8 <unknown>\n#23 0x55f56a5d4370 <unknown>\n#24 0x55f56a5e43b6 <unknown>\n#25 0x7f1c5769ca94 <unknown>\n#26 0x7f1c57729c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin creates a new student account",
+        "uid" : "f05e582737e3dc12",
+        "parentUid" : "9353315d658fe03977803951508ec3be",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253236625,
+          "stop" : 1739253237036,
+          "duration" : 411
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9353315d658fe03977803951508ec3be"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55df4deba53a <unknown>\n#1 0x55df4d9b5f00 <unknown>\n#2 0x55df4d9ae114 <unknown>\n#3 0x55df4d99e4b9 <unknown>\n#4 0x55df4d9a01c4 <unknown>\n#5 0x55df4d99e76d <unknown>\n#6 0x55df4d99e1e5 <unknown>\n#7 0x55df4d99dec2 <unknown>\n#8 0x55df4d99be56 <unknown>\n#9 0x55df4d99c4ca <unknown>\n#10 0x55df4d9b8879 <unknown>\n#11 0x55df4da49bf5 <unknown>\n#12 0x55df4da2a5a2 <unknown>\n#13 0x55df4da48f84 <unknown>\n#14 0x55df4da2a343 <unknown>\n#15 0x55df4d9f778a <unknown>\n#16 0x55df4d9f89de <unknown>\n#17 0x55df4de842cb <unknown>\n#18 0x55df4de88242 <unknown>\n#19 0x55df4de717ac <unknown>\n#20 0x55df4de88df7 <unknown>\n#21 0x55df4de55b2f <unknown>\n#22 0x55df4dea91a8 <unknown>\n#23 0x55df4dea9370 <unknown>\n#24 0x55df4deb93b6 <unknown>\n#25 0x7f59bf89ca94 <unknown>\n#26 0x7f59bf929c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin modifies a student account",
+        "uid" : "2078aa01cd171814",
+        "parentUid" : "84550d49301adbc4aeeaf0bc6b243f82",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253237036,
+          "stop" : 1739253237445,
+          "duration" : 409
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "84550d49301adbc4aeeaf0bc6b243f82"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55947588053a <unknown>\n#1 0x55947537bf00 <unknown>\n#2 0x559475374114 <unknown>\n#3 0x5594753644b9 <unknown>\n#4 0x5594753661c4 <unknown>\n#5 0x55947536476d <unknown>\n#6 0x5594753641e5 <unknown>\n#7 0x559475363ec2 <unknown>\n#8 0x559475361e56 <unknown>\n#9 0x5594753624ca <unknown>\n#10 0x55947537e879 <unknown>\n#11 0x55947540fbf5 <unknown>\n#12 0x5594753f05a2 <unknown>\n#13 0x55947540ef84 <unknown>\n#14 0x5594753f0343 <unknown>\n#15 0x5594753bd78a <unknown>\n#16 0x5594753be9de <unknown>\n#17 0x55947584a2cb <unknown>\n#18 0x55947584e242 <unknown>\n#19 0x5594758377ac <unknown>\n#20 0x55947584edf7 <unknown>\n#21 0x55947581bb2f <unknown>\n#22 0x55947586f1a8 <unknown>\n#23 0x55947586f370 <unknown>\n#24 0x55947587f3b6 <unknown>\n#25 0x7f9410a9ca94 <unknown>\n#26 0x7f9410b29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Admin deletes a student account",
+        "uid" : "646d4a4797e89b39",
+        "parentUid" : "c50dac60d7628ea5ef06034347741b45",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253237446,
+          "stop" : 1739253237908,
+          "duration" : 462
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c50dac60d7628ea5ef06034347741b45"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x556f9571153a <unknown>\n#1 0x556f9520cf00 <unknown>\n#2 0x556f95205114 <unknown>\n#3 0x556f951f54b9 <unknown>\n#4 0x556f951f71c4 <unknown>\n#5 0x556f951f576d <unknown>\n#6 0x556f951f51e5 <unknown>\n#7 0x556f951f4ec2 <unknown>\n#8 0x556f951f2e56 <unknown>\n#9 0x556f951f34ca <unknown>\n#10 0x556f9520f879 <unknown>\n#11 0x556f952a0bf5 <unknown>\n#12 0x556f952815a2 <unknown>\n#13 0x556f9529ff84 <unknown>\n#14 0x556f95281343 <unknown>\n#15 0x556f9524e78a <unknown>\n#16 0x556f9524f9de <unknown>\n#17 0x556f956db2cb <unknown>\n#18 0x556f956df242 <unknown>\n#19 0x556f956c87ac <unknown>\n#20 0x556f956dfdf7 <unknown>\n#21 0x556f956acb2f <unknown>\n#22 0x556f957001a8 <unknown>\n#23 0x556f95700370 <unknown>\n#24 0x556f957103b6 <unknown>\n#25 0x7fb8aee9ca94 <unknown>\n#26 0x7fb8aef29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Check Login title",
+        "uid" : "3cccc04d60800cc6",
+        "parentUid" : "b42c098b7b8dadd3f5bb87f1a6b8d497",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253237909,
+          "stop" : 1739253238327,
+          "duration" : 418
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b42c098b7b8dadd3f5bb87f1a6b8d497"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x563d32e4b53a <unknown>\n#1 0x563d32946f00 <unknown>\n#2 0x563d3293f114 <unknown>\n#3 0x563d3292f4b9 <unknown>\n#4 0x563d329311c4 <unknown>\n#5 0x563d3292f76d <unknown>\n#6 0x563d3292f1e5 <unknown>\n#7 0x563d3292eec2 <unknown>\n#8 0x563d3292ce56 <unknown>\n#9 0x563d3292d4ca <unknown>\n#10 0x563d32949879 <unknown>\n#11 0x563d329dabf5 <unknown>\n#12 0x563d329bb5a2 <unknown>\n#13 0x563d329d9f84 <unknown>\n#14 0x563d329bb343 <unknown>\n#15 0x563d3298878a <unknown>\n#16 0x563d329899de <unknown>\n#17 0x563d32e152cb <unknown>\n#18 0x563d32e19242 <unknown>\n#19 0x563d32e027ac <unknown>\n#20 0x563d32e19df7 <unknown>\n#21 0x563d32de6b2f <unknown>\n#22 0x563d32e3a1a8 <unknown>\n#23 0x563d32e3a370 <unknown>\n#24 0x563d32e4a3b6 <unknown>\n#25 0x7fe33a89ca94 <unknown>\n#26 0x7fe33a929c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with one incorrect userName data",
+        "uid" : "be5dc41f94469699",
+        "parentUid" : "25b0b3de4859c344550b9ea62db54acb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253238327,
+          "stop" : 1739253238774,
+          "duration" : 447
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "25b0b3de4859c344550b9ea62db54acb"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55d8d65d553a <unknown>\n#1 0x55d8d60d0f00 <unknown>\n#2 0x55d8d60c9114 <unknown>\n#3 0x55d8d60b94b9 <unknown>\n#4 0x55d8d60bb1c4 <unknown>\n#5 0x55d8d60b976d <unknown>\n#6 0x55d8d60b91e5 <unknown>\n#7 0x55d8d60b8ec2 <unknown>\n#8 0x55d8d60b6e56 <unknown>\n#9 0x55d8d60b74ca <unknown>\n#10 0x55d8d60d3879 <unknown>\n#11 0x55d8d6164bf5 <unknown>\n#12 0x55d8d61455a2 <unknown>\n#13 0x55d8d6163f84 <unknown>\n#14 0x55d8d6145343 <unknown>\n#15 0x55d8d611278a <unknown>\n#16 0x55d8d61139de <unknown>\n#17 0x55d8d659f2cb <unknown>\n#18 0x55d8d65a3242 <unknown>\n#19 0x55d8d658c7ac <unknown>\n#20 0x55d8d65a3df7 <unknown>\n#21 0x55d8d6570b2f <unknown>\n#22 0x55d8d65c41a8 <unknown>\n#23 0x55d8d65c4370 <unknown>\n#24 0x55d8d65d43b6 <unknown>\n#25 0x7f94f6e9ca94 <unknown>\n#26 0x7f94f6f29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in admin login with one correct user data",
+        "uid" : "b942c404279b131b",
+        "parentUid" : "bddb9d82898ef5d4bd4ebba4b9dbb42d",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253238774,
+          "stop" : 1739253239210,
+          "duration" : 436
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bddb9d82898ef5d4bd4ebba4b9dbb42d"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55577a21c53a <unknown>\n#1 0x555779d17f00 <unknown>\n#2 0x555779d10114 <unknown>\n#3 0x555779d004b9 <unknown>\n#4 0x555779d021c4 <unknown>\n#5 0x555779d0076d <unknown>\n#6 0x555779d001e5 <unknown>\n#7 0x555779cffec2 <unknown>\n#8 0x555779cfde56 <unknown>\n#9 0x555779cfe4ca <unknown>\n#10 0x555779d1a879 <unknown>\n#11 0x555779dabbf5 <unknown>\n#12 0x555779d8c5a2 <unknown>\n#13 0x555779daaf84 <unknown>\n#14 0x555779d8c343 <unknown>\n#15 0x555779d5978a <unknown>\n#16 0x555779d5a9de <unknown>\n#17 0x55577a1e62cb <unknown>\n#18 0x55577a1ea242 <unknown>\n#19 0x55577a1d37ac <unknown>\n#20 0x55577a1eadf7 <unknown>\n#21 0x55577a1b7b2f <unknown>\n#22 0x55577a20b1a8 <unknown>\n#23 0x55577a20b370 <unknown>\n#24 0x55577a21b3b6 <unknown>\n#25 0x7f11aca9ca94 <unknown>\n#26 0x7f11acb29c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+        "uid" : "744222d1a859d7a2",
+        "parentUid" : "9ae7207445b41be7e2e5428964e2498a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253239210,
+          "stop" : 1739253239627,
+          "duration" : 417
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "password1", "John Tan" ]
+      } ],
+      "uid" : "9ae7207445b41be7e2e5428964e2498a"
+    }, {
+      "name" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55909e61653a <unknown>\n#1 0x55909e111f00 <unknown>\n#2 0x55909e10a114 <unknown>\n#3 0x55909e0fa4b9 <unknown>\n#4 0x55909e0fc1c4 <unknown>\n#5 0x55909e0fa76d <unknown>\n#6 0x55909e0fa1e5 <unknown>\n#7 0x55909e0f9ec2 <unknown>\n#8 0x55909e0f7e56 <unknown>\n#9 0x55909e0f84ca <unknown>\n#10 0x55909e114879 <unknown>\n#11 0x55909e1a5bf5 <unknown>\n#12 0x55909e1865a2 <unknown>\n#13 0x55909e1a4f84 <unknown>\n#14 0x55909e186343 <unknown>\n#15 0x55909e15378a <unknown>\n#16 0x55909e1549de <unknown>\n#17 0x55909e5e02cb <unknown>\n#18 0x55909e5e4242 <unknown>\n#19 0x55909e5cd7ac <unknown>\n#20 0x55909e5e4df7 <unknown>\n#21 0x55909e5b1b2f <unknown>\n#22 0x55909e6051a8 <unknown>\n#23 0x55909e605370 <unknown>\n#24 0x55909e6153b6 <unknown>\n#25 0x7f17df69ca94 <unknown>\n#26 0x7f17df729c3c <unknown>\n\n",
+      "children" : [ {
+        "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+        "uid" : "aac5b8293f52f7a",
+        "parentUid" : "ccc5ec8fd3b49ea34c46341742b02275",
+        "status" : "broken",
+        "time" : {
+          "start" : 1739253239627,
+          "stop" : 1739253240052,
+          "duration" : 425
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "password2", "Sarah Lim" ]
+      } ],
+      "uid" : "ccc5ec8fd3b49ea34c46341742b02275"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}

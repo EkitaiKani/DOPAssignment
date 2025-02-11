@@ -1,0 +1,101 @@
+[ {
+  "uid" : "13c8e023b4a7643e",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739253235373,
+    "stop" : 1739253236194,
+    "duration" : 821
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "be5dc41f94469699",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1739253238327,
+    "stop" : 1739253238774,
+    "duration" : 447
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "80f125af9eb93b16",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739253236195,
+    "stop" : 1739253236623,
+    "duration" : 428
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "646d4a4797e89b39",
+  "name" : "Admin deletes a student account",
+  "time" : {
+    "start" : 1739253237446,
+    "stop" : 1739253237908,
+    "duration" : 462
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "f05e582737e3dc12",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739253236625,
+    "stop" : 1739253237036,
+    "duration" : 411
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "aac5b8293f52f7a",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1739253239627,
+    "stop" : 1739253240052,
+    "duration" : 425
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "3cccc04d60800cc6",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1739253237909,
+    "stop" : 1739253238327,
+    "duration" : 418
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "b942c404279b131b",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1739253238774,
+    "stop" : 1739253239210,
+    "duration" : 436
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "2078aa01cd171814",
+  "name" : "Admin modifies a student account",
+  "time" : {
+    "start" : 1739253237036,
+    "stop" : 1739253237445,
+    "duration" : 409
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "744222d1a859d7a2",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1739253239210,
+    "stop" : 1739253239627,
+    "duration" : 417
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
