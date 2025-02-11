@@ -1,0 +1,101 @@
+[ {
+  "uid" : "af92b9039d7e8989",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739241990198,
+    "stop" : 1739241991700,
+    "duration" : 1502
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1fc3a79f280550e5",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1739242008683,
+    "stop" : 1739242009178,
+    "duration" : 495
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9a24414c719f6a18",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739241991700,
+    "stop" : 1739242002876,
+    "duration" : 11176
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "58539884d986845b",
+  "name" : "Admin deletes a student account",
+  "time" : {
+    "start" : 1739242007301,
+    "stop" : 1739242008682,
+    "duration" : 1381
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "32ebc08594197761",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1739242012540,
+    "stop" : 1739242014237,
+    "duration" : 1697
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a4df85e6f621a624",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1739242010887,
+    "stop" : 1739242012539,
+    "duration" : 1652
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e10b602446c04895",
+  "name" : "Admin modifies a student account",
+  "time" : {
+    "start" : 1739242005159,
+    "stop" : 1739242007301,
+    "duration" : 2142
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "edf1d0fd7d315677",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1739242009178,
+    "stop" : 1739242010886,
+    "duration" : 1708
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "432ce9d2cf619691",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739242002877,
+    "stop" : 1739242005159,
+    "duration" : 2282
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4de2eaebb9edb698",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1739242014238,
+    "stop" : 1739242015904,
+    "duration" : 1666
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
