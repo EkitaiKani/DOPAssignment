@@ -7,14 +7,6 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-name: Issue Notification
-on:
-  issues:
-    types: [opened]
-jobs:
-  notify:
-    runs-on: ubuntu-latest
-    steps:
       - name: Send issue to Discord
         uses: Ilshidur/action-discord@master
         env:
