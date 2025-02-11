@@ -3,8 +3,11 @@ on:
   issues:
     types: [opened]
 
+<<<<<<< HEAD
   workflow_dispatch:
 
+=======
+>>>>>>> 18bfa1d8d87befd596ecaf134a2f0e48baca77b8
 jobs:
   notify:
     runs-on: ubuntu-latest
