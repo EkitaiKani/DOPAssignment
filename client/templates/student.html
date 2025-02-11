@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student</title>
-  </head>
-  <body>
-    <h1>Student</h1>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/student.css') }}">
+</head>
+<body>
+    <h2>Welcome, {{ username }}</h2>
+    <p>Your Points: <span id="points">{{ points }}</span></p>
+
+    <h3>Redeem Items</h3>
+    <form id="redeem-form">
+        {% for item in items %}
+            {% if item.quantity > 0 %}
+                <label>
+                    <input type="radio" name="item_id" value="{{ item.itemid }}">
+                    {{ item.name }} - {{ item.value }} Points (Available: {{ item.quantity }})
+                </label><br>
+            {% else %}
+                <p>{{ item.name }} - Out of Stock</p>
+            {% endif %}
+        {% endfor %}
+        <br>
+        <input type="submit" value="Redeem">
+    </form>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+    <script>
+        document.getElementById("redeem-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let selectedItem = document.querySelector('input[name="item_id"]:checked');
+            if (!selectedItem) {
+                alert("Please select an item to redeem.");
+                return;
+            }
+
+            fetch("{{ url_for('student.redeem') }}", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "item_id=" + selectedItem.value
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("points").textContent = data.new_points;
+                    alert("Redemption successful!");
+                    location.reload();
+                } else {
+                    alert("Redemption failed: " + data.error);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
 </html>
