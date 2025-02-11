@@ -10,7 +10,7 @@ jobs:
       - name: Send issue to Discord
         uses: Ilshidur/action-discord@0.3.2
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          webhook: ${{ secrets.DISCORD_ISSUES_URL}}
           title: "New Issue Created"
           description: |
             **Title**: ${{ github.event.issue.title }}
