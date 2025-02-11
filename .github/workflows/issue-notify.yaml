@@ -16,29 +16,19 @@ jobs:
         with:
           args: '🆕 New Issue Created: "${{ github.event.issue.title }}" by ${{ github.event.issue.user.login }} - ${{ github.event.issue.html_url }}'
 
-      - name: Send issue to Telegram
+      - name: Send Telegram Notification
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_ISSUES }}
-          GITHUB_ISSUE_TITLE: ${{ github.event.issue.title }}
-          GITHUB_ISSUE_BODY: ${{ github.event.issue.body }}
-          GITHUB_ISSUE_URL: ${{ github.event.issue.html_url }}
-          GITHUB_ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
-          # Escape special characters for MarkdownV2
-          ESCAPED_TITLE=$(echo "$GITHUB_ISSUE_TITLE" | sed 's/[_*\[\]()~`>#+\-=|{}.!]/\\&/g')
-          ESCAPED_BODY=$(echo "$GITHUB_ISSUE_BODY" | sed 's/[_*\[\]()~`>#+\-=|{}.!]/\\&/g')
-          ESCAPED_URL=$(echo "$GITHUB_ISSUE_URL" | sed 's/[_*\[\]()~`>#+\-=|{}.!]/\\&/g')
-          ESCAPED_AUTHOR=$(echo "$GITHUB_ISSUE_AUTHOR" | sed 's/[_*\[\]()~`>#+\-=|{}.!]/\\&/g')
-
           curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-          -d chat_id="${TELEGRAM_CHAT_ID}" \
-          -d message_thread_id="${TELEGRAM_TOPIC_ID}" \
-          -d parse_mode="MarkdownV2" \
-          -d text="*New Issue Created* 🛠️
-          *Title:* \`${ESCAPED_TITLE}\`
-          *Author:* ${ESCAPED_AUTHOR}
-          *Description:*
-          ${ESCAPED_BODY}
-          [View Issue](${ESCAPED_URL})"
+          -H "Content-Type: application/json" \
+          -d "{
+            \"chat_id\": \"${TELEGRAM_CHAT_ID}\",
+            \"parse_mode\": \"Markdown\",
+            \"text\": \"🆕 *New Issue Opened!*\n\n*Title:* ${ISSUE_TITLE}\n*Created by:* ${ISSUE_AUTHOR}\n[View Issue](${ISSUE_URL})\"
+          }"
