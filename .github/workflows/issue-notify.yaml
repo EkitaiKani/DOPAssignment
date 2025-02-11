@@ -7,17 +7,20 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+name: Issue Notification
+on:
+  issues:
+    types: [opened]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
       - name: Send issue to Discord
-        uses: Ilshidur/action-discord@0.3.2
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_ISSUES_URL }}
         with:
-          webhook: ${{ secrets.DISCORD_ISSUES_URL}}
-          title: "New Issue Created"
-          description: |
-            **Title**: ${{ github.event.issue.title }}
-            **Author**: ${{ github.event.issue.user.login }}
-            **Description**: ${{ github.event.issue.body }}
-          url: ${{ github.event.issue.html_url }}
-          color: 0x00ff00
+          args: '🆕 New Issue Created: "${{ github.event.issue.title }}" by ${{ github.event.issue.user.login }} - ${{ github.event.issue.html_url }}'
         
       - name: Send Telegram Notification
         env:
