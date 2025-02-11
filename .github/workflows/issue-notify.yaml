@@ -7,14 +7,6 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-name: Issue Notification
-on:
-  issues:
-    types: [opened]
-jobs:
-  notify:
-    runs-on: ubuntu-latest
-    steps:
       - name: Send issue to Discord
         uses: Ilshidur/action-discord@master
         env:
@@ -31,9 +23,9 @@ jobs:
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
-          ESCAPED_TITLE=$(echo "$ISSUE_TITLE" | sed 's/[\"]/\\&/g')
-          ESCAPED_AUTHOR=$(echo "$ISSUE_AUTHOR" | sed 's/[\"]/\\&/g')
-          ESCAPED_URL=$(echo "$ISSUE_URL" | sed 's/[\"]/\\&/g')
+          ESCAPED_TITLE=$(echo "$ISSUE_TITLE" | sed 's/[_*\[\]()~`>#+\-=|{}.!]/\\&/g')
+          ESCAPED_AUTHOR=$(echo "$ISSUE_AUTHOR" | sed 's/[_*\[\]()~`>#+\-=|{}.!]/\\&/g')
+          ESCAPED_URL=$(echo "$ISSUE_URL" | sed 's/[_*\[\]()~`>#+\-=|{}.!]/\\&/g')
           
           curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -H "Content-Type: application/json" \
