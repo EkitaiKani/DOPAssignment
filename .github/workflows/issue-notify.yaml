@@ -29,6 +29,7 @@ jobs:
           -H "Content-Type: application/json" \
           -d "{
             \"chat_id\": \"${TELEGRAM_CHAT_ID}\",
+            \"message_thread_id\":\"${TELEGRAM_TOPIC_ID}\",
             \"parse_mode\": \"Markdown\",
             \"text\": \"🆕 *New Issue Opened!*\n\n*Title:* ${ISSUE_TITLE}\n*Created by:* ${ISSUE_AUTHOR}\n[View Issue](${ISSUE_URL})\"
           }"
