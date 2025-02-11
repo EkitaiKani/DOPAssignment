@@ -1,0 +1,101 @@
+[ {
+  "uid" : "f9f9ccb40ad7b77",
+  "name" : "Admin lists all student accounts",
+  "time" : {
+    "start" : 1739242578851,
+    "stop" : 1739242580465,
+    "duration" : 1614
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d4c7f7e05e5ebe33",
+  "name" : "Check Login title",
+  "time" : {
+    "start" : 1739242597621,
+    "stop" : 1739242598161,
+    "duration" : 540
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4ea01c77b6847faa",
+  "name" : "Admin searches for a student account by Student Name",
+  "time" : {
+    "start" : 1739242580466,
+    "stop" : 1739242591668,
+    "duration" : 11202
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "938b9c7719cec36e",
+  "name" : "Admin modifies a student account",
+  "time" : {
+    "start" : 1739242593994,
+    "stop" : 1739242596171,
+    "duration" : 2177
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4a99ff8af4451e53",
+  "name" : "Fill in student login with one incorrect userName data",
+  "time" : {
+    "start" : 1739242598162,
+    "stop" : 1739242599870,
+    "duration" : 1708
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8443280fd25f9b1b",
+  "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+  "time" : {
+    "start" : 1739242601546,
+    "stop" : 1739242603278,
+    "duration" : 1732
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a0a1b347b7ab5fb5",
+  "name" : "Admin deletes a student account",
+  "time" : {
+    "start" : 1739242596172,
+    "stop" : 1739242597620,
+    "duration" : 1448
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7f05cb4c6c11e3f6",
+  "name" : "Fill in admin login with one correct user data",
+  "time" : {
+    "start" : 1739242599870,
+    "stop" : 1739242601546,
+    "duration" : 1676
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1449e44c313bd43e",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "time" : {
+    "start" : 1739242603279,
+    "stop" : 1739242604958,
+    "duration" : 1679
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c2d6ffae723d111b",
+  "name" : "Admin creates a new student account",
+  "time" : {
+    "start" : 1739242591668,
+    "stop" : 1739242593994,
+    "duration" : 2326
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
