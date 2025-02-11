@@ -1,0 +1,373 @@
+{
+  "uid" : "74f2153368192b32",
+  "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+  "fullName" : "Verify Login is valid: Fill in student login with multiple correct user data",
+  "historyId" : "38734b3559bb2ffcb5ec94b675640db6",
+  "time" : {
+    "start" : 1739244875274,
+    "stop" : 1739244876938,
+    "duration" : 1664
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739244875274,
+        "stop" : 1739244875594,
+        "duration" : 320
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739244875594,
+        "stop" : 1739244875594,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739244875595,
+        "stop" : 1739244875683,
+        "duration" : 88
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739244875683,
+        "stop" : 1739244875695,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Input multiple \"Sarah Lim\" and \"password2\"",
+      "time" : {
+        "start" : 1739244875695,
+        "stop" : 1739244875818,
+        "duration" : 123
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Submit form",
+      "time" : {
+        "start" : 1739244875819,
+        "stop" : 1739244876868,
+        "duration" : 1049
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Verify student login",
+      "time" : {
+        "start" : 1739244876868,
+        "stop" : 1739244876873,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Close browser",
+      "time" : {
+        "start" : 1739244876873,
+        "stop" : 1739244876938,
+        "duration" : 65
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Verify Login is valid"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "passWord",
+    "value" : "password2"
+  }, {
+    "name" : "userName",
+    "value" : "Sarah Lim"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 33,
+        "unknown" : 0,
+        "total" : 36
+      },
+      "items" : [ {
+        "uid" : "a7f4cefdb62d7acb",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/74/#testresult/a7f4cefdb62d7acb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739243641525,
+          "stop" : 1739243643195,
+          "duration" : 1670
+        }
+      }, {
+        "uid" : "1449e44c313bd43e",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/73/#testresult/1449e44c313bd43e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739242603279,
+          "stop" : 1739242604958,
+          "duration" : 1679
+        }
+      }, {
+        "uid" : "4e2bef183750e733",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/72/#testresult/4e2bef183750e733",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739242589055,
+          "stop" : 1739242590691,
+          "duration" : 1636
+        }
+      }, {
+        "uid" : "1dd8aa4ecb5a840f",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/71/#testresult/1dd8aa4ecb5a840f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739242301137,
+          "stop" : 1739242302840,
+          "duration" : 1703
+        }
+      }, {
+        "uid" : "c6956e47a0e9e9de",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/70/#testresult/c6956e47a0e9e9de",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739242246229,
+          "stop" : 1739242247977,
+          "duration" : 1748
+        }
+      }, {
+        "uid" : "4de2eaebb9edb698",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/69/#testresult/4de2eaebb9edb698",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739242014238,
+          "stop" : 1739242015904,
+          "duration" : 1666
+        }
+      }, {
+        "uid" : "bfd739b90230f0bc",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/68/#testresult/bfd739b90230f0bc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739242004029,
+          "stop" : 1739242005718,
+          "duration" : 1689
+        }
+      }, {
+        "uid" : "b4476340556de16e",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/67/#testresult/b4476340556de16e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739241581268,
+          "stop" : 1739241582953,
+          "duration" : 1685
+        }
+      }, {
+        "uid" : "c24af2b31bc445a2",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/66/#testresult/c24af2b31bc445a2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739241566945,
+          "stop" : 1739241568642,
+          "duration" : 1697
+        }
+      }, {
+        "uid" : "7252e3a313cbf0ca",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/65/#testresult/7252e3a313cbf0ca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739236064477,
+          "stop" : 1739236066156,
+          "duration" : 1679
+        }
+      }, {
+        "uid" : "52a366260124d087",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/64/#testresult/52a366260124d087",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739235705370,
+          "stop" : 1739235707050,
+          "duration" : 1680
+        }
+      }, {
+        "uid" : "97b7c9d6893af588",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/63/#testresult/97b7c9d6893af588",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739235576908,
+          "stop" : 1739235578557,
+          "duration" : 1649
+        }
+      }, {
+        "uid" : "555af0da4068af24",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/61/#testresult/555af0da4068af24",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739234847831,
+          "stop" : 1739234849534,
+          "duration" : 1703
+        }
+      }, {
+        "uid" : "f209f5fdd57ec6cb",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/62/#testresult/f209f5fdd57ec6cb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739234841572,
+          "stop" : 1739234843227,
+          "duration" : 1655
+        }
+      }, {
+        "uid" : "96711c2c41ddef75",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/59/#testresult/96711c2c41ddef75",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739234637152,
+          "stop" : 1739234638822,
+          "duration" : 1670
+        }
+      }, {
+        "uid" : "aae4fe92cf51b3f3",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/60/#testresult/aae4fe92cf51b3f3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739234644608,
+          "stop" : 1739234646254,
+          "duration" : 1646
+        }
+      }, {
+        "uid" : "44679de613d87b3f",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/58/#testresult/44679de613d87b3f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739203278980,
+          "stop" : 1739203280630,
+          "duration" : 1650
+        }
+      }, {
+        "uid" : "f16598343568e150",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/57/#testresult/f16598343568e150",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739203159481,
+          "stop" : 1739203161152,
+          "duration" : 1671
+        }
+      }, {
+        "uid" : "b0a6387dd42ed123",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/56/#testresult/b0a6387dd42ed123",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x556c95f6a53a <unknown>\n#1 0x556c95a65f00 <unknown>\n#2 0x556c95a5e114 <unknown>\n#3 0x556c95a4e4b9 <unknown>\n#4 0x556c95a501c4 <unknown>\n#5 0x556c95a4e76d <unknown>\n#6 0x556c95a4e1e5 <unknown>\n#7 0x556c95a4dec2 <unknown>\n#8 0x556c95a4be56 <unknown>\n#9 0x556c95a4c4ca <unknown>\n#10 0x556c95a68879 <unknown>\n#11 0x556c95af9bf5 <unknown>\n#12 0x556c95ada5a2 <unknown>\n#13 0x556c95af8f84 <unknown>\n#14 0x556c95ada343 <unknown>\n#15 0x556c95aa778a <unknown>\n#16 0x556c95aa89de <unknown>\n#17 0x556c95f342cb <unknown>\n#18 0x556c95f38242 <unknown>\n#19 0x556c95f217ac <unknown>\n#20 0x556c95f38df7 <unknown>\n#21 0x556c95f05b2f <unknown>\n#22 0x556c95f591a8 <unknown>\n#23 0x556c95f59370 <unknown>\n#24 0x556c95f693b6 <unknown>\n#25 0x7f5f3329ca94 <unknown>\n#26 0x7f5f33329c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739203042774,
+          "stop" : 1739203043194,
+          "duration" : 420
+        }
+      }, {
+        "uid" : "71e3a7af640cc96",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/55/#testresult/71e3a7af640cc96",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55927aad853a <unknown>\n#1 0x55927a5d3f00 <unknown>\n#2 0x55927a5cc114 <unknown>\n#3 0x55927a5bc4b9 <unknown>\n#4 0x55927a5be1c4 <unknown>\n#5 0x55927a5bc76d <unknown>\n#6 0x55927a5bc1e5 <unknown>\n#7 0x55927a5bbec2 <unknown>\n#8 0x55927a5b9e56 <unknown>\n#9 0x55927a5ba4ca <unknown>\n#10 0x55927a5d6879 <unknown>\n#11 0x55927a667bf5 <unknown>\n#12 0x55927a6485a2 <unknown>\n#13 0x55927a666f84 <unknown>\n#14 0x55927a648343 <unknown>\n#15 0x55927a61578a <unknown>\n#16 0x55927a6169de <unknown>\n#17 0x55927aaa22cb <unknown>\n#18 0x55927aaa6242 <unknown>\n#19 0x55927aa8f7ac <unknown>\n#20 0x55927aaa6df7 <unknown>\n#21 0x55927aa73b2f <unknown>\n#22 0x55927aac71a8 <unknown>\n#23 0x55927aac7370 <unknown>\n#24 0x55927aad73b6 <unknown>\n#25 0x7faf0cc9ca94 <unknown>\n#26 0x7faf0cd29c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739202914356,
+          "stop" : 1739202914791,
+          "duration" : 435
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "74f2153368192b32.json",
+  "parameterValues" : [ "password2", "Sarah Lim" ]
+}
