@@ -1,0 +1,346 @@
+{
+  "uid" : "b5d58ec290f525c5",
+  "name" : "Admin searches for a student account by Student Name",
+  "fullName" : "Admin Page Features: Admin searches for a student account by Student Name",
+  "historyId" : "b4287c483bb34fc757985ea41cba56ff",
+  "time" : {
+    "start" : 1739234622184,
+    "stop" : 1739234633337,
+    "duration" : 11153
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Chrome browser is launch",
+      "time" : {
+        "start" : 1739234622184,
+        "stop" : 1739234622492,
+        "duration" : 308
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Browser console logging is enabled for error tracking",
+      "time" : {
+        "start" : 1739234622493,
+        "stop" : 1739234622493,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Open Login Page",
+      "time" : {
+        "start" : 1739234622493,
+        "stop" : 1739234622577,
+        "duration" : 84
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Verify page loads without console errors",
+      "time" : {
+        "start" : 1739234622577,
+        "stop" : 1739234622586,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given I am logged in as an admin",
+      "time" : {
+        "start" : 1739234622587,
+        "stop" : 1739234623229,
+        "duration" : 642
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter username, \"John Tan\" into the search bar",
+      "time" : {
+        "start" : 1739234623229,
+        "stop" : 1739234633296,
+        "duration" : 10067
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then the search results should show the student \"John Tan\"",
+      "time" : {
+        "start" : 1739234633296,
+        "stop" : 1739234633337,
+        "duration" : 41
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Admin Page Features"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 5,
+        "skipped" : 0,
+        "passed" : 15,
+        "unknown" : 0,
+        "total" : 20
+      },
+      "items" : [ {
+        "uid" : "9278c10c2abd0c7e",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/58/#testresult/9278c10c2abd0c7e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739203256414,
+          "stop" : 1739203267579,
+          "duration" : 11165
+        }
+      }, {
+        "uid" : "3d01644630829a53",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/57/#testresult/3d01644630829a53",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739203137074,
+          "stop" : 1739203148266,
+          "duration" : 11192
+        }
+      }, {
+        "uid" : "75cd674292292113",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/56/#testresult/75cd674292292113",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x55b99925f53a <unknown>\n#1 0x55b998d5af00 <unknown>\n#2 0x55b998d53114 <unknown>\n#3 0x55b998d434b9 <unknown>\n#4 0x55b998d451c4 <unknown>\n#5 0x55b998d4376d <unknown>\n#6 0x55b998d431e5 <unknown>\n#7 0x55b998d42ec2 <unknown>\n#8 0x55b998d40e56 <unknown>\n#9 0x55b998d414ca <unknown>\n#10 0x55b998d5d879 <unknown>\n#11 0x55b998deebf5 <unknown>\n#12 0x55b998dcf5a2 <unknown>\n#13 0x55b998dedf84 <unknown>\n#14 0x55b998dcf343 <unknown>\n#15 0x55b998d9c78a <unknown>\n#16 0x55b998d9d9de <unknown>\n#17 0x55b9992292cb <unknown>\n#18 0x55b99922d242 <unknown>\n#19 0x55b9992167ac <unknown>\n#20 0x55b99922ddf7 <unknown>\n#21 0x55b9991fab2f <unknown>\n#22 0x55b99924e1a8 <unknown>\n#23 0x55b99924e370 <unknown>\n#24 0x55b99925e3b6 <unknown>\n#25 0x7f5aa789ca94 <unknown>\n#26 0x7f5aa7929c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739203039266,
+          "stop" : 1739203039712,
+          "duration" : 446
+        }
+      }, {
+        "uid" : "32454fa283681a13",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/55/#testresult/32454fa283681a13",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x560b7bbbd53a <unknown>\n#1 0x560b7b6b8f00 <unknown>\n#2 0x560b7b6b1114 <unknown>\n#3 0x560b7b6a14b9 <unknown>\n#4 0x560b7b6a31c4 <unknown>\n#5 0x560b7b6a176d <unknown>\n#6 0x560b7b6a11e5 <unknown>\n#7 0x560b7b6a0ec2 <unknown>\n#8 0x560b7b69ee56 <unknown>\n#9 0x560b7b69f4ca <unknown>\n#10 0x560b7b6bb879 <unknown>\n#11 0x560b7b74cbf5 <unknown>\n#12 0x560b7b72d5a2 <unknown>\n#13 0x560b7b74bf84 <unknown>\n#14 0x560b7b72d343 <unknown>\n#15 0x560b7b6fa78a <unknown>\n#16 0x560b7b6fb9de <unknown>\n#17 0x560b7bb872cb <unknown>\n#18 0x560b7bb8b242 <unknown>\n#19 0x560b7bb747ac <unknown>\n#20 0x560b7bb8bdf7 <unknown>\n#21 0x560b7bb58b2f <unknown>\n#22 0x560b7bbac1a8 <unknown>\n#23 0x560b7bbac370 <unknown>\n#24 0x560b7bbbc3b6 <unknown>\n#25 0x7f3b1b09ca94 <unknown>\n#26 0x7f3b1b129c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739202910780,
+          "stop" : 1739202911207,
+          "duration" : 427
+        }
+      }, {
+        "uid" : "2cc72f9403bf755d",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/54/#testresult/2cc72f9403bf755d",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=132.0.6834.159)\nStacktrace:\n#0 0x56017099653a <unknown>\n#1 0x560170491f00 <unknown>\n#2 0x56017048a114 <unknown>\n#3 0x56017047a4b9 <unknown>\n#4 0x56017047c1c4 <unknown>\n#5 0x56017047a76d <unknown>\n#6 0x56017047a1e5 <unknown>\n#7 0x560170479ec2 <unknown>\n#8 0x560170477e56 <unknown>\n#9 0x5601704784ca <unknown>\n#10 0x560170494879 <unknown>\n#11 0x560170525bf5 <unknown>\n#12 0x5601705065a2 <unknown>\n#13 0x560170524f84 <unknown>\n#14 0x560170506343 <unknown>\n#15 0x5601704d378a <unknown>\n#16 0x5601704d49de <unknown>\n#17 0x5601709602cb <unknown>\n#18 0x560170964242 <unknown>\n#19 0x56017094d7ac <unknown>\n#20 0x560170964df7 <unknown>\n#21 0x560170931b2f <unknown>\n#22 0x5601709851a8 <unknown>\n#23 0x560170985370 <unknown>\n#24 0x5601709953b6 <unknown>\n#25 0x7f89e029ca94 <unknown>\n#26 0x7f89e0329c3c <unknown>\n\n",
+        "time" : {
+          "start" : 1739202662963,
+          "stop" : 1739202663398,
+          "duration" : 435
+        }
+      }, {
+        "uid" : "f69e6dd145286c5e",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/51/#testresult/f69e6dd145286c5e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739202028628,
+          "stop" : 1739202039809,
+          "duration" : 11181
+        }
+      }, {
+        "uid" : "451ed254f5d610",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/50/#testresult/451ed254f5d610",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201768552,
+          "stop" : 1739201779829,
+          "duration" : 11277
+        }
+      }, {
+        "uid" : "9fc9ed64dce94a2e",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/49/#testresult/9fc9ed64dce94a2e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201651657,
+          "stop" : 1739201662855,
+          "duration" : 11198
+        }
+      }, {
+        "uid" : "ca56ddd2d1ef8aaa",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/48/#testresult/ca56ddd2d1ef8aaa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201211745,
+          "stop" : 1739201222931,
+          "duration" : 11186
+        }
+      }, {
+        "uid" : "6c8b0ebd991789a5",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/46/#testresult/6c8b0ebd991789a5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739201032658,
+          "stop" : 1739201043944,
+          "duration" : 11286
+        }
+      }, {
+        "uid" : "5e2b6b4d7a85544a",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/45/#testresult/5e2b6b4d7a85544a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200904299,
+          "stop" : 1739200915549,
+          "duration" : 11250
+        }
+      }, {
+        "uid" : "2a0db0588553b21b",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/44/#testresult/2a0db0588553b21b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200847138,
+          "stop" : 1739200858359,
+          "duration" : 11221
+        }
+      }, {
+        "uid" : "616ae5303c9516f",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/43/#testresult/616ae5303c9516f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200610167,
+          "stop" : 1739200621358,
+          "duration" : 11191
+        }
+      }, {
+        "uid" : "18272f42672cbe0",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/41/#testresult/18272f42672cbe0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739200266058,
+          "stop" : 1739200267224,
+          "duration" : 1166
+        }
+      }, {
+        "uid" : "533272866d95e064",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/42/#testresult/533272866d95e064",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'find_element'\n",
+        "time" : {
+          "start" : 1739200242211,
+          "stop" : 1739200242709,
+          "duration" : 498
+        }
+      }, {
+        "uid" : "be4bf8d41aeef7cc",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/40/#testresult/be4bf8d41aeef7cc",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'find_element'\n",
+        "time" : {
+          "start" : 1739200162470,
+          "stop" : 1739200162972,
+          "duration" : 502
+        }
+      }, {
+        "uid" : "76f59541066f1442",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/76f59541066f1442",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196906309,
+          "stop" : 1739196907517,
+          "duration" : 1208
+        }
+      }, {
+        "uid" : "3c5d79e313ce89a2",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/39/#testresult/3c5d79e313ce89a2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739196584017,
+          "stop" : 1739196585201,
+          "duration" : 1184
+        }
+      }, {
+        "uid" : "db711d42579ab71e",
+        "reportUrl" : "https://EkitaiKani.github.io/DOPAssignment/38/#testresult/db711d42579ab71e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1739195833020,
+          "stop" : 1739195834256,
+          "duration" : 1236
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "b5d58ec290f525c5.json",
+  "parameterValues" : [ ]
+}
