@@ -8,16 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send issue to Discord
-        uses: dawidd6/action-send-discord-message@v3
+        uses: Ilshidur/action-discord@0.3.2
         with:
-          webhook_url: ${{ secrets.DISCORD_ISSUES_URL }}
-          message: |
-            **New Issue Created**:
-            - **Title**: ${{ github.event.issue.title }}
-            - **URL**: ${{ github.event.issue.html_url }}
-            - **Author**: ${{ github.event.issue.user.login }}
-            - **Description**: ${{ github.event.issue.body }}
-
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "New Issue Created"
+          description: |
+            **Title**: ${{ github.event.issue.title }}
+            **Author**: ${{ github.event.issue.user.login }}
+            **Description**: ${{ github.event.issue.body }}
+          url: ${{ github.event.issue.html_url }}
+          color: 0x00ff00
+        
       - name: Send Telegram Notification
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -27,10 +28,15 @@ jobs:
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
+          ESCAPED_TITLE=$(echo "$ISSUE_TITLE" | sed 's/[\"]/\\&/g')
+          ESCAPED_AUTHOR=$(echo "$ISSUE_AUTHOR" | sed 's/[\"]/\\&/g')
+          ESCAPED_URL=$(echo "$ISSUE_URL" | sed 's/[\"]/\\&/g')
+          
           curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -H "Content-Type: application/json" \
           -d "{
             \"chat_id\": \"${TELEGRAM_CHAT_ID}\",
-            \"parse_mode\": \"Markdown\",
-            \"text\": \"🆕 *New Issue Opened!*\n\n*Title:* ${ISSUE_TITLE}\n*Created by:* ${ISSUE_AUTHOR}\n[View Issue](${ISSUE_URL})\"
+            \"message_thread_id\": \"${TELEGRAM_TOPIC_ID}\",
+            \"parse_mode\": \"MarkdownV2\",
+            \"text\": \"🆕 *New Issue Opened\\!*\\n\\n*Title:* ${ESCAPED_TITLE}\\n*Created by:* ${ESCAPED_AUTHOR}\\n[View Issue](${ESCAPED_URL})\"
           }"
