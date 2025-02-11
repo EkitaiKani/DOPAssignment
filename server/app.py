@@ -11,6 +11,7 @@ app = Flask(__name__, static_folder="../client/static", template_folder="../clie
 app.secret_key = os.urandom(24)
 app.config.from_object(ProductionConfig)
 init_db(app)
+
 users = {}
 
 app.register_blueprint(student_bp, url_prefix='/devopsassignment1/students')
