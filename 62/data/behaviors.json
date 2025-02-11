@@ -1,0 +1,143 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "Admin Page Features",
+    "children" : [ {
+      "name" : "Admin lists all student accounts",
+      "uid" : "ca313fea97d468e0",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234817591,
+        "stop" : 1739234819056,
+        "duration" : 1465
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin searches for a student account by Student Name",
+      "uid" : "403c99268fc456a1",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234819057,
+        "stop" : 1739234830242,
+        "duration" : 11185
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin creates a new student account",
+      "uid" : "eafd688331174630",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234830243,
+        "stop" : 1739234832502,
+        "duration" : 2259
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin modifies a student account",
+      "uid" : "8dfc0269a6dcd396",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234832503,
+        "stop" : 1739234834642,
+        "duration" : 2139
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Admin deletes a student account",
+      "uid" : "1d8ffd312701ff15",
+      "parentUid" : "2273fbf011b68a8f6b10e4baf6ad47e5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234834643,
+        "stop" : 1739234836030,
+        "duration" : 1387
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "2273fbf011b68a8f6b10e4baf6ad47e5"
+  }, {
+    "name" : "Verify Login is valid",
+    "children" : [ {
+      "name" : "Check Login title",
+      "uid" : "43eca66ac1888c14",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234836032,
+        "stop" : 1739234836535,
+        "duration" : 503
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Fill in student login with one incorrect userName data",
+      "uid" : "385c0aab8daeba00",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234836535,
+        "stop" : 1739234838212,
+        "duration" : 1677
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Fill in admin login with one correct user data",
+      "uid" : "757069bf597e2551",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234838212,
+        "stop" : 1739234839878,
+        "duration" : 1666
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Fill in student login with multiple correct user data -- @1.1 ",
+      "uid" : "fc69a05ff9dfa920",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234839879,
+        "stop" : 1739234841572,
+        "duration" : 1693
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "password1", "John Tan" ]
+    }, {
+      "name" : "Fill in student login with multiple correct user data -- @1.2 ",
+      "uid" : "f209f5fdd57ec6cb",
+      "parentUid" : "d9b076f658f0216dcb302880bce89ade",
+      "status" : "passed",
+      "time" : {
+        "start" : 1739234841572,
+        "stop" : 1739234843227,
+        "duration" : 1655
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "password2", "Sarah Lim" ]
+    } ],
+    "uid" : "d9b076f658f0216dcb302880bce89ade"
+  } ],
+  "name" : "behaviors"
+}
