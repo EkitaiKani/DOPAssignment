@@ -9,9 +9,9 @@ import os
 load_dotenv()
 app = Flask(__name__, static_folder="../client/static", template_folder="../client/templates")
 app.secret_key = os.urandom(24)
-app.config.from_object(DevelopmentConfig)
+config_class = ProductionConfig if os.getenv("FLASK_ENV") == "production" else DevelopmentConfig
+app.config.from_object(config_class)
 init_db(app)
-
 users = {}
 
 app.register_blueprint(student_bp, url_prefix='/devopsassignment1/students')
